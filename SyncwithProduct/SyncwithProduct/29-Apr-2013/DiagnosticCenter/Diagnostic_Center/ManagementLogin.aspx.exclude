@@ -1,0 +1,58 @@
+﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/SiteM.master" AutoEventWireup="true"
+    CodeFile="Default.aspx.cs" Inherits="_Default" %>
+
+<asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
+</asp:Content>
+<asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
+    <div class="container">
+		
+		
+			
+			 <div id="wrapper">
+          
+                        <div id="logindivM" class="animate form">
+		<section class="main">
+				<div class="form-4">
+				    <h1>Login</h1>
+				<p>
+                  <label for="Branch">Branch:</label>
+      <asp:DropDownList ID="ddlBranch" runat="server" CssClass="ddl" placeholder="Enter Branch here" required></asp:DropDownList>
+                </p>
+                    <p>
+                    
+                  
+				        <label for="login">User Name:</label>
+                        <asp:TextBox ID="txtName" runat="server" placeholder="Enter username here" required></asp:TextBox>
+				    <%--   <input type="text" name="login" placeholder="Enter username here" required>--%>
+				                        </p>
+				    <p>
+               
+				        <label for="password">Password:</label>
+                         <asp:TextBox ID="txtPassword" TextMode="Password" runat="server"  placeholder="Enter password here" required></asp:TextBox>
+				     <%-- <input type="password" name='password' placeholder="Enter password here" required> --%>
+				    
+                    </p>
+                    <p>
+                    <asp:Label ID="lblErrMsg" runat="server"></asp:Label>
+                    </p>
+
+				    <p>
+                    <asp:button ID="btnLogin" Text="Login" runat="server"/>
+				       <%-- <input type="submit" name="submit" value="Login">--%>
+				    </p>
+				</div>​
+			</section>
+			
+        </div>
+     
+		<!-- jQuery if needed -->
+       
+        <script type="text/javascript" src="js/jquery.placeholder.min.js"></script>
+		<script type="text/javascript">
+		    $(function () {
+		        $('input, textarea').placeholder();
+		    });
+		</script>
+           </div>
+        </div>
+</asp:Content>

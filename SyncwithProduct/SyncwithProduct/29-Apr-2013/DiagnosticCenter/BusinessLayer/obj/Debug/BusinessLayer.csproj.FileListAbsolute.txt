@@ -1,0 +1,215 @@
+D:\BCL latest 29-Nov-2012\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.dll
+D:\BCL latest 29-Nov-2012\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.pdb
+D:\BCL latest 29-Nov-2012\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.dll
+D:\BCL latest 29-Nov-2012\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.pdb
+D:\BCL latest 29-Nov-2012\DiagnosticCenter\BusinessLayer\obj\Debug\ResolveAssemblyReference.cache
+D:\BCL latest 29-Nov-2012\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.dll
+D:\BCL latest 29-Nov-2012\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Users\hp\Desktop\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Users\hp\Desktop\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\hp\Desktop\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.dll
+C:\Users\hp\Desktop\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.pdb
+C:\Users\hp\Desktop\DiagnosticCenter\BusinessLayer\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\hp\Desktop\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Users\hp\Desktop\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Users\Administrator\Desktop\BCl front office\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Users\Administrator\Desktop\BCl front office\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\Administrator\Desktop\BCl front office\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.dll
+C:\Users\Administrator\Desktop\BCl front office\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.pdb
+C:\Users\Administrator\Desktop\BCl front office\DiagnosticCenter\BusinessLayer\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\BCl front office\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Users\Administrator\Desktop\BCl front office\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Users\hp\Desktop\New BCL\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Users\hp\Desktop\New BCL\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\hp\Desktop\New BCL\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.dll
+C:\Users\hp\Desktop\New BCL\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.pdb
+C:\Users\hp\Desktop\New BCL\DiagnosticCenter\BusinessLayer\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\hp\Desktop\New BCL\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Users\hp\Desktop\New BCL\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Users\Administrator\Desktop\New BCL\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Users\Administrator\Desktop\New BCL\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\Administrator\Desktop\New BCL\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.dll
+C:\Users\Administrator\Desktop\New BCL\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.pdb
+C:\Users\Administrator\Desktop\New BCL\DiagnosticCenter\BusinessLayer\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\New BCL\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Users\Administrator\Desktop\New BCL\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Users\hp\Desktop\BCL-08Jan2013\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Users\hp\Desktop\BCL-08Jan2013\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\hp\Desktop\BCL-08Jan2013\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.dll
+C:\Users\hp\Desktop\BCL-08Jan2013\DiagnosticCenter\BusinessLayer\bin\Debug\DropDownCheckBoxes.dll
+C:\Users\hp\Desktop\BCL-08Jan2013\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.pdb
+C:\Users\hp\Desktop\BCL-08Jan2013\DiagnosticCenter\BusinessLayer\bin\Debug\DropDownCheckBoxes.pdb
+C:\Users\hp\Desktop\BCL-08Jan2013\DiagnosticCenter\BusinessLayer\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\hp\Desktop\BCL-08Jan2013\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Users\hp\Desktop\BCL-08Jan2013\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Users\Administrator\Desktop\BCL-08Jan2013\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Users\Administrator\Desktop\BCL-08Jan2013\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\Administrator\Desktop\BCL-08Jan2013\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.dll
+C:\Users\Administrator\Desktop\BCL-08Jan2013\DiagnosticCenter\BusinessLayer\bin\Debug\DropDownCheckBoxes.dll
+C:\Users\Administrator\Desktop\BCL-08Jan2013\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.pdb
+C:\Users\Administrator\Desktop\BCL-08Jan2013\DiagnosticCenter\BusinessLayer\bin\Debug\DropDownCheckBoxes.pdb
+C:\Users\Administrator\Desktop\BCL-08Jan2013\DiagnosticCenter\BusinessLayer\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\BCL-08Jan2013\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Users\Administrator\Desktop\BCL-08Jan2013\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.pdb
+D:\BCL-09Jan2013\BCL-08Jan2013\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.dll
+D:\BCL-09Jan2013\BCL-08Jan2013\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.pdb
+D:\BCL-09Jan2013\BCL-08Jan2013\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.dll
+D:\BCL-09Jan2013\BCL-08Jan2013\DiagnosticCenter\BusinessLayer\bin\Debug\DropDownCheckBoxes.dll
+D:\BCL-09Jan2013\BCL-08Jan2013\DiagnosticCenter\BusinessLayer\bin\Debug\DropDownCheckBoxes.pdb
+D:\BCL-09Jan2013\BCL-08Jan2013\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.pdb
+D:\BCL-09Jan2013\BCL-08Jan2013\DiagnosticCenter\BusinessLayer\obj\Debug\ResolveAssemblyReference.cache
+D:\BCL-09Jan2013\BCL-08Jan2013\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.dll
+D:\BCL-09Jan2013\BCL-08Jan2013\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Users\hp\Desktop\BCL 09-Jan-2013\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Users\hp\Desktop\BCL 09-Jan-2013\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\hp\Desktop\BCL 09-Jan-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.dll
+C:\Users\hp\Desktop\BCL 09-Jan-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DropDownCheckBoxes.dll
+C:\Users\hp\Desktop\BCL 09-Jan-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.pdb
+C:\Users\hp\Desktop\BCL 09-Jan-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DropDownCheckBoxes.pdb
+C:\Users\hp\Desktop\BCL 09-Jan-2013\DiagnosticCenter\BusinessLayer\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\hp\Desktop\BCL 09-Jan-2013\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Users\hp\Desktop\BCL 09-Jan-2013\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.pdb
+D:\BCL 18-Jan-2013\BCL 09-Jan-2013\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.dll
+D:\BCL 18-Jan-2013\BCL 09-Jan-2013\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.pdb
+D:\BCL 18-Jan-2013\BCL 09-Jan-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.dll
+D:\BCL 18-Jan-2013\BCL 09-Jan-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DropDownCheckBoxes.dll
+D:\BCL 18-Jan-2013\BCL 09-Jan-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.pdb
+D:\BCL 18-Jan-2013\BCL 09-Jan-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DropDownCheckBoxes.pdb
+D:\BCL 18-Jan-2013\BCL 09-Jan-2013\DiagnosticCenter\BusinessLayer\obj\Debug\ResolveAssemblyReference.cache
+D:\BCL 18-Jan-2013\BCL 09-Jan-2013\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.dll
+D:\BCL 18-Jan-2013\BCL 09-Jan-2013\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Users\hp\Desktop\BCL 18-Jan-2013\BCL 09-Jan-2013\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Users\hp\Desktop\BCL 18-Jan-2013\BCL 09-Jan-2013\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\hp\Desktop\BCL 18-Jan-2013\BCL 09-Jan-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.dll
+C:\Users\hp\Desktop\BCL 18-Jan-2013\BCL 09-Jan-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DropDownCheckBoxes.dll
+C:\Users\hp\Desktop\BCL 18-Jan-2013\BCL 09-Jan-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.pdb
+C:\Users\hp\Desktop\BCL 18-Jan-2013\BCL 09-Jan-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DropDownCheckBoxes.pdb
+C:\Users\hp\Desktop\BCL 18-Jan-2013\BCL 09-Jan-2013\DiagnosticCenter\BusinessLayer\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\hp\Desktop\BCL 18-Jan-2013\BCL 09-Jan-2013\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Users\hp\Desktop\BCL 18-Jan-2013\BCL 09-Jan-2013\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Users\Xii-ex3gen\Desktop\BCL 18-Jan-2013\BCL 09-Jan-2013\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Users\Xii-ex3gen\Desktop\BCL 18-Jan-2013\BCL 09-Jan-2013\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\Xii-ex3gen\Desktop\BCL 18-Jan-2013\BCL 09-Jan-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.dll
+C:\Users\Xii-ex3gen\Desktop\BCL 18-Jan-2013\BCL 09-Jan-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DropDownCheckBoxes.dll
+C:\Users\Xii-ex3gen\Desktop\BCL 18-Jan-2013\BCL 09-Jan-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.pdb
+C:\Users\Xii-ex3gen\Desktop\BCL 18-Jan-2013\BCL 09-Jan-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DropDownCheckBoxes.pdb
+C:\Users\Xii-ex3gen\Desktop\BCL 18-Jan-2013\BCL 09-Jan-2013\DiagnosticCenter\BusinessLayer\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Xii-ex3gen\Desktop\BCL 18-Jan-2013\BCL 09-Jan-2013\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Users\Xii-ex3gen\Desktop\BCL 18-Jan-2013\BCL 09-Jan-2013\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Users\Xii-ex3gen\Desktop\BCL 16-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Users\Xii-ex3gen\Desktop\BCL 16-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\Xii-ex3gen\Desktop\BCL 16-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.dll
+C:\Users\Xii-ex3gen\Desktop\BCL 16-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DropDownCheckBoxes.dll
+C:\Users\Xii-ex3gen\Desktop\BCL 16-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.pdb
+C:\Users\Xii-ex3gen\Desktop\BCL 16-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DropDownCheckBoxes.pdb
+C:\Users\Xii-ex3gen\Desktop\BCL 16-Apr-2013\DiagnosticCenter\BusinessLayer\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Xii-ex3gen\Desktop\BCL 16-Apr-2013\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Users\Xii-ex3gen\Desktop\BCL 16-Apr-2013\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.pdb
+D:\BCL 17-Apr-2013\BCL 16-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.dll
+D:\BCL 17-Apr-2013\BCL 16-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.pdb
+D:\BCL 17-Apr-2013\BCL 16-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.dll
+D:\BCL 17-Apr-2013\BCL 16-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DropDownCheckBoxes.dll
+D:\BCL 17-Apr-2013\BCL 16-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.pdb
+D:\BCL 17-Apr-2013\BCL 16-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DropDownCheckBoxes.pdb
+D:\BCL 17-Apr-2013\BCL 16-Apr-2013\DiagnosticCenter\BusinessLayer\obj\Debug\ResolveAssemblyReference.cache
+D:\BCL 17-Apr-2013\BCL 16-Apr-2013\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.dll
+D:\BCL 17-Apr-2013\BCL 16-Apr-2013\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.pdb
+D:\Back of Dr.Panel and BCL Source Code\BCL 18-Apr-2013\BCL 16-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.dll
+D:\Back of Dr.Panel and BCL Source Code\BCL 18-Apr-2013\BCL 16-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.pdb
+D:\Back of Dr.Panel and BCL Source Code\BCL 18-Apr-2013\BCL 16-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.dll
+D:\Back of Dr.Panel and BCL Source Code\BCL 18-Apr-2013\BCL 16-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DropDownCheckBoxes.dll
+D:\Back of Dr.Panel and BCL Source Code\BCL 18-Apr-2013\BCL 16-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.pdb
+D:\Back of Dr.Panel and BCL Source Code\BCL 18-Apr-2013\BCL 16-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DropDownCheckBoxes.pdb
+D:\Back of Dr.Panel and BCL Source Code\BCL 18-Apr-2013\BCL 16-Apr-2013\DiagnosticCenter\BusinessLayer\obj\Debug\ResolveAssemblyReference.cache
+D:\Back of Dr.Panel and BCL Source Code\BCL 18-Apr-2013\BCL 16-Apr-2013\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.dll
+D:\Back of Dr.Panel and BCL Source Code\BCL 18-Apr-2013\BCL 16-Apr-2013\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Users\Xii-ex3gen\Desktop\BCL 18-Apr-2013\BCL 16-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Users\Xii-ex3gen\Desktop\BCL 18-Apr-2013\BCL 16-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\Xii-ex3gen\Desktop\BCL 18-Apr-2013\BCL 16-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.dll
+C:\Users\Xii-ex3gen\Desktop\BCL 18-Apr-2013\BCL 16-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DropDownCheckBoxes.dll
+C:\Users\Xii-ex3gen\Desktop\BCL 18-Apr-2013\BCL 16-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.pdb
+C:\Users\Xii-ex3gen\Desktop\BCL 18-Apr-2013\BCL 16-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DropDownCheckBoxes.pdb
+C:\Users\Xii-ex3gen\Desktop\BCL 18-Apr-2013\BCL 16-Apr-2013\DiagnosticCenter\BusinessLayer\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Xii-ex3gen\Desktop\BCL 18-Apr-2013\BCL 16-Apr-2013\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Users\Xii-ex3gen\Desktop\BCL 18-Apr-2013\BCL 16-Apr-2013\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Users\Xii-ex3gen\Desktop\23-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Users\Xii-ex3gen\Desktop\23-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\Xii-ex3gen\Desktop\23-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.dll
+C:\Users\Xii-ex3gen\Desktop\23-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DropDownCheckBoxes.dll
+C:\Users\Xii-ex3gen\Desktop\23-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.pdb
+C:\Users\Xii-ex3gen\Desktop\23-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DropDownCheckBoxes.pdb
+C:\Users\Xii-ex3gen\Desktop\23-Apr-2013\DiagnosticCenter\BusinessLayer\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Xii-ex3gen\Desktop\23-Apr-2013\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Users\Xii-ex3gen\Desktop\23-Apr-2013\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Users\Nayab\Desktop\23-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Users\Nayab\Desktop\23-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\Nayab\Desktop\23-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.dll
+C:\Users\Nayab\Desktop\23-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DropDownCheckBoxes.dll
+C:\Users\Nayab\Desktop\23-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.pdb
+C:\Users\Nayab\Desktop\23-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DropDownCheckBoxes.pdb
+C:\Users\Nayab\Desktop\23-Apr-2013\DiagnosticCenter\BusinessLayer\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Nayab\Desktop\23-Apr-2013\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Users\Nayab\Desktop\23-Apr-2013\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Users\Nayab\Desktop\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Users\Nayab\Desktop\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\Nayab\Desktop\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.dll
+C:\Users\Nayab\Desktop\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DropDownCheckBoxes.dll
+C:\Users\Nayab\Desktop\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.pdb
+C:\Users\Nayab\Desktop\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DropDownCheckBoxes.pdb
+C:\Users\Nayab\Desktop\29-Apr-2013\DiagnosticCenter\BusinessLayer\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Nayab\Desktop\29-Apr-2013\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Users\Nayab\Desktop\29-Apr-2013\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Users\Xii-ex3gen\Desktop\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Users\Xii-ex3gen\Desktop\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\Xii-ex3gen\Desktop\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.dll
+C:\Users\Xii-ex3gen\Desktop\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DropDownCheckBoxes.dll
+C:\Users\Xii-ex3gen\Desktop\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.pdb
+C:\Users\Xii-ex3gen\Desktop\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DropDownCheckBoxes.pdb
+C:\Users\Xii-ex3gen\Desktop\29-Apr-2013\DiagnosticCenter\BusinessLayer\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Xii-ex3gen\Desktop\29-Apr-2013\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Users\Xii-ex3gen\Desktop\29-Apr-2013\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.pdb
+D:\Qamar\BCL\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.dll
+D:\Qamar\BCL\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.pdb
+D:\Qamar\BCL\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.dll
+D:\Qamar\BCL\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DropDownCheckBoxes.dll
+D:\Qamar\BCL\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.pdb
+D:\Qamar\BCL\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DropDownCheckBoxes.pdb
+D:\Qamar\BCL\29-Apr-2013\DiagnosticCenter\BusinessLayer\obj\Debug\ResolveAssemblyReference.cache
+D:\Qamar\BCL\29-Apr-2013\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.dll
+D:\Qamar\BCL\29-Apr-2013\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.pdb
+D:\Qamar\BCL\SyncwithProduct\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.dll
+D:\Qamar\BCL\SyncwithProduct\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.pdb
+D:\Qamar\BCL\SyncwithProduct\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.dll
+D:\Qamar\BCL\SyncwithProduct\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DropDownCheckBoxes.dll
+D:\Qamar\BCL\SyncwithProduct\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.pdb
+D:\Qamar\BCL\SyncwithProduct\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DropDownCheckBoxes.pdb
+D:\Qamar\BCL\SyncwithProduct\29-Apr-2013\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.dll
+D:\Qamar\BCL\SyncwithProduct\29-Apr-2013\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.pdb
+D:\Qamar\BCL\SyncwithProduct\29-Apr-2013\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
+E:\Raza\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.dll
+E:\Raza\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.pdb
+E:\Raza\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.dll
+E:\Raza\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DropDownCheckBoxes.dll
+E:\Raza\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.pdb
+E:\Raza\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DropDownCheckBoxes.pdb
+E:\Raza\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
+E:\Raza\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.dll
+E:\Raza\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.pdb
+E:\BCL\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.dll
+E:\BCL\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.pdb
+E:\BCL\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.dll
+E:\BCL\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DropDownCheckBoxes.dll
+E:\BCL\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.pdb
+E:\BCL\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DropDownCheckBoxes.pdb
+E:\BCL\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
+E:\BCL\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.dll
+E:\BCL\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.pdb
+D:\Muhammad Qamar\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.dll
+D:\Muhammad Qamar\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\BusinessLayer.pdb
+D:\Muhammad Qamar\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.dll
+D:\Muhammad Qamar\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DropDownCheckBoxes.dll
+D:\Muhammad Qamar\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DataLayer.pdb
+D:\Muhammad Qamar\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Debug\DropDownCheckBoxes.pdb
+D:\Muhammad Qamar\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
+D:\Muhammad Qamar\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.dll
+D:\Muhammad Qamar\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\BusinessLayer\obj\Debug\BusinessLayer.pdb

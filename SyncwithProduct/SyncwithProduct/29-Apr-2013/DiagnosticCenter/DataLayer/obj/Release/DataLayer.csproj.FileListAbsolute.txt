@@ -1,0 +1,2 @@
+D:\Muhammad Qamar\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\DataLayer\bin\Release\DataLayer.dll
+D:\Muhammad Qamar\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\DataLayer\obj\Release\DataLayer.dll

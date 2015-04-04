@@ -1,0 +1,90 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using DataLayer;
+
+/// <summary>
+/// Summary description for clsBLReport
+/// </summary>
+public class clsBLReport
+{
+    clsoperation objTrans = new clsoperation();
+    clsdbhims objdbhims = new clsdbhims();
+
+    public clsBLReport() { }
+
+    #region "Class Variables"
+
+    private static string StrReportName;
+    private static string StrFromDate;
+    private static string StrToDate;
+
+    private static string StrsSelectionFormula;
+    private static string StrSubReportSelectFormula;
+
+    private static string StrSubReportName;
+    private static string StrFromDateTIme;
+    private static string StrTODateTime;
+    #endregion
+
+    #region "Properties"
+
+    public static string ReportName
+    {
+        get { return StrReportName; }
+        set { StrReportName = value; }
+    }
+    public static string FromDate
+    {
+        get { return StrFromDate; }
+        set { StrFromDate = value; }
+    }
+    public static string ToDate
+    {
+        get { return StrToDate; }
+        set { StrToDate = value; }
+    }
+
+    public static string sSelectionFormula
+    {
+        get { return StrsSelectionFormula; }
+        set { StrsSelectionFormula = value; }
+    }
+    public static string sSubSelectionFormula
+    {
+        get { return StrSubReportSelectFormula; }
+        set { StrSubReportSelectFormula = value; }
+    }
+
+    public static string SubReportName
+    {
+        get { return StrSubReportName; }
+        set { StrSubReportName = value; }
+    }
+    public static string FromDateTime
+    {
+        get { return StrFromDateTIme; }
+        set { StrFromDateTIme = value; }
+    }
+    public static string ToDateTime
+    {
+        get { return StrTODateTime; }
+        set { StrTODateTime = value; }
+    }
+    #endregion
+
+    public DataView GetReportInfo(string ReportName)
+    {
+        string query = "Select ACTIVE, REPORTTITLE, REPORTSUBTITLE, PAGEFOOTERNOTE, REPORTFOOTERNOTE,TREESNOTE1, TREESNOTE2 from Cm_Treportinfo Where REPORTNAME = '" + ReportName + "'";
+
+        objdbhims.Query = query;
+        return objTrans.DataTrigger_Get_All(objdbhims);
+    }
+}
+

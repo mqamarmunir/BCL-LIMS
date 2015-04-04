@@ -1,0 +1,744 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="OliveService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://87.106.184.4:84/CliqServiceBeta/OliveService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://87.106.184.4:84/CliqServiceBeta/OliveService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://87.106.184.4:84/CliqServiceBeta/OliveService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/OliveCliqService" />
+      <xsd:import schemaLocation="http://87.106.184.4:84/CliqServiceBeta/OliveService.svc?xsd=xsd3" />
+      <xsd:import schemaLocation="http://87.106.184.4:84/CliqServiceBeta/OliveService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IOliveService_SignIn_InputMessage">
+    <wsdl:part name="parameters" element="tns:SignIn" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_SignIn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SignInResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetDoctors_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDoctors" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetDoctors_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDoctorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_DeactivateDoctor_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeactivateDoctor" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_DeactivateDoctor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeactivateDoctorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_AddToMyVault_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddToMyVault" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_AddToMyVault_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddToMyVaultResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetMyVault_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMyVault" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetMyVault_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMyVaultResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetDoctorsList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDoctorsList" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetDoctorsList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDoctorsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_AddFriend_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddFriend" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_AddFriend_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddFriendResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetFriends_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFriends" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetFriends_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFriendsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_UnFriend_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnFriend" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_UnFriend_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnFriendResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetTests_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTests" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetTests_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTestsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetAttributes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAttributes" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetAttributes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAttributesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_SearchMyVault_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchMyVault" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_SearchMyVault_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchMyVaultResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_Search_InputMessage">
+    <wsdl:part name="parameters" element="tns:Search" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_Search_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetRecipients_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecipients" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetRecipients_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecipientsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetThem_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetThem" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetThem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetThemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_SendMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendMessage" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_SendMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetTestSpecimentList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTestSpecimentList" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetTestSpecimentList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTestSpecimentListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_AddSpecimenTemplate_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSpecimenTemplate" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_AddSpecimenTemplate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSpecimenTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetResultTemplate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetResultTemplate" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetResultTemplate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetResultTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetTemplates_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTemplates" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetTemplates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTemplatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetTestSpecimentListDropDown_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTestSpecimentListDropDown" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetTestSpecimentListDropDown_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTestSpecimentListDropDownResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetPanelTests_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPanelTests" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetPanelTests_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPanelTestsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetPanelTestRequests_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPanelTestRequests" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetPanelTestRequests_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPanelTestRequestsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetPanelRequestsDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPanelRequestsDetail" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetPanelRequestsDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPanelRequestsDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetRequestDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRequestDetails" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetRequestDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRequestDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_UpdateRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRequest" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_UpdateRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetPanellegderData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPanellegderData" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetPanellegderData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPanellegderDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GEtCliqueClinicTests_InputMessage">
+    <wsdl:part name="parameters" element="tns:GEtCliqueClinicTests" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GEtCliqueClinicTests_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GEtCliqueClinicTestsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetLabTests_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLabTests" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetLabTests_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLabTestsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetMasterTestList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMasterTestList" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetMasterTestList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMasterTestListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetNewTestRequests_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewTestRequests" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetNewTestRequests_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewTestRequestsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetNewTestRequestsAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewTestRequestsAll" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetNewTestRequestsAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewTestRequestsAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_updateorderstatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateorderstatus" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_updateorderstatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateorderstatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetConnectionString_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConnectionString" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetConnectionString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConnectionStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetAllConnectionString_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllConnectionString" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetAllConnectionString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllConnectionStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetHospitals_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHospitals" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetHospitals_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHospitalsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetPanelRequestsDAP_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPanelRequestsDAP" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetPanelRequestsDAP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPanelRequestsDAPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetPanelSpecificRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPanelSpecificRequest" />
+  </wsdl:message>
+  <wsdl:message name="IOliveService_GetPanelSpecificRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPanelSpecificRequestResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IOliveService">
+    <wsdl:operation name="SignIn">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOliveService/SignIn" message="tns:IOliveService_SignIn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOliveService/SignInResponse" message="tns:IOliveService_SignIn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctors">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOliveService/GetDoctors" message="tns:IOliveService_GetDoctors_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOliveService/GetDoctorsResponse" message="tns:IOliveService_GetDoctors_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeactivateDoctor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOliveService/DeactivateDoctor" message="tns:IOliveService_DeactivateDoctor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOliveService/DeactivateDoctorResponse" message="tns:IOliveService_DeactivateDoctor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddToMyVault">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOliveService/AddToMyVault" message="tns:IOliveService_AddToMyVault_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOliveService/AddToMyVaultResponse" message="tns:IOliveService_AddToMyVault_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMyVault">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOliveService/GetMyVault" message="tns:IOliveService_GetMyVault_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOliveService/GetMyVaultResponse" message="tns:IOliveService_GetMyVault_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctorsList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOliveService/GetDoctorsList" message="tns:IOliveService_GetDoctorsList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOliveService/GetDoctorsListResponse" message="tns:IOliveService_GetDoctorsList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFriend">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOliveService/AddFriend" message="tns:IOliveService_AddFriend_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOliveService/AddFriendResponse" message="tns:IOliveService_AddFriend_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFriends">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOliveService/GetFriends" message="tns:IOliveService_GetFriends_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOliveService/GetFriendsResponse" message="tns:IOliveService_GetFriends_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnFriend">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOliveService/UnFriend" message="tns:IOliveService_UnFriend_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOliveService/UnFriendResponse" message="tns:IOliveService_UnFriend_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTests">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOliveService/GetTests" message="tns:IOliveService_GetTests_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOliveService/GetTestsResponse" message="tns:IOliveService_GetTests_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAttributes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOliveService/GetAttributes" message="tns:IOliveService_GetAttributes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOliveService/GetAttributesResponse" message="tns:IOliveService_GetAttributes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchMyVault">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOliveService/SearchMyVault" message="tns:IOliveService_SearchMyVault_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOliveService/SearchMyVaultResponse" message="tns:IOliveService_SearchMyVault_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOliveService/Search" message="tns:IOliveService_Search_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOliveService/SearchResponse" message="tns:IOliveService_Search_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecipients">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOliveService/GetRecipients" message="tns:IOliveService_GetRecipients_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOliveService/GetRecipientsResponse" message="tns:IOliveService_GetRecipients_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetThem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOliveService/GetThem" message="tns:IOliveService_GetThem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOliveService/GetThemResponse" message="tns:IOliveService_GetThem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOliveService/SendMessage" message="tns:IOliveService_SendMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOliveService/SendMessageResponse" message="tns:IOliveService_SendMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTestSpecimentList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOliveService/GetTestSpecimentList" message="tns:IOliveService_GetTestSpecimentList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOliveService/GetTestSpecimentListResponse" message="tns:IOliveService_GetTestSpecimentList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSpecimenTemplate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOliveService/AddSpecimenTemplate" message="tns:IOliveService_AddSpecimenTemplate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOliveService/AddSpecimenTemplateResponse" message="tns:IOliveService_AddSpecimenTemplate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResultTemplate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOliveService/GetResultTemplate" message="tns:IOliveService_GetResultTemplate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOliveService/GetResultTemplateResponse" message="tns:IOliveService_GetResultTemplate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTemplates">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOliveService/GetTemplates" message="tns:IOliveService_GetTemplates_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOliveService/GetTemplatesResponse" message="tns:IOliveService_GetTemplates_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTestSpecimentListDropDown">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOliveService/GetTestSpecimentListDropDown" message="tns:IOliveService_GetTestSpecimentListDropDown_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOliveService/GetTestSpecimentListDropDownResponse" message="tns:IOliveService_GetTestSpecimentListDropDown_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPanelTests">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOliveService/GetPanelTests" message="tns:IOliveService_GetPanelTests_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOliveService/GetPanelTestsResponse" message="tns:IOliveService_GetPanelTests_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPanelTestRequests">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOliveService/GetPanelTestRequests" message="tns:IOliveService_GetPanelTestRequests_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOliveService/GetPanelTestRequestsResponse" message="tns:IOliveService_GetPanelTestRequests_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPanelRequestsDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOliveService/GetPanelRequestsDetail" message="tns:IOliveService_GetPanelRequestsDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOliveService/GetPanelRequestsDetailResponse" message="tns:IOliveService_GetPanelRequestsDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRequestDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOliveService/GetRequestDetails" message="tns:IOliveService_GetRequestDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOliveService/GetRequestDetailsResponse" message="tns:IOliveService_GetRequestDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOliveService/UpdateRequest" message="tns:IOliveService_UpdateRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOliveService/UpdateRequestResponse" message="tns:IOliveService_UpdateRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPanellegderData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOliveService/GetPanellegderData" message="tns:IOliveService_GetPanellegderData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOliveService/GetPanellegderDataResponse" message="tns:IOliveService_GetPanellegderData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GEtCliqueClinicTests">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOliveService/GEtCliqueClinicTests" message="tns:IOliveService_GEtCliqueClinicTests_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOliveService/GEtCliqueClinicTestsResponse" message="tns:IOliveService_GEtCliqueClinicTests_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLabTests">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOliveService/GetLabTests" message="tns:IOliveService_GetLabTests_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOliveService/GetLabTestsResponse" message="tns:IOliveService_GetLabTests_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMasterTestList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOliveService/GetMasterTestList" message="tns:IOliveService_GetMasterTestList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOliveService/GetMasterTestListResponse" message="tns:IOliveService_GetMasterTestList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewTestRequests">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOliveService/GetNewTestRequests" message="tns:IOliveService_GetNewTestRequests_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOliveService/GetNewTestRequestsResponse" message="tns:IOliveService_GetNewTestRequests_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewTestRequestsAll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOliveService/GetNewTestRequestsAll" message="tns:IOliveService_GetNewTestRequestsAll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOliveService/GetNewTestRequestsAllResponse" message="tns:IOliveService_GetNewTestRequestsAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateorderstatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOliveService/updateorderstatus" message="tns:IOliveService_updateorderstatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOliveService/updateorderstatusResponse" message="tns:IOliveService_updateorderstatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConnectionString">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOliveService/GetConnectionString" message="tns:IOliveService_GetConnectionString_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOliveService/GetConnectionStringResponse" message="tns:IOliveService_GetConnectionString_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllConnectionString">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOliveService/GetAllConnectionString" message="tns:IOliveService_GetAllConnectionString_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOliveService/GetAllConnectionStringResponse" message="tns:IOliveService_GetAllConnectionString_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHospitals">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOliveService/GetHospitals" message="tns:IOliveService_GetHospitals_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOliveService/GetHospitalsResponse" message="tns:IOliveService_GetHospitals_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPanelRequestsDAP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOliveService/GetPanelRequestsDAP" message="tns:IOliveService_GetPanelRequestsDAP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOliveService/GetPanelRequestsDAPResponse" message="tns:IOliveService_GetPanelRequestsDAP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPanelSpecificRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOliveService/GetPanelSpecificRequest" message="tns:IOliveService_GetPanelSpecificRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOliveService/GetPanelSpecificRequestResponse" message="tns:IOliveService_GetPanelSpecificRequest_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IOliveService" type="tns:IOliveService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SignIn">
+      <soap:operation soapAction="http://tempuri.org/IOliveService/SignIn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctors">
+      <soap:operation soapAction="http://tempuri.org/IOliveService/GetDoctors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeactivateDoctor">
+      <soap:operation soapAction="http://tempuri.org/IOliveService/DeactivateDoctor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToMyVault">
+      <soap:operation soapAction="http://tempuri.org/IOliveService/AddToMyVault" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMyVault">
+      <soap:operation soapAction="http://tempuri.org/IOliveService/GetMyVault" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctorsList">
+      <soap:operation soapAction="http://tempuri.org/IOliveService/GetDoctorsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFriend">
+      <soap:operation soapAction="http://tempuri.org/IOliveService/AddFriend" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFriends">
+      <soap:operation soapAction="http://tempuri.org/IOliveService/GetFriends" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnFriend">
+      <soap:operation soapAction="http://tempuri.org/IOliveService/UnFriend" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTests">
+      <soap:operation soapAction="http://tempuri.org/IOliveService/GetTests" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttributes">
+      <soap:operation soapAction="http://tempuri.org/IOliveService/GetAttributes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchMyVault">
+      <soap:operation soapAction="http://tempuri.org/IOliveService/SearchMyVault" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <soap:operation soapAction="http://tempuri.org/IOliveService/Search" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecipients">
+      <soap:operation soapAction="http://tempuri.org/IOliveService/GetRecipients" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetThem">
+      <soap:operation soapAction="http://tempuri.org/IOliveService/GetThem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <soap:operation soapAction="http://tempuri.org/IOliveService/SendMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTestSpecimentList">
+      <soap:operation soapAction="http://tempuri.org/IOliveService/GetTestSpecimentList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSpecimenTemplate">
+      <soap:operation soapAction="http://tempuri.org/IOliveService/AddSpecimenTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResultTemplate">
+      <soap:operation soapAction="http://tempuri.org/IOliveService/GetResultTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTemplates">
+      <soap:operation soapAction="http://tempuri.org/IOliveService/GetTemplates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTestSpecimentListDropDown">
+      <soap:operation soapAction="http://tempuri.org/IOliveService/GetTestSpecimentListDropDown" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPanelTests">
+      <soap:operation soapAction="http://tempuri.org/IOliveService/GetPanelTests" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPanelTestRequests">
+      <soap:operation soapAction="http://tempuri.org/IOliveService/GetPanelTestRequests" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPanelRequestsDetail">
+      <soap:operation soapAction="http://tempuri.org/IOliveService/GetPanelRequestsDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRequestDetails">
+      <soap:operation soapAction="http://tempuri.org/IOliveService/GetRequestDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRequest">
+      <soap:operation soapAction="http://tempuri.org/IOliveService/UpdateRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPanellegderData">
+      <soap:operation soapAction="http://tempuri.org/IOliveService/GetPanellegderData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GEtCliqueClinicTests">
+      <soap:operation soapAction="http://tempuri.org/IOliveService/GEtCliqueClinicTests" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLabTests">
+      <soap:operation soapAction="http://tempuri.org/IOliveService/GetLabTests" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMasterTestList">
+      <soap:operation soapAction="http://tempuri.org/IOliveService/GetMasterTestList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewTestRequests">
+      <soap:operation soapAction="http://tempuri.org/IOliveService/GetNewTestRequests" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewTestRequestsAll">
+      <soap:operation soapAction="http://tempuri.org/IOliveService/GetNewTestRequestsAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateorderstatus">
+      <soap:operation soapAction="http://tempuri.org/IOliveService/updateorderstatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConnectionString">
+      <soap:operation soapAction="http://tempuri.org/IOliveService/GetConnectionString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllConnectionString">
+      <soap:operation soapAction="http://tempuri.org/IOliveService/GetAllConnectionString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHospitals">
+      <soap:operation soapAction="http://tempuri.org/IOliveService/GetHospitals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPanelRequestsDAP">
+      <soap:operation soapAction="http://tempuri.org/IOliveService/GetPanelRequestsDAP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPanelSpecificRequest">
+      <soap:operation soapAction="http://tempuri.org/IOliveService/GetPanelSpecificRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OliveService">
+    <wsdl:port name="BasicHttpBinding_IOliveService" binding="tns:BasicHttpBinding_IOliveService">
+      <soap:address location="http://87.106.184.4:84/CliqServiceBeta/OliveService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

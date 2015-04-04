@@ -1,0 +1,355 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="NewLogin.aspx.cs" Inherits="NewLogin"%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
+    <head>
+		<meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <title>Front Office Manager</title>
+       
+        <link rel="shortcut icon" href="../favicon.ico"> 
+		<link rel="stylesheet" type="text/css" href="logincss/demo.css" />
+        <link rel="stylesheet" type="text/css" href="logincss/style.css" />
+        <link rel="stylesheet" type="text/css" href="logincss/custom.css" />
+		<script type="text/javascript" src="loginjs/modernizr.custom.79639.js"></script>
+        
+        <!-- stylesheets -->
+  	<link rel="stylesheet" href="logincss/style1.css" type="text/css" media="screen" />
+  	<link rel="stylesheet" href="logincss/slide.css" type="text/css" media="screen" />
+	
+  	<!-- PNG FIX for IE6 -->
+  	<!-- http://24ways.org/2007/supersleight-transparent-png-in-ie6 -->
+	<!--[if lte IE 6]>
+		<script type="text/javascript" src="js/pngfix/supersleight-min.js"></script>
+	<![endif]-->
+	 
+    <!-- jQuery - the core -->
+	<script src="loginjs/jquery-1.3.2.min.js" type="text/javascript"></script>
+	<!-- Sliding effect -->
+	<script src="loginjs/slide.js" type="text/javascript"></script>
+
+        
+		<noscript>
+			<link rel="stylesheet" type="text/css" href="logincss/styleNoJS.css" />
+		</noscript>
+    </head>
+    <body>
+        <form id="form1" runat="server">
+        <div class="container demo-1">
+		
+			<!-- Codrops top bar -->
+            <div class="codrops-top clearfix">
+               
+               <!-- Panel -->
+<div id="toppanel">
+	<div id="panel">
+		<div class="content clearfix">
+			<div class="left">
+				<h1 style="font-family:arial, helvetica, sans-serif;font-size: 1.6em;
+padding: 5px 0 10px;
+margin: 0;
+color: white;">Welcome to Front Office Manager</h1>
+				<h2 style="font-family:arial, helvetica, sans-serif;font-size: 1.2em;
+padding: 10px 0 5px;
+margin: 0;
+color: white;">News and Updates Goes here</h2>		
+				<p style="font-family: arial, helvetica, sans-serif;
+display: block;
+text-transform: capitalize;
+-webkit-margin-before: -1em;
+-webkit-margin-after: 0em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+text-align: justify;
+font-size: 12px;
+color: #999999;
+line-height: 18px;">
+                
+            <marquee direction="up" scrollamount="2" height="140px">    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. 
+                </marquee>
+                
+                </p>
+				
+				
+			</div>
+			<div class="left">
+				<!-- Login Form -->
+				<form class="clearfix" action="#" method="post">
+					<h1 style="font-family:arial, helvetica, sans-serif;font-size: 1.6em;
+padding: 5px 0 10px;
+margin: 0;
+color: white;" >Member Login</h1>
+
+
+
+
+
+<label class="grey" for="pwd"  style="font-family: arial, helvetica, sans-serif;
+display: block;
+text-transform: capitalize;
+-webkit-margin-before: -1em;
+-webkit-margin-after: 0em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+text-align: justify;
+font-size: 12px;
+color: #999999;
+line-height: 18px;">Branch:</label>
+					<asp:DropDownList ID="ddlBranch" runat="server" CssClass="field" style="width:140px; margin-bottom: 4px;" placeholder="Enter Branch here" 
+
+required></asp:DropDownList>
+
+
+					<label class="grey" for="log"  style="font-family: arial, helvetica, sans-serif;
+display: block;
+text-transform: capitalize;
+-webkit-margin-before: -1em;
+-webkit-margin-after: 0em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+text-align: justify;
+font-size: 12px;
+color: #999999;
+line-height: 18px;">Username:</label>
+					<input class="field" type="text" name="log" id="txtName" runat="server" value="" size="23" />
+					<label class="grey" for="pwd"  style="font-family: arial, helvetica, sans-serif;
+display: block;
+text-transform: capitalize;
+-webkit-margin-before: -1em;
+-webkit-margin-after: 0em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+text-align: justify;
+font-size: 12px;
+color: #999999;
+line-height: 18px;">Password:</label>
+					<input class="field" type="password" name="pwd" id="txtPassword" runat="server" size="23" />
+
+                    <span style="color:red">
+                     <asp:Label ID="lblErrMsg" runat="server"></asp:Label>
+                    <%--Password or Username is incorrect--%></span>
+
+
+	            	<%--<label><input name="rememberme" id="rememberme" type="checkbox" checked="checked" value="forever"  style="font-family: arial, helvetica, sans-serif;
+display: block;
+text-transform: capitalize;
+-webkit-margin-before: -1em;
+-webkit-margin-after: 0em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+text-align: justify;
+font-size: 12px;
+color: #999999;
+line-height: 18px;" /> &nbsp;Remember me</label>--%>
+        			<div class="clear"></div>
+                   <%-- <asp:button ID="btnLogin" Text="Login" runat="server" CssClass="bt_login"  OnClick="btnLogin_Click"/>--%>
+					
+                    
+                    
+                    <div style="float:left; width:80px;"> 
+                    <asp:button ID="btnLogin" Text="Login" runat="server" CssClass="bt_login"  OnClick="btnLogin_Click"/>
+                    <%--<input type="submit" name="submit" value="Login" class="bt_login" />--%></div>
+                    
+                    <div style="float:left; width: 155px;
+padding-top: 11px; color:white">Ver:1.6.300 Dated:23 Feb 2015</div>
+
+                    <div style="clear:both;"></div>
+                   
+					
+				</form>
+			</div>
+			<div class="left right">			
+				
+                
+                <img src="images/img.png" style="margin-left: 20px;
+margin-right: 20px;">
+                
+                
+			</div>
+		</div>
+</div> <!-- /login -->	
+
+	<!-- The tab on top -->	
+	<div class="tab">
+		<ul class="login">
+			<li class="left">&nbsp;</li>
+			<li>Hello Guest!</li>
+			<li class="sep">|</li>
+			<li id="toggle">
+				<a id="open" class="open" href="#" style="font-family: arial, helvetica, sans-serif;
+display: block;
+text-transform:capitalize;
+font-size: 12px;
+line-height: 18px;">Log In</a>
+				<a id="close" style="display: none;" class="close" href="#">Close</a>			
+			</li>
+			<li class="right">&nbsp;</li>
+		</ul> 
+	</div> <!-- / top -->
+	
+</div> <!--panel -->
+               
+               
+               
+               
+            </div><!--/ Codrops top bar -->
+
+           
+
+            <div id="slider" class="sl-slider-wrapper">
+
+				<div class="sl-slider">
+                <div class="sl-slide bg-5" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1">
+						<div class="sl-slide-inner">
+							<div class="deco" data-icon=""> <img src="images/logopulse.png" style="margin-top: 73px;margin-left: 34px;"></div>
+							<h2>Pulse LIMS</h2>
+							<blockquote><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,</p><!--<cite>Margi Clarke</cite> --></blockquote>
+						</div>
+					</div>
+                    
+				
+					<div class="sl-slide bg-1" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+						<div class="sl-slide-inner">
+							<div class="deco" data-icon=""><img src="images/logopulse.png" style="margin-top: 73px;margin-left: 34px;"></div>
+							<h2>Pulse LIMS</h2>
+							<blockquote><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,</p><!--<cite>Margi Clarke</cite> --></blockquote>
+						</div>
+					</div>
+					
+					<div class="sl-slide bg-2" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
+						<div class="sl-slide-inner">
+							<div class="deco" data-icon=""><img src="images/logopulse.png" style="margin-top: 73px;margin-left: 34px;"></div>
+							<h2>Pulse LIMS</h2>
+							<blockquote><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,</p><!--<cite>Margi Clarke</cite> --></blockquote>
+						</div>
+					</div>
+					
+					<div class="sl-slide bg-3" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
+						<div class="sl-slide-inner">
+							<div class="deco" data-icon=""><img src="images/logopulse.png" style="margin-top: 73px;margin-left: 34px;"></div>
+							<h2>Pulse LIMS</h2>
+							<blockquote><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,</p><!--<cite>Margi Clarke</cite> --></blockquote>
+							</div>
+					</div>
+					
+					<div class="sl-slide bg-4" data-orientation="vertical" data-slice1-rotation="-5" data-slice2-rotation="25" data-slice1-scale="2" data-slice2-scale="1">
+						<div class="sl-slide-inner">
+							<div class="deco" data-icon=""><img src="images/logopulse.png" style="margin-top: 73px;margin-left: 34px;"></div>
+							<h2>Pulse LIMS</h2>
+							<blockquote><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,</p><!--<cite>Margi Clarke</cite> --></blockquote>
+							</div>
+					</div>
+					
+					<!--<div class="sl-slide bg-5" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1">
+						<div class="sl-slide-inner">
+							<div class="deco" data-icon="t"></div>
+							<h2>Pulse LIMS</h2>
+							<blockquote><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,</p><!--<cite>Margi Clarke</cite> --></blockquote>
+						</div>
+					</div>
+				</div> --><!-- /sl-slider -->
+				</form>
+				<nav id="nav-arrows" class="nav-arrows">
+					<span class="nav-arrow-prev">Previous</span>
+					<span class="nav-arrow-next">Next</span>
+				</nav>
+
+				<nav id="nav-dots" class="nav-dots">
+					<span class="nav-dot-current"></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</nav>
+
+			</div><!-- /slider-wrapper -->
+
+        </div>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script type="text/javascript" src="loginjs/jquery.ba-cond.min.js"></script>
+		<script type="text/javascript" src="loginjs/jquery.slitslider.js"></script>
+		<script type="text/javascript">
+		    $(function () {
+
+		        var Page = (function () {
+
+		            var $navArrows = $('#nav-arrows'),
+						$nav = $('#nav-dots > span'),
+						slitslider = $('#slider').slitslider({
+						    onBeforeChange: function (slide, pos) {
+
+						        $nav.removeClass('nav-dot-current');
+						        $nav.eq(pos).addClass('nav-dot-current');
+
+						    }
+						}),
+
+						init = function () {
+
+						    initEvents();
+
+						},
+						initEvents = function () {
+
+						    // add navigation events
+						    $navArrows.children(':last').on('click', function () {
+
+						        slitslider.next();
+						        return false;
+
+						    });
+
+						    $navArrows.children(':first').on('click', function () {
+
+						        slitslider.previous();
+						        return false;
+
+						    });
+
+						    $nav.each(function (i) {
+
+						        $(this).on('click', function (event) {
+
+						            var $dot = $(this);
+
+						            if (!slitslider.isActive()) {
+
+						                $nav.removeClass('nav-dot-current');
+						                $dot.addClass('nav-dot-current');
+
+						            }
+
+						            slitslider.jump(i + 1);
+						            return false;
+
+						        });
+
+						    });
+
+						};
+
+		            return { init: init };
+
+		        })();
+
+		        Page.init();
+
+		        /**
+		        * Notes: 
+		        * 
+		        * example how to add items:
+		        */
+
+		        /*
+				
+		        var $items  = $('<div class="sl-slide sl-slide-color-2" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1"><div class="sl-slide-inner bg-1"><div class="sl-deco" data-icon="t"></div><h2>some text</h2><blockquote><p>bla bla</p><cite>Margi Clarke</cite></blockquote></div></div>');
+				
+		        // call the plugin's add method
+		        ss.add($items);
+
+		        */
+
+		    });
+		</script>
+	</body>
+</html>

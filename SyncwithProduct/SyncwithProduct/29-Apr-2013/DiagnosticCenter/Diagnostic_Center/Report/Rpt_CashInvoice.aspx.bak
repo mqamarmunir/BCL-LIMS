@@ -1,0 +1,445 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Rpt_CashInvoice.aspx.cs"
+    Inherits="transaction_Rpt_CashInvoice" %>
+
+<%@ Register Assembly="Shared.WebControls" Namespace="Shared.WebControls" TagPrefix="wc" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <%-- <img src="images/logos.jpg" width="100%" height="80px" alt="" /> --%>
+        <asp:Image ID="Img_headerMain" Visible="false" Height="50px" Width="100%" runat="server" />
+        <asp:Image ID="Img_empty" Visible="true" ImageUrl="../transaction/headerfooter/empty.jpg" Height="10px"
+            runat="server" />
+        <table width="100%">
+            <tr>
+                <td align="left" style="width: 15%;">
+                    <asp:Image ID="Img_header" ImageUrl="../transaction/headerfooter/BCL LOGO.jpg" Visible="true" Height="50px" Width="200px" runat="server" />
+                </td>
+                <td align="center" style="width: 70%;">
+                    <p style="font-size: 9px; font-weight: bold; text-align: center;">
+                        <asp:Label ID="Lb_BranchNames" Font-Size="18px" runat="server"></asp:Label>
+                        <br />
+                        <asp:Label ID="Label6" Font-Size="9px" Font-Bold="true" runat="server" Text="Timings:"></asp:Label>
+                        <asp:Label ID="Lb_starttime" Font-Size="10px" runat="server" Text="txbx_starttime"></asp:Label>-<asp:Label
+                            ID="Lb_endtime" Font-Size="10px" runat="server" Text="txbx_endtime"></asp:Label>
+                        &nbsp;&nbsp;&nbsp;
+                        <asp:Label ID="Label2" Font-Size="9px" Font-Bold="true" runat="server" Text="Ph No:"></asp:Label>
+                        <asp:Label ID="lb_phonebranchmain" Font-Size="9px" runat="server" Text=""></asp:Label>
+                        &nbsp;
+                        <asp:Label ID="LB_Ext" Font-Size="9px" Font-Bold="true" runat="server" Text="Ext:" />
+                        <asp:Label ID="Lb_Extension" Font-Size="9px" runat="server" Text=""></asp:Label>
+                    </p>
+                </td>
+                <td style="width: 15%;">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" style="font-size: 12px;
+                        font-family: Tahoma;">
+                        <tr>
+                            <td>
+                                &nbsp;<asp:Label ID="Lb_txPRNo" Visible="false" runat="server" Font-Bold="true" Text="PR No:"></asp:Label>
+                                <asp:Label ID="Lb_PRNO" runat="server" Visible="false" Text=""></asp:Label>
+                            </td>
+                            <td rowspan="2" align="center">
+                                <h3>
+                                    Cash Summary</h3>
+                            </td>
+                            <td align="right">
+                                <asp:Label ID="LB_txVisit" runat="server"  Font-Bold="true" Visible="false" Text="Visit No:"></asp:Label>
+                                <asp:Label ID="Lb_Visit" Visible="false" runat="server" Text=""></asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                
+                            </td>
+                            <td align="right" style="visibility: hidden;">
+                               
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <%--(<asp:Label ID="Lb_starttime" Font-Size="7px" runat="server" Text="txbx_starttime"></asp:Label>
+                                               -<asp:Label ID="Lb_endtime" Font-Size="7px" runat="server" Text="txbx_endtime"></asp:Label>)--%>
+            <%--<table width="100%"><tr><td align="center"><h3>Receipt</h3></td></tr></table>
+            --%>
+            <tr>
+                <td colspan="3">
+                    <fieldset style="border-radius: 10px;">
+                        <asp:GridView Width="100%" Font-Size="11px" Style="font-family: Tahoma; color: Black;"
+                            ID="Gv_PatientPrimaryInfo" runat="server" AutoGenerateColumns="False" ShowHeader="False"
+                            GridLines="None">
+                            <Columns>
+                                <asp:TemplateField>
+                                    <ItemTemplate>
+                                        <table width="100%">
+                                            <tr>
+                                                <td>
+                                                    <table cellpadding="2" cellspacing="2">
+                                                    <tr>
+                                                            <td>
+                                                                <asp:Label ID="lblBranch" runat="server" Font-Bold="true" Text="Branch"></asp:Label>
+                                                            </td>
+                                                            <td>
+                                                                <asp:Label ID="lblBranchName" runat="server" Text='<%# Eval("BranchName")  %>'></asp:Label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <asp:Label ID="lblPanelName" runat="server" Font-Bold="true" Text="Panel"></asp:Label>
+                                                            </td>
+                                                            <td>
+                                                                <asp:Label ID="lblpanelNameValue" runat="server" Text='<%# Eval("PanelName")  %>'></asp:Label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <asp:Label ID="lblConsultant" runat="server" Font-Bold="true" Text="Consultant"></asp:Label>
+                                                            </td>
+                                                            <td>
+                                                                <asp:Label ID="lblConsultantVal" runat="server" Text='<%#Eval("Consultant")%>'></asp:Label>
+                                                            </td>
+                                                        </tr>
+                                                        <%--                                    <tr>
+                                        <td>
+                                            <asp:Label ID="Lb_txPassword" runat="server" Font-Bold="true" Text="Password:"></asp:Label>
+                                        </td>
+                                        <td>
+                                            <asp:Label ID="Lb_Password" runat="server" Text='<%# Eval("Pasword")  %>'></asp:Label>
+                                        </td>
+                                    </tr>
+                                                        --%>
+                                                        <tr>
+                                                            <td>
+                                                                <asp:Label ID="lblReportDate" runat="server" Font-Bold="true" Text="Report Date:"></asp:Label>
+                                                            </td>
+                                                            <td>
+                                                                <asp:Label ID="Label2" runat="server" Text='<%# Eval("DateRange")  %>'></asp:Label>
+                                                                
+                                                                
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                                <td align="right">
+                                                    <table cellpadding="2" cellspacing="2">
+                                                        <tr>
+                                                            <td>
+                                                                <asp:Label ID="PrintedOn" runat="server" Font-Bold="true" Text="Printed On:"></asp:Label>
+                                                            </td>
+                                                            <td>
+                                                                <asp:Label ID="lblPrintedOn" runat="server" Text='<%# Eval("PrintedOn")  %>'></asp:Label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
+                            <HeaderStyle Wrap="True" />
+                        </asp:GridView>
+                    </fieldset>
+                </td>
+            </tr>
+        </table>
+        <%-- <fieldset style="border-radius:10px;">--%>
+        <%--  <table id="tblxxx" width="99%">
+<tr>
+<td colspan="10">--%>
+        <wc:ReportGridView ID="gvMain" runat="server" Width="99%" ShowHeader="true" AutoGenerateColumns="false"
+            AlternatingRowStyle-BorderStyle="None" PrintPageSize="17" AllowPrintPaging="true"
+            Font-Size="11px" DataKeyNames="bookingid" 
+            GridLines="None">
+            <HeaderStyle BackColor="#CCCCCC" />
+            <RowStyle BorderStyle="Solid" BorderWidth="1px" BorderColor="#DDDDDD" />
+            <AlternatingRowStyle BorderStyle="Solid" BorderWidth="1px" BorderColor="#DDDDDD"></AlternatingRowStyle>
+            <Columns>
+                <asp:TemplateField HeaderStyle-HorizontalAlign="Left" ItemStyle-HorizontalAlign="Left">
+                <HeaderTemplate>
+                <table id="gvtbl" width="99%">
+                            <tr style="background-color: #DDDDDD">
+                                <td style="font-weight: bold;" width="8%">
+                                    Date
+                                </td>
+                                <td style="font-weight: bold;" width="12%">
+                                    Lab ID
+                                </td>
+                                <td style="font-weight: bold;" width="13%">
+                                    Patient
+                                </td>
+                                <td style="font-weight: bold;" width="15%">
+                                    Panel
+                                </td>
+                                <td style="font-weight: bold;" width="13%">
+                                    Consultant
+                                </td>
+                                <td style="font-weight: bold;" width="10%">
+                                    Entered By
+                                </td>
+                                <td style="font-weight: bold;" width="7%">
+                                    Total
+                                </td>
+                                <td style="font-weight: bold;" width="7%">
+                                    Paid
+                                </td>
+                                <td style="font-weight: bold;" width="7%">
+                                    Discount
+                                </td>
+                                <td style="font-weight: bold;" width="7%">
+                                    Balance
+                                </td>
+                            </tr>
+                            </table>
+                </HeaderTemplate>
+                    <ItemTemplate>
+                        <table id="gvtbl" width="99%">
+                            <%--<tr style="background-color: #DDDDDD">
+                                <td style="font-weight: bold;" width="10%">
+                                    Date
+                                </td>
+                                <td style="font-weight: bold;" width="15%">
+                                    Lab ID
+                                </td>
+                                <td style="font-weight: bold;" width="8%">
+                                    Patient
+                                </td>
+                                <td style="font-weight: bold;" width="10%">
+                                    Panel
+                                </td>
+                                <td style="font-weight: bold;" width="9%">
+                                    Consultant
+                                </td>
+                                <td style="font-weight: bold;" width="9%">
+                                    Entered By
+                                </td>
+                                <td style="font-weight: bold;" width="10%">
+                                    Total
+                                </td>
+                                <td style="font-weight: bold;" width="10%">
+                                    Paid
+                                </td>
+                                <td style="font-weight: bold;" width="8%">
+                                    Discount
+                                </td>
+                                <td style="font-weight: bold;" width="10%">
+                                    Balance
+                                </td>
+                            </tr>--%>
+                            <tr>
+                                <td width="8%">
+                                    <asp:Label ID="lbldate" runat="server" Text='<%#Eval("bookedon")%>'></asp:Label>
+                                </td>
+                                <td width="12%">
+                                    <asp:Label ID="lbllabid" runat="server" Text='<%#Eval("labid")%>'></asp:Label>
+                                </td>
+                                <td width="13%">
+                                    <asp:Label ID="lblPatientName" runat="server" Text='<%#Eval("Patientname")%>'></asp:Label>
+                                </td>
+                                <td width="15%">
+                                    <asp:Label ID="lblPanel" runat="server" Text='<%#Eval("Panel")%>'></asp:Label>
+                                </td>
+                                <td width="13%">
+                                    <%-- <asp:Label ID="lblAdmNo" Visible="true" runat="server" Text='<%#Eval("adm_ref")%>' ></asp:Label>--%>
+                                    <asp:Label ID="lblConsultant" Visible="true" runat="server" Text='<%#Eval("Consultant")%>'></asp:Label>
+                                </td>
+                                <td width="10%">
+                                    <asp:Label ID="lblEnteredBy" Visible="true" runat="server" Text='<%#Eval("EnteredBy")%>'></asp:Label>
+                                </td>
+                                <td width="7%">
+                                    <asp:Label ID="lblTotal" runat="server" Text='<%#Eval("charges")%>'></asp:Label>
+                                </td>
+                                <td width="7%">
+                                    <asp:Label ID="lblpaid" runat="server" Text='<%#Eval("paidamount")%>'></asp:Label>
+                                </td>
+                                <td width="7%">
+                                    <asp:Label ID="lbldis" runat="server" Text='<%#Eval("discount_amt")%>'></asp:Label>
+                                </td>
+                                <td width="7%">
+                                    <asp:Label ID="lblbal" runat="server" Text='<%#Eval("balance")%>'></asp:Label>
+                                </td>
+                            </tr>
+                        </table>
+                    </ItemTemplate>
+
+<HeaderStyle HorizontalAlign="Left"></HeaderStyle>
+
+<ItemStyle HorizontalAlign="Left"></ItemStyle>
+                </asp:TemplateField>
+            </Columns>
+        </wc:ReportGridView>
+
+        Refund/Cancellation:
+        
+        <wc:ReportGridView ID="ReportGridView1" runat="server" Width="99%" AutoGenerateColumns="False"
+            AlternatingRowStyle-BorderStyle="None" PrintPageSize="10" AllowPrintPaging="True"
+            Font-Size="11px" DataKeyNames="bookingid" 
+            GridLines="Horizontal" Branchid="" 
+            onrowdatabound="ReportGridView1_RowDataBound">
+            <HeaderStyle BackColor="#CCCCCC" />
+            <RowStyle BorderStyle="Solid" BorderWidth="1px" BorderColor="#DDDDDD" />
+            <AlternatingRowStyle BorderStyle="Solid" BorderWidth="1px" BorderColor="#DDDDDD"></AlternatingRowStyle>
+            <Columns>
+                <asp:TemplateField HeaderStyle-HorizontalAlign="Left" ItemStyle-HorizontalAlign="Left">
+                <HeaderTemplate>
+                <table id="gvtbl" width="99%">
+                            <tr style="background-color: #DDDDDD">
+                                <td style="font-weight: bold;" width="15%">
+                                    Date
+                                </td>
+                                <td style="font-weight: bold;" width="15%">
+                                    Lab ID
+                                </td>
+                                <td style="font-weight: bold;" width="20%">
+                                    Patient
+                                </td>
+                                <td style="font-weight: bold;" width="20%">
+                                    Tests
+                                </td>
+                                <td style="font-weight: bold;" width="15%">
+                                    Type
+                                </td>
+                                <td style="font-weight: bold;" width="15%">
+                                    Amount
+                                </td>
+                                
+                                
+                                
+                                
+                            </tr>
+                            </table>
+                </HeaderTemplate>
+                    <ItemTemplate>
+                        <table id="gvtbl" width="99%">
+                            
+                            <tr>
+                                <td width="15%">
+                                    <asp:Label ID="lbldate" runat="server" Text='<%#Eval("enteredon")%>'></asp:Label>
+                                </td>
+                                <td width="15%">
+                                    <asp:Label ID="lbllabid" runat="server" Text='<%#Eval("labid")%>'></asp:Label>
+                                </td>
+                                <td width="20%">
+                                    <asp:Label ID="lblPatientName" runat="server" Text='<%#Eval("Patientname")%>'></asp:Label>
+                                </td>
+                                <td width="20%"></td>
+                                <td width="15%"></td>
+                                <td width="15%"></td>
+                            </tr>
+                            <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td colspan="3">
+                                <asp:GridView ID="gvrefunddetail" runat="server" GridLines="None" Width="99%" ShowHeader="false" AutoGenerateColumns="false"
+            AlternatingRowStyle-BorderStyle="None" Font-Size="11px">
+            <Columns>
+            <asp:BoundField ItemStyle-Width="40%" DataField="Test_name" HeaderText="Test"/>
+            <asp:BoundField ItemStyle-Width="30%" DataField="refundtype" HeaderText="Type" />
+            <asp:BoundField ItemStyle-Width="30%" DataField="paidamount" HeaderText="Amount" />
+            </Columns>
+                                
+                                </asp:GridView>
+                            </td>
+                            
+                            </tr>
+                        </table>
+                    </ItemTemplate>
+
+<HeaderStyle HorizontalAlign="Left"></HeaderStyle>
+
+<ItemStyle HorizontalAlign="Left"></ItemStyle>
+                </asp:TemplateField>
+            </Columns>
+        </wc:ReportGridView>
+
+
+
+
+        <%--   </td>
+</tr>
+<tr>
+<td colspan="5"></td>
+<td colspan="5">--%>
+        <table id="ttltable" style="background-color: #DDDDDD; font-size: 12px;" cellpadding="0"
+            cellspacing="0" border="0" width="99%">
+            <tr>
+                <td style="width: 60%;">
+                </td>
+                <td style="font-weight: bold;">
+                    Total
+                </td>
+                <td style="font-weight: bold;">
+                    Paid
+                </td>
+                <td style="font-weight: bold;">
+                    Discount
+                </td>
+                <td style="font-weight: bold;">
+                    Refunds
+                </td>
+                <td style="font-weight: bold;">
+                    Balance
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td>
+                    <asp:Label ID="lbltotcharges" runat="server"></asp:Label>
+                </td>
+                <td>
+                    <asp:Label ID="lbltotpaid" runat="server"></asp:Label>
+                </td>
+                <td>
+                    <asp:Label ID="lbltotdisc" runat="server"></asp:Label>
+                </td>
+                <td>
+                    <asp:Label ID="lblTotalRefunds" runat="server"></asp:Label>
+                </td>
+                <td>
+                    <asp:Label ID="lbltotbal" runat="server"></asp:Label>
+                </td>
+            </tr>
+        </table>
+        <%--</td>
+</tr>
+<tr>
+<td width="10%"></td>
+<td width="10%"></td>
+<td width="10%"></td>
+<td width="10%"></td>
+<td width="10%"></td>
+<td width="10%"></td>
+<td width="10%"></td>
+<td width="10%"></td>
+<td width="10%"></td>
+<td width="10%"></td>
+</tr>
+
+</table>--%>
+        <%--</fieldset>--%>
+    </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,33 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using bc_limsModel;
+
+
+public partial class Parameter_dummy1 : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        FillGv();
+    }
+    private void FillGv()
+    {
+        //using (var db = new bc_limsEntities())
+        //{
+        //    List<Test> result = (from t in db.dc_tp_test
+
+        //                 join td in db.dc_tp_subdepartments on t.SubdepartmentId equals td.SubdepartmentId
+
+        //                 where t.SubdepartmentId == 13
+
+        //                 select new Test { TestName = t.Test_Name,SubDepartmentName = td.Name }).ToList();
+        //    gvxxx.DataSource = result;
+        //    gvxxx.DataBind();
+        //}
+
+        
+    }
+}

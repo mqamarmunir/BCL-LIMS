@@ -1,0 +1,354 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+using BusinessLayer;
+using DataLayer;
+using System.IO;
+
+public partial class Parameter_wfrmDiscountPackage : System.Web.UI.Page
+{
+    private static string mode = "";
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            txtFrom.Text = System.DateTime.Now.ToString("dd/MM/yyyy");
+            txtTO.Text = System.DateTime.Now.ToString("dd/MM/yyyy");
+            FIllDDLBranches();
+            FillGv();
+           // checkBoxes3.Texts.SelectBoxCaption = "SelectBoxCaption";
+            //checkBoxes2.Style.SelectBoxWidth = 200;
+        }
+    }
+
+    private void FIllDDLBranches()
+    {
+        clsBLBranch obj_Br = new clsBLBranch();
+        DataView dv_Br = obj_Br.GetAll(3);
+        if (dv_Br.Count > 0)
+        {
+            checkBoxes3.DataTextField = "Name";
+            checkBoxes3.DataValueField = "BranchID";
+            checkBoxes3.DataSource = dv_Br;
+            checkBoxes3.DataBind();
+
+        }
+
+    }
+
+    private void FillGv()
+    {
+        clsBlDiscountpackage obj_disc = new clsBlDiscountpackage();
+        DataView dv = obj_disc.GetAll(1);
+        if (dv.Count > 0)
+        {
+            lblCount.Text = dv.Count + " Row(s) Found";
+            gvPackages.DataSource = dv;
+            gvPackages.DataBind();
+        }
+        else
+        {
+            lblCount.Text = "";
+            gvPackages.DataSource = "";
+            gvPackages.DataBind();
+
+        }
+    }
+    protected void lbtnSave_Click(object sender, ImageClickEventArgs e)
+    {
+        if (mode == "update")
+        {
+            Update();
+        }
+        else
+        {
+            Insert();
+        }
+
+    }
+
+    private void Insert()
+    {
+        clsBlDiscountpackage obj_pa = new clsBlDiscountpackage();
+
+        obj_pa.Name = txtName.Text.Trim();
+        obj_pa.Code = txtCode.Text.Trim();
+        obj_pa.Active = chkActive.Checked == true ? "Y" : "N";
+        obj_pa.StartDate = txtFrom.Text.ToString().Trim();
+        obj_pa.EndDate = txtTO.Text.ToString().Trim();
+        obj_pa.Type = ddlDiscounttype.SelectedValue.ToString().Trim();
+        obj_pa.ReportText = txtReportText.Text.Trim();
+        obj_pa.WebText = txtWebText.Text;
+        obj_pa.Percentage = txPercentage.Text.Replace("%", "").Trim();
+        #region uploadingimages and saving their paths
+        if (!Imgupload.FileName.Equals(""))
+        {
+            try
+            {
+                string filename = Path.GetFileName(Imgupload.FileName);
+
+                Imgupload.SaveAs(Server.MapPath("~/Uploads/") + filename);
+                string imagePath = Server.MapPath("~/Uploads/") + filename;
+                obj_pa.ImgPath=imagePath.Replace("\\",@"\\\");
+                //obj_pa.ImgPath = Server.MapPath("~/Uploads/") + filename;
+
+            }
+            catch (Exception ee)
+            {
+                lblErrMsg.Text = ee.ToString();
+            }
+        }
+
+        #endregion
+        obj_pa.Enteredon = System.DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt");
+        obj_pa.Enteredby = Session["PersonId"].ToString();
+        obj_pa.ClientId = Session["orgid"].ToString();
+        if (obj_pa.Insert())
+        {
+            lblErrMsg.Text = "<font color='green'>Discount Package Added.</font>";
+            FillGv();
+            RefreshForm();
+        }
+        else
+        {
+            lblErrMsg.Text = obj_pa.ErrorMessage;
+        }
+    }
+    private void Update()
+    {
+        clsBlDiscountpackage obj_pa = new clsBlDiscountpackage();
+        obj_pa.PackageID = hdDiscountPackage.Value.ToString().Trim();
+        obj_pa.Name = txtName.Text.Trim();
+        obj_pa.Code = txtCode.Text.Trim();
+        obj_pa.Active = chkActive.Checked == true ? "Y" : "N";
+        obj_pa.StartDate = txtFrom.Text.ToString().Trim();
+        obj_pa.EndDate = txtTO.Text.ToString().Trim();
+        obj_pa.Type = ddlDiscounttype.SelectedValue.ToString().Trim();
+        obj_pa.ReportText = txtReportText.Text.Trim();
+        obj_pa.WebText = txtWebText.Text;
+        obj_pa.Percentage = txPercentage.Text.Replace("%", "").Trim();
+        #region uploadingimages and saving their paths
+        if (!Imgupload.FileName.Equals(""))
+        {
+            try
+            {
+                string filename = Path.GetFileName(Imgupload.FileName);
+
+                Imgupload.SaveAs(Server.MapPath("~/Uploads/") + filename);
+                string imagePath = Server.MapPath("~/Uploads/") + filename;
+                obj_pa.ImgPath = imagePath.Replace("\\", @"\\\");
+                //obj_pa.ImgPath = Server.MapPath("~/Uploads/") + filename;
+
+            }
+            catch (Exception ee)
+            {
+                lblErrMsg.Text = ee.ToString();
+            }
+        }
+
+        #endregion
+        obj_pa.Enteredon = System.DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt");
+        obj_pa.Enteredby = Session["PersonId"].ToString();
+        obj_pa.ClientId = Session["orgid"].ToString();
+        if (obj_pa.Update())
+        {
+            lblErrMsg.Text = "<font color='green'>Discount Package Changed.</font>";
+            FillGv();
+            RefreshForm();
+        }
+        else
+        {
+            lblErrMsg.Text = obj_pa.ErrorMessage;
+        }
+    }
+    protected void lbtnClearAll_Click(object sender, ImageClickEventArgs e)
+    {
+        lblErrMsg.Text = "";
+        RefreshForm();
+    }
+    private void RefreshForm()
+    {
+        
+        txtCode.Text = "";
+        txtName.Text = "";
+        txtReportText.Text = "";
+        txtWebText.Text = "";
+        txtTO.Text = System.DateTime.Now.ToString("dd/MM/yyyy");
+        txtFrom.Text = System.DateTime.Now.ToString("dd/MM/yyyy");
+        ddlDiscounttype.ClearSelection();
+        checkBoxes3.ClearSelection();
+        txPercentage.Text = "";
+        lnkimgPath.Visible = false;
+        updteimage.Visible = false;
+        Imgupload.Visible = true;
+        mode = "Insert";
+
+
+    }
+    protected void btnClose_Click(object sender, ImageClickEventArgs e)
+    {
+        Response.Redirect("../Parameter/MainPage.aspx");
+    }
+
+    protected void checkBoxes_SelcetedIndexChanged(object sender, EventArgs e)
+    {
+        selectedItemsPanel.Controls.Clear();
+
+        foreach (ListItem item in (sender as ListControl).Items)
+        {
+            if (item.Selected)
+                selectedItemsPanel.Controls.Add(new Literal() { Text = item.Text + " : " + item.Value + "<br/>" });
+        }
+    }
+
+    protected void gvpackages_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+        if (e.CommandName == "Select")
+        {
+            hdDiscountPackage.Value = gvPackages.DataKeys[Convert.ToInt32(e.CommandArgument)].Value.ToString() ;
+            mode = "update";
+            FillForm(Convert.ToInt16(e.CommandArgument));
+        }
+    }
+
+    private void FillForm(int index)
+    {
+        int startingindex = 0;
+        clsBlDiscountpackage obj_package = new clsBlDiscountpackage();
+        obj_package.PackageID = gvPackages.DataKeys[index].Value.ToString();
+        DataView dv_result = obj_package.GetAll(1);
+        if (dv_result.Count > 0)
+        {
+            txtName.Text = dv_result[0]["Name"].ToString().Trim();
+            txtCode.Text = dv_result[0]["Code"].ToString().Trim();
+            txtFrom.Text = dv_result[0]["Start_Date"].ToString().Replace(" 00:00:00", "");
+            txtTO.Text = dv_result[0]["End_Date"].ToString().Replace(" 00:00:00", "");
+            txPercentage.Text = dv_result[0]["Percentage"].ToString().Trim() + "%";
+            txtWebText.Text = dv_result[0]["WebText"].ToString().Trim();
+            txtReportText.Text = dv_result[0]["RecieptText"].ToString().Trim();
+            chkActive.Checked = dv_result[0]["Active"].ToString().Trim() == "Y" ? true : false;
+            ddlDiscounttype.ClearSelection();
+            ddlDiscounttype.Items.FindByValue(dv_result[0]["Type"].ToString().Trim()).Selected = true;
+            if (dv_result[0]["ImagePath"].ToString().Trim() != "&nbsp;" && dv_result[0]["ImagePath"].ToString().Trim() != "")
+            {
+                lnkimgPath.Visible = true;
+                lnkimgPath.ToolTip = dv_result[0]["ImagePath"].ToString().Trim();
+                string path = dv_result[0]["ImagePath"].ToString();
+
+                for (int i = 0; i < path.Length; i++)
+                {
+                    if (path[i].ToString() == @"\")
+                    {
+                        startingindex = i;
+                    }
+                }
+                lnkimgPath.Text = dv_result[0]["ImagePath"].ToString().Substring(startingindex + 1);
+                updteimage.Visible = true;
+                Imgupload.Visible = false;
+            }
+        }
+    }
+
+    protected void updteImage_Click(object sender, EventArgs e)
+    {
+        ((LinkButton)sender).Visible = false;
+        lnkimgPath.Visible = false;
+        Imgupload.Visible = true;
+
+    }
+
+    protected void lnkimgpath_Click(object sender, EventArgs e)
+    {
+        
+        string filepath = lnkimgPath.ToolTip.ToString();// @"D:\negno25462.jpg";
+        // Create New instance of FileInfo class to get the properties of the file being downloaded
+        FileInfo myfile = new FileInfo(filepath);
+
+        // Checking if file exists
+        if (myfile.Exists)
+        {
+            // Clear the content of the response
+            Response.ClearContent();
+
+            // Add the file name and attachment, which will force the open/cancel/save dialog box to show, to the header
+            Response.AddHeader("Content-Disposition", "attachment; filename=" + myfile.Name);
+
+            // Add the file size into the response header
+            Response.AddHeader("Content-Length", myfile.Length.ToString());
+
+            // Set the ContentType
+            Response.ContentType = ReturnExtension(myfile.Extension.ToLower());
+
+            // Write the file into the response (TransmitFile is for ASP.NET 2.0. In ASP.NET 1.1 you have to use WriteFile instead)
+            Response.TransmitFile(myfile.FullName);
+
+            // End the response
+            Response.End();
+        }
+    }
+    private string ReturnExtension(string fileExtension)
+    {
+        switch (fileExtension)
+        {
+            case ".htm":
+            case ".html":
+            case ".log":
+                return "text/HTML";
+            case ".txt":
+                return "text/plain";
+            case ".doc":
+                return "application/ms-word";
+            case ".tiff":
+            case ".tif":
+                return "image/tiff";
+            case ".asf":
+                return "video/x-ms-asf";
+            case ".avi":
+                return "video/avi";
+            case ".zip":
+                return "application/zip";
+            case ".xls":
+            case ".csv":
+                return "application/vnd.ms-excel";
+            case ".gif":
+                return "image/gif";
+            case ".jpg":
+            case "jpeg":
+                return "image/jpeg";
+            case ".bmp":
+                return "image/bmp";
+            case ".wav":
+                return "audio/wav";
+            case ".mp3":
+                return "audio/mpeg3";
+            case ".mpg":
+            case "mpeg":
+                return "video/mpeg";
+            case ".rtf":
+                return "application/rtf";
+            case ".asp":
+                return "text/asp";
+            case ".pdf":
+                return "application/pdf";
+            case ".fdf":
+                return "application/vnd.fdf";
+            case ".ppt":
+                return "application/mspowerpoint";
+            case ".dwg":
+                return "image/vnd.dwg";
+            case ".msg":
+                return "application/msoutlook";
+            case ".xml":
+            case ".sdxl":
+                return "application/xml";
+            case ".xdp":
+                return "application/vnd.adobe.xdp+xml";
+            default:
+                return "application/octet-stream";
+        }
+    }
+}

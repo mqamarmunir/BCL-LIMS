@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="OR_DataLayer.clsdbconnection" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>clsdbconnection.cs</FileName>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OR_DataLayer.clsdbhims" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>clsdbhims.cs</FileName>
+      <HashCode>AAQABEAAAAAAAEAAAAAAAAAAAAEAAAgAAAAAAAAAAAQ=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="OR_DataLayer.clsoperation" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>clsoperation.cs</FileName>
+      <HashCode>AAAACAgCCAClACAAAIAAJAAAAAAAAABAACAAARiAACA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="OR_DataLayer.Iinterface" Collapsed="true">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Iinterface.cs</FileName>
+      <HashCode>AAQABEAAAAAAAEAAAAAAAAAAAAEAAAAAAAAAAAAAAAQ=</HashCode>
+    </TypeIdentifier>
+  </Interface>
+</ClassDiagram>

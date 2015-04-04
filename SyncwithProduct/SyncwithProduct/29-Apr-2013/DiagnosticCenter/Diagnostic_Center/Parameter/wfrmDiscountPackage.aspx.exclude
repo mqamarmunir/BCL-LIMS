@@ -1,0 +1,218 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="wfrmDiscountPackage.aspx.cs" MasterPageFile="~/MasterPage.master" Inherits="Parameter_wfrmDiscountPackage" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+</asp:ScriptManager> 
+<table id="tblbody" class="label" cellpadding="1" cellspacing="1" width="100%">
+<tr>
+<td colspan="7" align="center"> <font size="4"><strong>Discount Packages</strong></font>
+<asp:HiddenField ID="hdDiscountPackage" runat="server" />
+</td>
+
+</tr>
+<tr>
+<td colspan="7" align="right">
+ <asp:ImageButton ID="lbtnSave" runat="server" ImageUrl="~/images/SavePack_2.gif"
+                                        TabIndex="12" ToolTip="Click or Press ALT+s  to Save Record (Alt+S)" AccessKey="s" OnClick="lbtnSave_Click" />
+ <asp:ImageButton ID="lbtnClearAll" runat="server" ImageUrl="~/images/ClearPack.gif"
+                                        TabIndex="13" ToolTip="Click or Press ALT+X  to Clear Screen (Alt+C)" AccessKey="x" OnClick="lbtnClearAll_Click" />
+<asp:ImageButton ID="btnClose" runat="server" ImageUrl="~/images/ClosePack.gif"
+                                        TabIndex="14" ToolTip="Click or Press ALT+c  to Close Screen (Alt+X)" AccessKey="c" OnClick="btnClose_Click" />
+
+</td>
+
+</tr>
+<tr>
+<td colspan="7"><asp:Label ID="lblErrMsg" ForeColor="Red" runat="server" Font-Size="X-Small"></asp:Label></td>
+
+</tr>
+
+<tr>
+<td align="right">Name:</td>
+<td><asp:TextBox ID="txtName" CssClass="mandatoryField" runat="server" Width="100%"></asp:TextBox></td>
+<td align="right">Code:</td>
+<td><asp:TextBox ID="txtCode" CssClass="mandatoryField" runat="server" Width="8%"></asp:TextBox>
+    <cc1:MaskedEditExtender ID="txtCode_MaskedEditExtender" runat="server" 
+        CultureAMPMPlaceholder="" CultureCurrencySymbolPlaceholder="" 
+        CultureDateFormat="" CultureDatePlaceholder="" CultureDecimalPlaceholder="" 
+        CultureThousandsPlaceholder="" Mask="999" ClearMaskOnLostFocus="false" CultureTimePlaceholder="" Enabled="True" 
+        TargetControlID="txtCode">
+    </cc1:MaskedEditExtender>
+    <asp:CheckBox ID="chkActive" Text="Active" Checked="true" runat="server" /></td>
+<td>&nbsp;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="right">Start Date:</td>
+<td><asp:TextBox ID="txtFrom" CssClass="mandatoryField" runat="server" Width="50%"></asp:TextBox>
+    <cc1:MaskedEditExtender ID="txtFrom_MaskedEditExtender" runat="server" 
+        CultureAMPMPlaceholder="" CultureCurrencySymbolPlaceholder="" 
+        CultureDateFormat="" CultureDatePlaceholder="" CultureDecimalPlaceholder="" 
+        CultureThousandsPlaceholder="" ClearMaskOnLostFocus="false" Mask="99/99/9999" CultureTimePlaceholder="" Enabled="True" 
+        TargetControlID="txtFrom">
+    </cc1:MaskedEditExtender>
+    <cc1:CalendarExtender ID="txtFrom_CalendarExtender" runat="server" 
+        Enabled="True" Format="dd/MM/yyyy" TargetControlID="txtFrom">
+    </cc1:CalendarExtender>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; End Date:</td>
+<td><asp:TextBox ID="txtTO" CssClass="mandatoryField" runat="server" Width="60%"></asp:TextBox>
+    <cc1:MaskedEditExtender ID="txtTO_MaskedEditExtender" runat="server" 
+        CultureAMPMPlaceholder="" CultureCurrencySymbolPlaceholder="" 
+        CultureDateFormat="" CultureDatePlaceholder="" CultureDecimalPlaceholder="" 
+        CultureThousandsPlaceholder="" ClearMaskOnLostFocus="false" Mask="99/99/9999" CultureTimePlaceholder="" Enabled="True" 
+        TargetControlID="txtTO">
+    </cc1:MaskedEditExtender>
+    <cc1:CalendarExtender ID="txtTO_CalendarExtender" Format="dd/MM/yyyy" runat="server" Enabled="True" 
+        TargetControlID="txtTO">
+    </cc1:CalendarExtender>
+    </td>
+<td>
+<asp:DropDownCheckBoxes ID="checkBoxes3" runat="server" UseButtons="True" UseSelectAllNode="True"
+                OnSelectedIndexChanged="checkBoxes_SelcetedIndexChanged" Width="99%" AddJQueryReference="True"
+                meta:resourcekey="checkBoxes3Resource1">
+                <Style SelectBoxWidth="99%" DropDownBoxBoxWidth="99%" DropDownBoxBoxHeight=""></Style>
+                <Texts OkButton="Yes" CancelButton="No" SelectAllNode="ALL" SelectBoxCaption="Select Branches" />
+                <%--<Items>
+                    <asp:ListItem Text="Option 1" Value="1" meta:resourcekey="ListItemResource15" />
+                    <asp:ListItem Text="Option 2" Value="2" meta:resourcekey="ListItemResource16" />
+                    <asp:ListItem Text="Option 3" Value="3" meta:resourcekey="ListItemResource17" />
+                    <asp:ListItem Text="Option 4" Value="4" meta:resourcekey="ListItemResource18" />
+                    <asp:ListItem Text="Option 5" Value="5" meta:resourcekey="ListItemResource19" />
+                    <asp:ListItem Text="Option 6" Value="6" meta:resourcekey="ListItemResource20" />
+                    <asp:ListItem Text="Option 7" Value="7" meta:resourcekey="ListItemResource21" />
+                </Items>--%>
+            </asp:DropDownCheckBoxes>
+</td>
+<td> <asp:Panel ID="selectedItemsPanel" runat="server" meta:resourcekey="selectedItemsPanelResource1">
+            </asp:Panel></td>
+<td></td>
+<td></td>
+</tr>
+    
+<tr>
+<td align="right">Promotion Image: </td>
+<td> 
+<asp:LinkButton ID="lnkimgPath" runat="server" Visible="false" OnClick="lnkimgpath_Click"></asp:LinkButton>
+<br />
+<asp:LinkButton ID="updteimage" runat="server" Visible="false" Text="Change Image File" OnClick="updteImage_Click"></asp:LinkButton>
+<asp:FileUpload ID="Imgupload" runat="server" /> </td>
+<td align="right">&nbsp;</td>
+<td>
+
+</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td align="right">Discount Type:</td>
+<td>
+<asp:DropDownList ID="ddlDiscounttype" Width="80%" CssClass="mandatorySelect" runat="server">
+<asp:ListItem Text="Select Item" Value="-1"></asp:ListItem>
+<asp:ListItem Text="Fixed" Value="F"></asp:ListItem>
+<asp:ListItem Text="Variable" Value="V"></asp:ListItem>
+</asp:DropDownList>
+ 
+</td>
+<td align="right">Discount(%age)</td>
+<td>
+<asp:TextBox ID="txPercentage" CssClass="mandatoryField" runat="server" Width="10%"></asp:TextBox>
+    <cc1:MaskedEditExtender ID="txPercentage_MaskedEditExtender" runat="server" 
+        CultureAMPMPlaceholder="" CultureCurrencySymbolPlaceholder="" 
+        CultureDateFormat="" CultureDatePlaceholder="" CultureDecimalPlaceholder="" 
+        CultureThousandsPlaceholder="" Mask="99%" ClearMaskOnLostFocus="false" CultureTimePlaceholder="" Enabled="True" 
+        TargetControlID="txPercentage">
+    </cc1:MaskedEditExtender>
+</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="right">Web Text:</td>
+<td colspan="3">
+<asp:TextBox ID="txtWebText" CssClass="field" Width="99%" TextMode="MultiLine" 
+        runat="server" ToolTip="Enter the Text you want to display in News Events"></asp:TextBox>
+    </td>
+<td></td>
+<td></td>
+<td></td>
+
+</tr>
+<tr>
+<td align="right">Report Text:</td>
+<td colspan="3">
+<asp:TextBox ID="txtReportText" CssClass="field" Width="99%" TextMode="MultiLine" runat="server" ToolTip="Enter the Text you want to display on Patient Report"></asp:TextBox>
+</td>
+<td></td>
+<td></td>
+<td></td>
+
+</tr>
+
+<tr>
+<td></td>
+<td colspan="6"><asp:Label ID="lblCount" runat="server"></asp:Label></td>
+
+</tr>
+<tr>
+<td></td>
+<td colspan="6">
+
+
+<asp:GridView ID="gvPackages" runat="server" Width="75%" DataKeyNames="DiscountPackageID" CssClass="datagrid" 
+ AutoGenerateColumns="False" OnRowCommand="gvpackages_RowCommand">
+<RowStyle CssClass="gridItem" />
+<AlternatingRowStyle CssClass="gridAlternate" />
+<HeaderStyle CssClass="gridheader" HorizontalAlign="Left" />
+<Columns>
+<asp:TemplateField HeaderText="S#">
+<ItemTemplate>
+<%#Container.DataItemIndex+1 %>
+</ItemTemplate>
+</asp:TemplateField>
+<asp:BoundField DataField="Name" HeaderText="Package Name" />
+<asp:BoundField DataField="Code" HeaderText="Code" />
+<asp:BoundField DataField="Type" HeaderText="Type" />
+<asp:BoundField DataField="Percentage" HeaderText="Percentage" />
+
+<asp:TemplateField HeaderText="Active">
+    <ItemStyle HorizontalAlign="Center" Width="8%" />
+    <ItemTemplate>
+        <asp:CheckBox ID="chkgvActive" runat="server" Checked='<%# (DataBinder.Eval(Container.DataItem, "Active").ToString() == "Y") %>'
+            Enabled="False" />
+    </ItemTemplate>
+                                  
+</asp:TemplateField>
+
+<asp:CommandField ShowEditButton="true" Visible="false" />
+<asp:CommandField ShowSelectButton="true" SelectText="Edit" />
+</Columns>
+</asp:GridView>
+
+</td>
+
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td width="15%"></td>
+<td width="20%"></td>
+<td width="15%"></td>
+<td width="20%"></td>
+<td width="10%"></td>
+<td width="10%"></td>
+<td width="10%"></td>
+</tr>
+</table>
+</asp:Content>
+

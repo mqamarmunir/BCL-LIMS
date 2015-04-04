@@ -1,0 +1,20 @@
+
+#siteNav{display:block;margin-bottom:28px;}
+#siteNav #nav{width:995px;margin:0 auto;padding:0;line-height:100%;font:normal 15px/150% "palatino Linotype",palatino,serif;text-transform:lowercase;position:relative;}
+#siteNav #nav li{margin:0;padding:0;float:left;list-style:none; background-color:#EEE;}
+#siteNav #nav li:first-child a,.homepage #siteNav #nav a:hover{background-image:none; background-color:#EEE;}
+#siteNav #nav li li:first-child a,#siteNav #nav li.current ul.navList li:first-child a{background-image:none!important; }
+#siteNav #nav .current a{background-color:#06F;background-image:none;color:#fff;}
+#siteNav #nav a{font-weight:900;color:#333;text-decoration:none;display:block;margin:0;padding:8px 12px 9px;}
+#siteNav #nav li li a,#siteNav #nav .middleClass li a{padding:2px 15px 3px 15px;}
+#siteNav #nav .current a:hover{background-color:#06F;color:#fff;}
+.homepage #siteNav #nav li:hover>a,#siteNav #nav .middleClass a{background:#06F;color:#fff;}
+#siteNav #nav ul li:hover a,#siteNav #nav li:hover li a{background:#06F;color:#fff;}
+#siteNav #nav ul a:hover{background:#fff!important;color:#000!important;}
+#siteNav #nav li li:first-child a:hover{background:none!important;}
+#siteNav .navListHeader{display:block;font-weight:900;color:#000;padding:2px 15px 3px;text-transform:uppercase;font-size:10px;}
+#siteNav #nav ul{background:#fff;display:none;margin:0;padding:0;width:995px;position:absolute;top:38px;left:0;z-index:10;}
+.boxshadow #sitenav #nav ul{-moz-box-shadow:0 -3px 0 rgba(10,10,10,0.1);-webkit-box-shadow:0 -3px 0 rgba(10,10,10,0.1);box-shadow:0 -3px 0 rgba(10,10,10,0.1);}
+#siteNav #nav li:hover>ul,#siteNav #nav .current>ul,#siteNav #nav li.current ul.navList,#siteNav #nav span.middleClass ul.navList{display:block;font-size:14px;}
+#siteNav #nav ul li{float:left;margin:0;padding:0;border:0 none;}
+#siteNav #nav ul ul{left:181px;top:-3px;}

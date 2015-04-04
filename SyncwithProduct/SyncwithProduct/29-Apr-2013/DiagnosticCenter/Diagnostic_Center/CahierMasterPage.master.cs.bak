@@ -1,0 +1,53 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using BusinessLayer;
+using System.Data;
+
+public partial class CahierMasterPage : System.Web.UI.MasterPage
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        clsBLUserRight obj_rights = new clsBLUserRight();
+        
+        obj_rights.PersonID = Session["personId"].ToString().Trim();
+        lblPerson.Text = "Welcome " + Session["personname"].ToString();
+        DataView dv = obj_rights.GetALL(7);
+        if (dv.Count > 0)
+        {
+            for (int i = 0; i < dv.Count; i++)
+            {
+                (Page.Master.FindControl(dv[i]["optionname"].ToString().Trim()) as HyperLink).Visible = true;
+            }
+        }
+        else
+        {
+            // (Page.Master.FindControl("Hyp_CashEntry") as HyperLink).Visible = false;
+        }
+       // (Page.Master.FindControl("Hyp_CashEntry") as HyperLink).Visible = false;
+       // Control ctrl=Fin
+       // Hyp_CashEntry.Visible = false;
+       // imgcashierentry.Visible = false;
+       // imgcashierEntry.Visible = false;
+    }
+
+    protected void lbtnChange_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("../Parameter/wfrmPasswordChanged.aspx?pasword=Y");
+    }
+
+
+    protected void LinkButton1_Click(object sender, EventArgs e)
+    {
+        //Session["personid"] = "";
+        //Session["branchID"]="";
+        //Session["ClientID"] = "";
+        
+        Session.Abandon();
+
+        Response.Redirect("~/logout.aspx");
+    }
+}

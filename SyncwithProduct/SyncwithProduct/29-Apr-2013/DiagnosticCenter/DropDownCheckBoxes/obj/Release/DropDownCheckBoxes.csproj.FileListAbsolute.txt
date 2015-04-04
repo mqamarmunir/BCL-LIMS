@@ -1,0 +1,4 @@
+D:\Muhammad Qamar\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\DropDownCheckBoxes\bin\Release\DropDownCheckBoxes.dll
+D:\Muhammad Qamar\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\DropDownCheckBoxes\bin\Release\DropDownCheckBoxes.pdb
+D:\Muhammad Qamar\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\DropDownCheckBoxes\obj\Release\DropDownCheckBoxes.dll
+D:\Muhammad Qamar\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\DropDownCheckBoxes\obj\Release\DropDownCheckBoxes.pdb

@@ -1,0 +1,151 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using BusinessLayer;
+using System.Data;
+using ServiceReference2;
+using AjaxControlToolkit;
+public partial class Parameter_TestMapper : System.Web.UI.Page
+{
+  static  DataView cliqtests = new DataView();
+        //= FillCliqueTests();
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if(!Page.IsPostBack)
+        {
+             clsLogin log = new clsLogin();
+                log.OptionId = "26";
+                log.PersonId = Session["personid"].ToString();
+                DataView dvLog = log.GetLogin(2);
+                if (dvLog.Count > 0)
+                {
+                    fillGvTests();
+                }
+                else
+                {
+                    Response.Redirect("wfrmNotAllowed.aspx");
+                }
+                
+        }
+    }
+    private void fillGvTests()
+    {
+        clsTest test = new clsTest();
+       DataView dv =test.GetAll(22);
+       if (dv.Count > 0)
+       {
+           GVTESTS.DataSource = dv;
+           GVTESTS.DataBind();
+
+       }
+       cliqtests = FillCliqueTests();
+      // SComponents com = new SComponents();
+
+
+       //for (int i = 0; i < dv.Count; i++)
+       //{
+
+       //    com.FillComboBox(((ComboBox)(GVTESTS.Rows[i].FindControl("cliqtests"))), cliqtests, "TestName", "TestID");
+       //}
+     
+    }
+    private DataView FillCliqueTests()
+    {
+        DataView d = new DataView();
+        OliveService client = new OliveService();
+        try
+        {
+            DataSet dvCliquetest = client.GEtCliqueClinicTests(System.Configuration.ConfigurationManager.AppSettings["CliqBranchid"].ToString().Trim());
+            if (dvCliquetest.Tables.Count > 0)
+            {
+                d = dvCliquetest.Tables[0].DefaultView;
+
+            }
+        }catch(Exception ee)
+        {
+            lblerror.Text= ee.Message;
+            lblerror.ForeColor = System.Drawing.Color.Red;
+            return d;
+        }
+        return d;
+    }
+    private bool UpdateTest(string testid, string cliqtestid)
+    {
+        clsTest test = new clsTest();
+        test.TestId = testid;
+        test.CliQtest = cliqtestid;
+        return test.updatCliqtestsInfo();
+    }
+    protected void btnmapp_Click(object sender, EventArgs e)
+    {
+        for (int k = 0; k <  GVTESTS.Rows.Count; k++)
+        {
+            if(!(((ComboBox)(GVTESTS.Rows[k].FindControl("cliqtests"))).SelectedValue.Equals("-1")))
+            {
+                if (!UpdateTest(GVTESTS.DataKeys[k].Values["testid"].ToString().Trim(), ((ComboBox)(GVTESTS.Rows[k].FindControl("cliqtests"))).SelectedValue.ToString()))
+                {
+                    lblerror.Text = "Update failed!!";
+                    fillGvTests();
+                    break;
+
+                }
+            }
+        
+        }
+        fillGvTests();
+    }
+    protected void GVTESTS_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+        try
+        {
+            if (e.CommandName.Equals("UnMapp"))
+            {
+                if (UpdateTest(GVTESTS.DataKeys[Convert.ToInt32(e.CommandArgument.ToString().Trim())].Values["testid"].ToString().Trim(), "0"))
+                {
+                    fillGvTests();
+
+                }
+                else
+                {
+                    lblerror.Text = "Update failed!!";
+                }
+                            
+            }
+        }
+        catch (Exception ee)
+        {
+            lblerror.Text = ee.Message;
+        }
+    }
+   // DataView cliqtests = FillCliqueTests();
+    protected void GVTESTS_RowDataBound(object sender, GridViewRowEventArgs e)
+    {
+        if (e.Row.RowType.ToString().Equals("DataRow"))
+        {
+            //DataView cliqtests = FillCliqueTests();
+            SComponents com = new SComponents();
+            if (cliqtests.Count > 0)
+
+            { com.FillComboBox(((ComboBox)(e.Row.FindControl("cliqtests"))), cliqtests, "TestName", "TestID"); }
+            if (Convert.ToInt32(GVTESTS.DataKeys[e.Row.RowIndex].Values["cliqtestid"].ToString().Trim()) > 0)
+            {
+                e.Row.BackColor = System.Drawing.Color.Bisque;
+                e.Row.Cells[4].Visible = true;
+                ComboBox cbcliqtests = (ComboBox)(e.Row.FindControl("cliqtests"));
+                cbcliqtests.SelectedValue = GVTESTS.DataKeys[e.Row.RowIndex].Values["cliqtestid"].ToString().Trim();
+            }
+            else
+            {
+                e.Row.Cells[4].Visible = false;
+            }
+        }
+    }
+    protected void GVTESTS_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    {
+        GVTESTS.PageIndex = e.NewPageIndex;
+        fillGvTests();
+    }
+}

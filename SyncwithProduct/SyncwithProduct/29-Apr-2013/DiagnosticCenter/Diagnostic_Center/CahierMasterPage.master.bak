@@ -1,0 +1,574 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true"  CodeFile="CahierMasterPage.master.cs" Inherits="CahierMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <link href="Styles/tstyle.css" rel="stylesheet" type="text/css" />
+<!-- adjust these paths as necessary -->
+<script src="Scripts/jquery.quickflip.source.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function () {
+        $('.quickFlip').quickFlip();
+
+        $('.quickFlip3').quickFlip({
+            vertical: true
+        });
+
+        /*    $('.quickFlip2').quickFlip();*/
+    });
+
+
+    function newnotifications() {
+        //alert('I am called');
+
+        $('#divnewnotifications').fadeIn('slow');
+        $('#divdefault').fadeOut('slow');
+    }
+
+   
+</script>
+<script language="javascript" type="text/javascript">
+    window.history.forward();
+</script> 
+<!-- end quickflip javascript -->
+<link rel="stylesheet" type="text/css" href="Styles/basic-quickflips.css" />
+<!--<script src="../jquery-latest.js" type="text/javascript"></script>-->
+<script type="text/javascript">
+    $(document).ready(function () {
+        var hide = false;
+        $(".quickFlipCta").hover(function () {
+            if (hide) clearTimeout(hide);
+            $("#rss-subscribe").fadeIn();
+        }, function () {
+            hide = setTimeout(function () { $("#rss-subscribe").fadeOut("slow"); }, 250);
+        });
+        $("#rss-subscribe").hover(function () {
+            if (hide) clearTimeout(hide);
+        }, function () {
+            hide = setTimeout(function () { $("#rss-subscribe").fadeOut("slow"); }, 250);
+        });
+    });
+</script>
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="css/flaty.css">
+<link href="http://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:300" rel="stylesheet" type="text/css">
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+
+
+
+    <style>
+        
+        
+        
+        a.tip {
+    border-bottom: 1px dashed;
+    text-decoration: none
+}
+a.tip:hover {
+    cursor: help;
+    position: relative;
+     }
+a.tip span {
+    display: none
+}
+a.tip:hover span {
+    border: #c0c0c0 1px dotted;
+    padding: 5px 20px 5px 5px;
+    display: block;
+    z-index: 100;
+    background: #bce0ee; /* Old browsers */
+background: -moz-linear-gradient(top,  #bce0ee 0%, #bce0ee 50%, #b3dced 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bce0ee), color-stop(50%,#bce0ee), color-stop(100%,#b3dced)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #bce0ee 0%,#bce0ee 50%,#b3dced 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #bce0ee 0%,#bce0ee 50%,#b3dced 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #bce0ee 0%,#bce0ee 50%,#b3dced 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #bce0ee 0%,#bce0ee 50%,#b3dced 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bce0ee', endColorstr='#b3dced',GradientType=0 ); /* IE6-9 */
+
+    left: 0px;
+    margin: 10px;
+    width: 250px;
+    position: absolute;
+    top: 10px;
+    text-decoration: none
+}
+
+</style>
+</head>
+<body>
+<form id="Form1" runat="server">
+<div id="navbar" class="navbar">
+<button type="button" class="navbar-toggle navbar-btn collapsed" data-toggle="collapse" data-target="#sidebar">
+<span class="icon-reorder"></span>
+</button>
+<a class="navbar-brand" href="#">
+<small>
+
+<img src="../img/logo.png" height="40" style="margin-top: 5px;">
+</small>
+</a>
+<ul class="nav flaty-nav pull-right" style="margin-top:4px;"><li class="hidden-xs">
+<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+<i class="icon-tasks"><img src="../img/c.png"></i>
+<span class="badge badge-warning">4</span>
+</a>
+<ul class="dropdown-navbar dropdown-menu">
+<li class="nav-header">
+<i class="icon-ok"><img src="img/c.png"></i>
+4 Tasks to complete
+</li><li>
+<a href="#">
+<div class="clearfix">
+<span class="pull-left">Software Update</span>
+<span class="pull-right">75%</span>
+</div><div class="progress progress-mini">
+<div style="width:75%" class="progress-bar progress-bar-warning"></div>
+</div>
+</a>
+</li><li>
+<a href="#">
+<div class="clearfix">
+<span class="pull-left">Transfer To New Server</span>
+<span class="pull-right">45%</span>
+</div><div class="progress progress-mini">
+<div style="width:45%" class="progress-bar progress-bar-danger"></div>
+</div>
+</a>
+</li><li>
+<a href="#">
+<div class="clearfix">
+<span class="pull-left">Bug Fixes</span>
+<span class="pull-right">20%</span>
+</div><div class="progress progress-mini">
+<div style="width:20%" class="progress-bar"></div>
+</div>
+</a>
+</li><li>
+<a href="#">
+<div class="clearfix">
+<span class="pull-left">Writing Documentation</span>
+<span class="pull-right">85%</span>
+</div><div class="progress progress-mini progress-striped active">
+<div style="width:85%" class="progress-bar progress-bar-success"></div>
+</div>
+</a>
+</li><li class="more">
+<a href="#">See tasks with details</a>
+</li>
+</ul></li>
+
+<li class="hidden-xs">
+<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+<i class="icon-bell-alt"><img src="../img/noti.png"></i>
+<span class="badge badge-important">5</span>
+</a>
+<ul class="dropdown-navbar dropdown-menu">
+<li class="nav-header">
+<i class="icon-warning-sign"><img src="../img/noti.png"></i>
+5 Notifications
+</li>
+<li class="notify">
+<a href="#">
+<i class="icon-comment orange"></i>
+<p>New Comments</p>
+<span class="badge badge-warning">4</span>
+</a>
+</li><li class="notify">
+<a href="#">
+<i class="icon-twitter blue"></i>
+<p>New Twitter followers</p>
+<span class="badge badge-info">7</span>
+</a>
+</li><li class="notify">
+<a href="#">
+<img src="../img/demo/avatar/avatar2.jpg" alt="Alex" />
+<p>David would like to become moderator.</p>
+</a>
+</li><li class="notify">
+<a href="#">
+<i class="icon-bug pink"></i>
+<p>New bug in program!</p>
+</a>
+</li><li class="notify">
+<a href="#">
+<i class="icon-shopping-cart green"></i>
+<p>You have some new orders</p>
+<span class="badge badge-success">+10</span>
+</a>
+</li>
+<li class="more">
+<a href="#">See all notifications</a>
+</li>
+</ul>
+
+</li>
+<%--<li class="hidden-xs">
+<asp:Menu ID="Menunotifications" runat="server" RenderingMode="List"  Orientation="Horizontal" CssClass="dropdown-navbar dropdown-menu">
+<Items>
+<asp:MenuItem ImageUrl="img/noti.png">
+<asp:MenuItem Text="123"></asp:MenuItem>
+<asp:MenuItem Text="456"></asp:MenuItem>
+<asp:MenuItem Text="789"></asp:MenuItem>
+</asp:MenuItem>
+
+</Items>
+
+</asp:Menu>
+</li>--%>
+
+
+
+<li class="hidden-xs">
+<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+<i class="icon-envelope"><img src="../img/msg.png"></i>
+<span class="badge badge-success">3</span>
+</a>
+<ul class="dropdown-navbar dropdown-menu">
+<li class="nav-header">
+<i class="icon-comments"><img src="../img/msg.png"></i>
+3 Messages
+</li><li class="msg">
+<a href="#">
+<img src="../img/demo/avatar/avatar3.jpg" alt="Sarah's Avatar" />
+<div>
+<span class="msg-title">Sarah</span>
+<span class="msg-time">
+<i class="icon-time"></i>
+<span>a moment ago</span>
+</span>
+</div>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+</a>
+</li><li class="msg">
+<a href="#">
+<img src="../img/demo/avatar/avatar4.jpg" alt="#" />
+<div>
+<span class="msg-title">Emma</span>
+<span class="msg-time">
+<i class="icon-time"></i>
+<span>2 Days ago</span>
+</span>
+</div>
+<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris ...</p>
+</a>
+</li><li class="msg">
+<a href="#">
+<img src="../img/demo/avatar/avatar5.jpg" alt="#" />
+<div>
+<span class="msg-title">John</span>
+<span class="msg-time">
+<i class="icon-time"></i>
+<span>8:24 PM</span>
+</span>
+</div>
+<p>Duis aute irure dolor in reprehenderit in ...</p>
+</a>
+</li><li class="more">
+<a href="#">See all messages</a>
+</li>
+</ul></li><li class="user-profile">
+<a data-toggle="dropdown" href="#" class="user-menu dropdown-toggle">
+<img class="nav-user-photo" src="../img/demo/avatar/avatar1.jpg" alt="" />
+<span class="hidden-sm" id="user_info">
+<asp:Label ID="lblPerson"  runat="server" ></asp:Label>
+</span>
+<i class="icon-caret-down"><img src="../img/down.png"></i>
+</a>
+<ul class="dropdown-menu dropdown-navbar" id="user_menu">
+<li class="nav-header">
+<i class="icon-time"></i>
+Logined From 20:45
+</li><li>
+<a href="#">
+<i class="icon-question"></i>
+Change Password
+</a>
+</li><li class="divider visible-sm"></li><li class="visible-sm">
+<a href="#">
+<i class="icon-tasks"></i>
+Tasks
+<span class="badge badge-warning">4</span>
+</a>
+</li>
+<li class="visible-sm">
+<a href="#">
+<i class="icon-bell-alt"></i>
+Notifications
+<span class="badge badge-important">8</span>
+</a>
+</li>
+<li class="visible-sm">
+<a href="#">
+<i class="icon-envelope"></i>
+Messages
+<span class="badge badge-success">5</span>
+</a>
+</li><li class="divider"></li><li>
+<a href="../logout.aspx" >
+<i class="icon-off"></i>
+Logout
+</a>
+</li>
+</ul></li></ul></div>
+
+<%--
+ <asp:Label ID="lblPerson" Font-Size="10px" runat="server" Font-Bold="True" ForeColor="DarkBlue"></asp:Label>
+             
+    <asp:LinkButton ID="lbtnChange" runat="server" Font-Size="Smaller" OnClick="lbtnChange_Click">Change Password</asp:LinkButton>
+         
+    &nbsp;&nbsp;
+    <asp:LinkButton ID="LinkButton1" runat="server" onclick="LinkButton1_Click"><b>Log Out!</b></asp:LinkButton>--%>
+
+
+<div class="container" id="main-container" style="min-height:650px !important;background: white !important;">
+
+
+    <div id="tWrap">
+    
+    
+    
+    <div id="topbar">
+    	<ul id="ttop">
+				
+				<li class="ttop">
+               
+                <asp:HyperLink ID="imgcashierentry" Visible="false" runat="server" NavigateUrl="~/transaction/wfrmCashierEntry.aspx" class="ttop"><asp:Image ID="imgcashierentryimg" runat="server"  AlternateText="" ImageUrl="~/img/cash.gif" width="24px" height="24px" /><br />
+						Cashier Panel
+					</asp:HyperLink>       
+                
+				</li>
+                <li class="ttop">
+                <asp:HyperLink ID="imgpatientregistration" Visible="false"  runat="server" NavigateUrl="~/transaction/wfrmNewPatientReegistration.aspx"   class="ttop"><asp:Image ID="Image1" runat="server"  AlternateText="" ImageUrl="~/img/bookin.png" width="24px" height="24px" /><br />
+						Patient Booking
+					</asp:HyperLink>  
+				</li>
+                  <li class="ttop">
+                 <asp:HyperLink ID="imgSpecimenCollection" Visible="false"  runat="server" NavigateUrl="~/transaction/wfrmSpecimenCollect.aspx"  class="ttop"><asp:Image ID="Image2" runat="server"  AlternateText="" ImageUrl="~/img/testarr (2).png" width="24px" height="24px" /><br />
+						Specimen Collection
+					</asp:HyperLink>  
+               <%-- <a href="wfrmSpecimenCollect.aspx" class="ttop"><img alt="" src="../img/bookin.png" width="24px" height="24px" />
+					<br />Specimen Collection
+					</a>       --%>
+				</li>
+				<li class="ttop"> 
+                <asp:HyperLink ID="imgCashierList" runat="server" Visible="false"  NavigateUrl="~/transaction/wfrmCaslList.aspx"  class="ttop"><asp:Image ID="Image3" runat="server"  AlternateText="" ImageUrl="~/img/notebook.png" width="24px" height="24px" /><br />
+						Cashier List
+					</asp:HyperLink>  
+               <%-- <a href="wfrmCaslList.aspx" class="ttop"> <img  alt="" src="../img/notebook.png" width="24px" height="24px" />
+						 <br /> Cashier List
+                      
+					</a>  --%>     
+				</li>
+				<li class="ttop">
+                <asp:HyperLink ID="imgSearch" runat="server" Visible="false" NavigateUrl="~/transaction/Search.aspx"   class="ttop"><asp:Image ID="Image4" runat="server"  AlternateText="" ImageUrl="~/img/search.png" width="24px" height="24px" /><br />
+						Search Cashier
+					</asp:HyperLink> 
+                
+				</li>
+                <li class="ttop">
+                <asp:HyperLink ID="imgCashtracking" runat="server" Visible="false"  NavigateUrl="~/transaction/wfrmCaslList.aspx"  class="ttop"><asp:Image ID="Image5" runat="server"  AlternateText="" ImageUrl="~/img/trackin.png" width="24px" height="24px" /><br />
+						Cash Tracking
+					</asp:HyperLink> 
+                     
+				</li>
+                <li class="ttop">
+                  <asp:HyperLink ID="imgbranchTestSearch" Visible="false"  runat="server" NavigateUrl="~/transaction/wfrmInvestigation Rate.aspx"  class="ttop"><asp:Image ID="Image6" runat="server"  AlternateText="" ImageUrl="~/img/testRate.png" width="24px" height="24px" /><br />
+						Charge Calculator
+					</asp:HyperLink>
+                    
+				</li>
+                 <li class="ttop">
+                  <asp:HyperLink ID="imgPatientSearch" Visible="false"  runat="server" NavigateUrl="~/transaction/wfrmPatientSearch.aspx" class="ttop"><asp:Image ID="Image7" runat="server"  AlternateText="" ImageUrl="~/img/patientstatus.png" width="24px" height="24px" /><br />
+						Patient Status
+					</asp:HyperLink>
+                 
+				</li>
+                 <li class="ttop">
+                 <asp:HyperLink ID="imgbranchbooking"  Visible="false"  runat="server" NavigateUrl="~/transaction/wfrmBranchBookedTests.aspx" class="ttop"><asp:Image ID="Image8" runat="server"  AlternateText="abc" ImageUrl="~/img/report.png" width="24px" height="24px" /><br />
+						Specimen Out Queue
+					</asp:HyperLink>
+                
+				</li>
+                 <li class="ttop">
+                  <asp:HyperLink ID="imgTestArrival" Visible="false" NavigateUrl="~/transaction/wfrmupcomingtests.aspx"  runat="server" class="ttop"><asp:Image ID="Image9" runat="server"  AlternateText="" ImageUrl="~/img/testarr (1).png" width="24px" height="24px" /><br />
+						Specimen In Queue
+					</asp:HyperLink>
+                     
+				</li>
+                 <li class="ttop">
+                  <asp:HyperLink ID="imgCashierRefund" Visible="false" NavigateUrl="~/transaction/wfrmNewCashierRefund.aspx" runat="server" class="ttop"><asp:Image ID="Image10" runat="server"  AlternateText="" ImageUrl="~/img/icon_refund.jpg" width="24px" height="24px" /><br />
+						Cashier Refund
+					</asp:HyperLink>
+				</li>
+               <li class="ttop">
+                  <asp:HyperLink ID="CashEntryQueue" Visible="false" NavigateUrl="~/transaction/wfrmCash.aspx" runat="server" class="ttop"><asp:Image ID="Image11" runat="server"  AlternateText="" ImageUrl="~/img/cashEntryQ.png" width="24px" height="24px" /><br />
+						Cashier Queue
+					</asp:HyperLink>
+                     
+				</li>
+				<li class="ttop">
+                  <asp:HyperLink ID="ResultReady" Visible="false" NavigateUrl="~/transaction/wfrmDispatch.aspx" runat="server" class="ttop"><asp:Image ID="Image12" runat="server"  AlternateText="" ImageUrl="~/img/resultReady.png" width="24px" height="24px" /><br />
+						Result Ready
+					</asp:HyperLink>
+				</li>
+				<li class="ttop">
+                  <asp:HyperLink ID="GeneralReceipt" Visible="false" NavigateUrl="~/transaction/wfrmNewGeneral.aspx" runat="server" class="ttop"><asp:Image ID="Image13" runat="server"  AlternateText="" ImageUrl="~/img/receipt.png" width="24px" height="24px" /><br />
+						Duplicate Receipt
+                  </asp:HyperLink>
+				</li>
+                <li class="ttop">
+                  <asp:HyperLink ID="DueBalance" Visible="false" NavigateUrl="~/transaction/RptDueBalance.aspx" runat="server" class="ttop"><asp:Image ID="Image14" runat="server"  AlternateText="" ImageUrl="~/img/Money1.png" width="24px" height="24px" /><br />
+						 Receivables
+                  </asp:HyperLink>
+				</li>
+               <li class="ttop">
+                  <asp:HyperLink ID="IndoorReport" Visible="false" NavigateUrl="~/transaction/wfrmIndoor_Sheet.aspx" runat="server" class="ttop">
+                  <asp:Image ID="Image15" runat="server"  AlternateText="" ImageUrl="~/images/Tasks.gif" width="24px" height="24px" /><br />
+						Indoor Report
+                  </asp:HyperLink>
+				</li>
+                 <li class="ttop">
+                  <asp:HyperLink ID="CashPanel_Summary" Visible="false" NavigateUrl="~/report/wfrmCashSummary.aspx" runat="server" class="ttop">
+                  <asp:Image ID="Image16" runat="server"  AlternateText="" ImageUrl="~/images/report.png" width="24px" height="24px" /><br />
+						Cash Summary
+                  </asp:HyperLink>
+				</li>
+              <li class="ttop">
+                 <asp:HyperLink ID="branchescashsummary" Visible="false" NavigateUrl="~/report/rptcashsummary.aspx" runat="server" class="ttop">
+                  <asp:Image ID="Image17" runat="server"  AlternateText="" ImageUrl="~/images/report.png" width="24px" height="24px" /><br />
+						Branches Summary
+                  </asp:HyperLink>
+                </li>
+                <li class="ttop">
+                 <asp:HyperLink ID="pnlservicessummary" Visible="false" NavigateUrl="~/report/spPanelServices.aspx" runat="server" class="ttop">
+                  <asp:Image ID="Image18" runat="server"  AlternateText="" ImageUrl="~/images/report.png" width="24px" height="24px" /><br />
+						Panel Services
+                  </asp:HyperLink>
+                </li>
+              <li class="ttop">
+                 <asp:HyperLink ID="bal_discsummary" Visible="false" NavigateUrl="~/report/spdisc_balsummary.aspx" runat="server" class="ttop">
+                  <asp:Image ID="Image19" runat="server"  AlternateText="" ImageUrl="~/images/report.png" width="24px" height="24px" /><br />
+						Due Balance
+                  </asp:HyperLink>
+                </li>
+
+			</ul>
+    </div>
+ 
+    <div id="tSidebar">
+		 <div class="tboxhead">
+   <table>
+         <tr>
+         <td><img alt="" src="../img/notification.png" width="24px" height="24px" /></td>
+         <td>
+    Notifications</td>
+    </tr>
+    </table>
+		</div>
+    <div class="quickFlip3">
+        <div class="redPanel">
+           <!-- <h3 class="first quickFlipCta">Also Flips Vertically</h3>-->
+             <div class="tboxheadFlip">
+               <ul id="notifyIcon">
+				
+				<li class="notifyIcon">
+                <a href="../transaction/wfrmCashierEmail.aspx" class="notifyIcon"><img src="../img/notification/mail.png" width="16px" height="16px" alt="New Mail" />
+					</a>       
+				</li>
+                 <li class="notifyIcon">
+                <a href="#" class="notifyIcon"><img src="../img/notification/139_1.png" width="12px" height="12px" style="padding:2px" alt="new Phone Call" onclick="newnotifications();"/>
+					<%--../transaction/smsPage.aspx--%>
+                    </a>       
+				</li>
+               
+                 <li class="notifyIcon">
+                <a href="" class="notifyIcon"><img src="../img/notify.png" alt="new notification" />
+					</a>       
+				</li>
+         <div id="divdefault" style="display:none" >
+           <div style="margin-top:20px;"><marquee  onmouseover="stop();" onmouseout="start();" scrollAmount="1" scrollDelay="100" direction="up" style="margin-top: 20px;" >
+           For blood sample collection of patient send email <a href="#">click here</a>.
+            </marquee>
+            </div>
+            </div>
+
+
+            <div id="divnewnotifications" style=" min-height:20px; width:200px; padding:20px 0 0 0; display:block;">
+             <%--<marquee  onmouseover="stop();" onmouseout="start();" scrollAmount="1" scrollDelay="100" direction="up" style="margin-top: 20px;" >--%>
+            <asp:GridView ID="gvacceptedrequests" runat="server" GridLines="None" AutoGenerateColumns="false" ShowHeader="false" Width="99%">
+            <RowStyle BackColor="Aqua" />
+            <AlternatingRowStyle BackColor="Beige" />
+            <Columns>
+            <asp:TemplateField>
+            <ItemTemplate>
+           <font style="font-size:x-small">
+                <%# Container.DataItemIndex+1%>:</font>
+            <asp:Label ID="lblxyz" runat="server" Font-Size="X-Small" Text='<%#Eval("Status")%>'> </asp:Label>
+            <br />
+            <a href="../transaction/wfrmpatientreceipttemp.aspx?bookingid=<%#Eval("bookingid")%>&requestcancelled=<%#Eval("Cancelled") %>"><font style="font-size:x-small">Generate Receipt</font></a>
+            
+            </ItemTemplate>
+            </asp:TemplateField>
+            </Columns>
+            
+            </asp:GridView>
+
+            <%--</marquee>--%>
+            
+            </div>
+        </ul>
+
+    </div>
+           
+        </div>
+    </div>
+    
+    
+    </div>
+    <div id="tMain">
+      <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+    </div>
+   
+    	
+         <div id="tFooter">
+		
+	</div>
+    </div>
+           
+
+      
+    
+
+</div>
+<footer style="background:#58b1fc;padding-left: 0;
+padding-right: 15px;
+margin-left: 0;
+margin-right: 0;
+margin-bottom: 0;
+position: relative;
+z-index: 990;
+border: 0;
+min-height: 40px;
+width:100%;
+height: 60px;
+border-radius: 0; text-align:center; padding-top:1px">
+<div style="width:10%;float:left;"><img src="../img/olive.png" height="60" style="margin-left:0px;" ></div>
+<div style="width:60%; float:left;"> &nbsp;</div>
+
+<div style="width:30%; float:left; padding-top:14px">2013 © rights reserved by trees technologies.</div>
+
+
+
+<div style="clear:both;"></div>
+</footer>
+<script src="../js/jquery.min.js"></script>
+<script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using BusinessLayer;
+
+public partial class GroupM : System.Web.UI.Page
+{
+    private static string DGSort = "";
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!Session["PersonId"].Equals(""))
+        {
+            if (!IsPostBack)
+            {                
+                DGSort = "";
+                lblstatus.Text = "i";                
+                Fillgv();
+                this.Title = this.Session["PersonName"].ToString();
+                txtName.Focus();
+            }
+        }
+    }
+
+
+    private void Fillgv()
+    {
+        clsGroupM objDC = new clsGroupM();       
+        DataView dv = objDC.GetAll(1);
+        if (dv.Count > 0)
+        {
+            dv.Sort = DGSort;
+            gvGroup.DataSource = dv;
+            gvGroup.DataBind();
+            gvGroup.Visible = true;
+        }
+        else
+        {
+            gvGroup.Visible = false;
+        }
+    }
+    private void Insert()
+    {
+        clsGroupM objDC = new clsGroupM();
+        objDC.Name = txtName.Text.Trim();
+        objDC.Acronym = txtAcronym.Text.Trim();
+        objDC.Description = txtDescription.Text.Trim();
+        objDC.DOrder = txtDOrder.Text.Trim();        
+        objDC.Active = chkActive.Checked ? "Y" : "N";
+        objDC.Enteredon = System.DateTime.Now.ToString("dd/MM/yyyy hh:mm tt");
+        objDC.Enteredby = Session["PersonId"].ToString();
+        objDC.ClientId = this.Session["OrgId"].ToString();
+        if (objDC.Insert())
+        {
+            Clear();
+            lblErrMsg.ForeColor = System.Drawing.Color.Green;
+            lblErrMsg.Text = "Record save successfully";
+            Fillgv();
+        }
+        else
+        {
+            lblErrMsg.ForeColor = System.Drawing.Color.Red;
+            lblErrMsg.Text = objDC.ErrorMessage;
+        }
+    }
+
+    private void Update()
+    {
+        clsGroupM objDC = new clsGroupM();
+        objDC.GroupId = lblGroupId.Text.Trim();
+        objDC.Name = txtName.Text.Trim();
+        objDC.Acronym = txtAcronym.Text.Trim();
+        objDC.Description = txtDescription.Text.Trim();
+        objDC.DOrder = txtDOrder.Text.Trim();   
+        objDC.Active = chkActive.Checked ? "Y" : "N";
+        objDC.Enteredon = System.DateTime.Now.ToString("dd/MM/yyyy hh:mm tt");
+        objDC.Enteredby = Session["PersonId"].ToString();
+        if (objDC.Update())
+        {
+            Clear();
+            lblErrMsg.ForeColor = System.Drawing.Color.Green;
+            lblErrMsg.Text = "Record Update successfully";
+            Fillgv();
+        }
+        else
+        {
+            lblErrMsg.ForeColor = System.Drawing.Color.Red;
+            lblErrMsg.Text = objDC.ErrorMessage;
+        }
+    }
+
+    private void Clear()
+    {
+        txtName.Text = "";
+        txtAcronym.Text = "";
+        txtDOrder.Text = "";
+        txtDescription.Text = "";        
+        chkActive.Checked = true;
+        lblErrMsg.Text = "";
+        Fillgv();
+        lblstatus.Text = "i";
+    }
+
+    protected void lbtnSave_Click(object sender, ImageClickEventArgs e)
+    {
+        if (lblstatus.Text == "i")
+            Insert();
+        else
+            Update();
+        this.txtName.Focus();
+    }
+    protected void lbtnClearAll_Click(object sender, ImageClickEventArgs e)
+    {
+        Clear();
+    }
+    protected void btnClose_Click(object sender, ImageClickEventArgs e)
+    {
+        Response.Redirect("MainPage.aspx");
+    }
+    protected void gvGroup_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    {
+        gvGroup.PageIndex = e.NewPageIndex;
+        Fillgv();
+    }
+    protected void gvGroup_RowEditing(object sender, GridViewEditEventArgs e)
+    {
+        lblErrMsg.Text = "";
+        lblstatus.Text = "u";
+        clsGroupM objDC = new clsGroupM();
+        lblGroupId.Text = objDC.GroupId = gvGroup.DataKeys[e.NewEditIndex].Value.ToString();
+        DataView dv = objDC.GetAll(3);
+        if (dv.Count > 0)
+        {
+            this.txtName.Text = dv[0]["Name"].ToString();
+            this.txtAcronym.Text = dv[0]["Acronym"].ToString();
+            this.txtDescription.Text = dv[0]["Description"].ToString();
+            this.txtDOrder.Text = dv[0]["DOrder"].ToString();                       
+            this.chkActive.Checked = (dv[0]["Active"].ToString().Equals("Y")) ? true : false;
+        }
+    }
+    protected void gvGroup_Sorting(object sender, GridViewSortEventArgs e)
+    {
+        if (e.SortExpression.Equals("NAME"))
+        {
+            if (DGSort == "NAME ASC")
+                DGSort = "NAME DESC";
+            else
+                DGSort = "NAME ASC";
+
+        }
+
+        Fillgv();
+    }
+}

@@ -1,0 +1,115 @@
+/* it's a good idea to define a height and width for quickFlip */
+
+
+/*.blackPanel {
+    text-align: right;
+}
+
+.redPanel
+{
+	text-align: right;
+}*/
+
+.tboxheadFlip {
+	position:relative;
+/*	border:thin solid;*/
+margin-top:-5px;
+margin-left:-30px;
+	height:20px;
+}
+	.utilsFlip a {
+	position:absolute;
+	top:5px;
+	right:0px;
+}
+/**** panels ****/
+.quickFlip3 {
+	/*position:relative;*/
+	 height: 30px;
+	 margin-top:10px;
+	 margin-left:10px;
+	/* padding-top:2px;*/
+	/* top:7px;*/
+    width: 92%;
+}
+
+.quickFlip3 .blackPanel {
+    /*background-color: #F0F0F0;*/
+
+    
+}
+
+.quickFlip3 .redPanel {
+   /* background-color: #F0F0F0;*/
+
+    
+}
+
+.quickFlipCta {
+    cursor: pointer;
+}
+.delete
+{
+	visibility:hidden;
+}
+.delete:hover
+{
+	visibility:visible;
+}
+
+a.notifyIcon
+{
+display:block;
+text-align:center;
+border:thin solid #CCC;
+border-radius:7px;
+-moz-border-radius:7px;
+
+text-decoration:none;
+padding:1px;
+background:-moz-linear-gradient(-45deg, #f9fcff 0%, #ffffff 35%, #EBEBEB 89%, #EBEBEB 100%);
+background:-webkit-linear-gradient(-45deg, #f9fcff 0%, #ffffff 35%, #EBEBEB 89%, #EBEBEB 100%);
+}
+li.notifyIcon
+{
+	display:block;
+float:left;
+padding-left:3px;
+/*border:thin solid;*/
+}
+ul.notifyIcon
+{
+list-style-type:none;
+padding:0px;
+overflow:hidden;
+}
+
+
+.quickFlip{
+    height: 420px;
+    width: 99%;
+}
+
+
+
+
+.quickFlip{
+/*    font-family: "Trebuchet MS", Verdana, Sans-serif, sans;
+    font-size: 13px;
+    position: relative;*/
+}
+
+.quickFlip .blackPanel{
+
+    border: 1px outset #ccc;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+}
+
+.quickFlip .redPanel{
+	text-align:right;
+		background-color:#F2F2F2;
+    border: 1px outset #A6C9E2;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+}

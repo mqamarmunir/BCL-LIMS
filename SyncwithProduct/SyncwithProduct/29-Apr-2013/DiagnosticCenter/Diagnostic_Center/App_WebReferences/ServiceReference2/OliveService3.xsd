@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/OliveCliqService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/OliveCliqService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="User">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BranchID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimsMapID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
+  <xs:complexType name="Vault">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AttributesResult" nillable="true" type="tns:ArrayOfAttributeViewModel" />
+      <xs:element minOccurs="0" name="MicroSensitivity" nillable="true" type="tns:ArrayOfDrug" />
+      <xs:element minOccurs="0" name="Patient" nillable="true" type="tns:VaultPatientInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Vault" nillable="true" type="tns:Vault" />
+  <xs:complexType name="ArrayOfAttributeViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AttributeViewModel" nillable="true" type="tns:AttributeViewModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAttributeViewModel" nillable="true" type="tns:ArrayOfAttributeViewModel" />
+  <xs:complexType name="AttributeViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AttributeID" type="xs:long" />
+      <xs:element minOccurs="0" name="AttributeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AttributeType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DOrder" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Heading" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LinesNo" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="PrID" type="xs:long" />
+      <xs:element minOccurs="0" name="PrintStatus" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Range" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RangeID" type="xs:long" />
+      <xs:element minOccurs="0" name="RangeMax" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RangeMin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Result" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResultID" type="xs:long" />
+      <xs:element minOccurs="0" name="Unit" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AttributeViewModel" nillable="true" type="tns:AttributeViewModel" />
+  <xs:complexType name="ArrayOfDrug">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Drug" nillable="true" type="tns:Drug" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDrug" nillable="true" type="tns:ArrayOfDrug" />
+  <xs:complexType name="Drug">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DrugID" type="xs:long" />
+      <xs:element minOccurs="0" name="DrugName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrganismID" type="xs:long" />
+      <xs:element minOccurs="0" name="OrganismName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sensitivity" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Drug" nillable="true" type="tns:Drug" />
+  <xs:complexType name="VaultPatientInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BranchID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F_Parent" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Pasword" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PersonID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="S_Parent" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="TestID" type="xs:long" />
+      <xs:element minOccurs="0" name="TestName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TestType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cellno" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="classid" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="clientid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cnic" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dob" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="enteredby" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="enteredon" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fax" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="gender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="hphone" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="maritalstatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="panelid" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="prid" type="xs:long" />
+      <xs:element minOccurs="0" name="prno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="relation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="serviceno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VaultPatientInfo" nillable="true" type="tns:VaultPatientInfo" />
+  <xs:complexType name="ArrayOfTestInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TestInfo" nillable="true" type="tns:TestInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTestInfo" nillable="true" type="tns:ArrayOfTestInfo" />
+  <xs:complexType name="TestInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TestInfo" nillable="true" type="tns:TestInfo" />
+  <xs:complexType name="ArrayOfAttributeInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AttributeInfo" nillable="true" type="tns:AttributeInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAttributeInfo" nillable="true" type="tns:ArrayOfAttributeInfo" />
+  <xs:complexType name="AttributeInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AttributeInfo" nillable="true" type="tns:AttributeInfo" />
+  <xs:complexType name="SearchResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="connections" nillable="true" type="tns:ArrayOfConnection" />
+      <xs:element minOccurs="0" name="doctors" nillable="true" type="tns:ArrayOfDoctor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchResult" nillable="true" type="tns:SearchResult" />
+  <xs:complexType name="ArrayOfConnection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Connection" nillable="true" type="tns:Connection" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfConnection" nillable="true" type="tns:ArrayOfConnection" />
+  <xs:complexType name="Connection">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ConnectionID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConnectionName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ImageName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Connection" nillable="true" type="tns:Connection" />
+  <xs:complexType name="ArrayOfDoctor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Doctor" nillable="true" type="tns:Doctor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDoctor" nillable="true" type="tns:ArrayOfDoctor" />
+  <xs:complexType name="Doctor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DoctorID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DoctorName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ImageName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Doctor" nillable="true" type="tns:Doctor" />
+  <xs:complexType name="ArrayOfRecipient">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Recipient" nillable="true" type="tns:Recipient" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRecipient" nillable="true" type="tns:ArrayOfRecipient" />
+  <xs:complexType name="Recipient">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ImageName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="first_name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="last_name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Recipient" nillable="true" type="tns:Recipient" />
+  <xs:complexType name="ArrayOfSpecimen">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Specimen" nillable="true" type="tns:Specimen" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSpecimen" nillable="true" type="tns:ArrayOfSpecimen" />
+  <xs:complexType name="Specimen">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="selected" type="xs:boolean" />
+      <xs:element minOccurs="0" name="value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Specimen" nillable="true" type="tns:Specimen" />
+  <xs:complexType name="SpecimenTemplate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AttributesResult" nillable="true" type="tns:ArrayOfAttributeResult" />
+      <xs:element minOccurs="0" name="EnteredBy" type="xs:long" />
+      <xs:element minOccurs="0" name="SpecimenID" type="xs:int" />
+      <xs:element minOccurs="0" name="TestID" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SpecimenTemplate" nillable="true" type="tns:SpecimenTemplate" />
+  <xs:complexType name="ArrayOfAttributeResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AttributeResult" nillable="true" type="tns:AttributeResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAttributeResult" nillable="true" type="tns:ArrayOfAttributeResult" />
+  <xs:complexType name="AttributeResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AttributeID" type="xs:long" />
+      <xs:element minOccurs="0" name="AttributeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Result" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AttributeResult" nillable="true" type="tns:AttributeResult" />
+  <xs:complexType name="ArrayOfResultTemplate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ResultTemplate" nillable="true" type="tns:ResultTemplate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResultTemplate" nillable="true" type="tns:ArrayOfResultTemplate" />
+  <xs:complexType name="ResultTemplate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="LimsAttributeID" type="xs:int" />
+      <xs:element minOccurs="0" name="LimsAttributeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Result" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResultTemplate" nillable="true" type="tns:ResultTemplate" />
+  <xs:complexType name="ArrayOfAllTemplate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AllTemplate" nillable="true" type="tns:AllTemplate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAllTemplate" nillable="true" type="tns:ArrayOfAllTemplate" />
+  <xs:complexType name="AllTemplate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="LastModified" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TemplateCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AllTemplate" nillable="true" type="tns:AllTemplate" />
+  <xs:complexType name="ArrayOfSpecimenDropDown">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SpecimenDropDown" nillable="true" type="tns:SpecimenDropDown" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSpecimenDropDown" nillable="true" type="tns:ArrayOfSpecimenDropDown" />
+  <xs:complexType name="SpecimenDropDown">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Selected" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SpecimenDropDown" nillable="true" type="tns:SpecimenDropDown" />
+  <xs:complexType name="ArrayOfPanelTest">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PanelTest" nillable="true" type="tns:PanelTest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPanelTest" nillable="true" type="tns:ArrayOfPanelTest" />
+  <xs:complexType name="PanelTest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PanelCliqID" type="xs:int" />
+      <xs:element minOccurs="0" name="PanelID" type="xs:int" />
+      <xs:element minOccurs="0" name="PanelName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Rate" type="xs:long" />
+      <xs:element minOccurs="0" name="TestID" type="xs:int" />
+      <xs:element minOccurs="0" name="TestName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PanelTest" nillable="true" type="tns:PanelTest" />
+  <xs:complexType name="ArrayOfNewTestsRMI">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NewTestsRMI" nillable="true" type="tns:NewTestsRMI" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNewTestsRMI" nillable="true" type="tns:ArrayOfNewTestsRMI" />
+  <xs:complexType name="NewTestsRMI">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CellNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExternalbranchId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaritalStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SampleTags" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="bloodgroup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="bookedon" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="branchid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="charges" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="checkin_id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cnic" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="delivery_Date" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dob" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="firstname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="gender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lastname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="middlename" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mr_no" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="orderid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="patient_id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="test_id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="visit_no" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NewTestsRMI" nillable="true" type="tns:NewTestsRMI" />
+</xs:schema>

@@ -1,0 +1,112 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="ResultReportfooter.ascx.cs" Inherits="transaction_ResultReportfooter" %>
+<table width="98.5%" style="border-radius:8px; bottom:0; position:fixed; font-size: 8px;">
+                <tr style="border-bottom:1px solid #DDDDDD;">
+                    
+                    <td align="center" colspan="8">
+                    <asp:Label ID="lblnoresponsibility" Font-Size="11px" runat="server" Visible="false"></asp:Label>
+                         </td>
+                </tr>
+               <tr style="border-bottom:1px solid #DDDDDD;">
+                    <td align="left" colspan="2">
+                         <asp:Label Font-Bold="true"  Font-Size="6px" ID="Lb_TodayDate" runat="server" Text=""></asp:Label>
+                    </td>
+                    <td align="center" colspan="4">
+                         <asp:Label Font-Bold="true" Font-Size="8px" ID="Label_Signature" runat="server" Text="Electronically verified report. Signatures not required."></asp:Label>
+                    </td>
+                    <td colspan="2"></td>
+                </tr>
+           <tr style="padding-top=2px;">
+                <td width="12%" valign="top">
+                    <asp:Label Font-Bold="true" ID="Label21" runat="server" Text="Anis Alam"></asp:Label>
+                </td>
+                <td width="13.5%" valign="top">
+                    <asp:Label ID="Label24" Font-Bold="true" runat="server" Text="Dr. Shahid Rafi"></asp:Label>
+                </td>
+                <td width="12.5%" valign="top">
+                    <asp:Label ID="Label23" Font-Bold="true" runat="server" Text="Prof. Dr. Saeed Alam"></asp:Label>
+                </td>
+                 <td width="12.5%" valign="top">
+                    <asp:Label ID="Label3" runat="server" Font-Bold="true" Text="Dr. R.N. Ahmad"></asp:Label>
+                </td>
+                <%-- <td width="12.5%" valign="top">
+                    <asp:Label ID="Label33" runat="server" Font-Bold="true" Text="Dr. Nasir Rafi"></asp:Label>
+                </td>--%>
+                <td width="12%" valign="top">
+                    <asp:Label ID="Label25" runat="server" Font-Bold="true" Text="Dr. Masooma Raza"></asp:Label>
+                </td>
+                <%--<td width="13.5%" valign="top">
+                    <asp:Label Font-Bold="true" ID="Label22" runat="server" Text="Dr. Huma Jawad"></asp:Label>
+                </td>--%>
+                <td width="12%" valign="top">
+                    <asp:Label ID="Label26" runat="server" Font-Bold="true" Text="Dr. Maha Anis"></asp:Label>
+                </td>
+               
+                
+            </tr>
+            <tr>
+                <td valign="top">
+                    Chief Executive Officer</td>
+               <td valign="top">
+                    Lab Dir. /Cnst. Microbiologist</td>
+                <td valign="top">
+                    Consultant Histopathologist</td>
+                 <td valign="top">
+                    Consultant Microbiologist</td>
+                <%--<td valign="top">
+                    Consultant Microbiologist</td>--%>
+                <td valign="top">
+                    Consultant Haematologist</td>
+                <%--<td valign="top">
+                    Assistant<br />  Pathologist</td>--%>
+                <td valign="top">
+                    Pathologist Hematologist</td>
+              
+               
+            </tr>
+            <tr>
+                <td valign="top">
+                    B.SC (Hons) M.S M.B.A,PGD(MGT) M (A.A.C.C)(USA)</td>
+               <td valign="top">
+                    M.B.B.S; FCPS.</td>
+               
+                <td valign="top">
+                    M.B.B.S.<br /> M.Phil</td>
+
+                 <td valign="top">
+                    M.B.B.S F.C.P.S</td>
+                 <%--<td valign="top">
+                     MBBS,FCPS (Pak),<br />ARC Path(UK)</td> 
+                --%>
+                <td valign="top">
+                    MBBS,FCPS </td>
+
+                <%--<td valign="top">
+                    MBBS,MCPS</td>--%>
+                <td valign="top">
+                    M.B.B.S,M.Phill</td>
+            </tr>
+            <tr>
+                <td>
+                    </td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <%--<td>
+                    &nbsp;</td>
+                <td>
+                    </td>--%>
+                <td>
+                    &nbsp;</td>
+               <%-- <td>
+                    &nbsp;</td>--%>
+                    <td>
+                    &nbsp;
+                    </td>
+            </tr>
+            <tr>
+            <td align="right" colspan="8" style="display:none">
+            <%-- Page <%#  Gv_GroupTest.CurrentPrintPage.ToString() %> / <%#  Gv_GroupTest.PrintPageCount%>--%>
+            </td>
+            </tr>
+        </table>

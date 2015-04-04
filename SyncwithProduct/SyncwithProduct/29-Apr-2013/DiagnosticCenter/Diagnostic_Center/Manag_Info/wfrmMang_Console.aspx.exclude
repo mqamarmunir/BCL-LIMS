@@ -1,0 +1,147 @@
+<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="~/Manag_Info/wfrmMang_Console.aspx.cs" Inherits="manage_console" Title="Management Console" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <table id="tb_main" cellpadding="1" cellspacing="1" width="100%" class="label">
+        <tr>
+            <td align="center" class="tdheading" colspan="8">
+                Management Console&nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td colspan="8">
+                <asp:ScriptManager ID="ScriptManager1" runat="server">
+                </asp:ScriptManager>
+                <cc1:CalendarExtender ID="cal_date" runat="server" Format="dd/MM/yyyy"
+                 TargetControlID="txtCal" PopupButtonID="txtCal"></cc1:CalendarExtender>
+                 <cc1:MaskedEditExtender runat="server" ID="msk_cal" Mask="99/99/9999" MaskType="date"
+                  TargetControlID="txtCal"></cc1:MaskedEditExtender> 
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td colspan="4">
+                <asp:Label ID="lblError" runat="server"></asp:Label></td>
+            <td>
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <strong></strong>
+            </td>
+            <td colspan="3">
+                <strong>
+                Today Summary:</strong>&nbsp;
+                <asp:TextBox ID="txtCal" runat="server" CssClass="field" ToolTip="Please enter or Click to select date" Width="15%"></asp:TextBox>&nbsp;</td>
+            <td colspan="2"><asp:ImageButton
+                    ID="imgSerach" runat="server" ImageUrl="~/images/Refresh.gif" OnClick="imgSerach_Click" /><asp:ImageButton
+                        ID="imgClose" runat="server" ImageUrl="~/images/ClosePack.gif" OnClick="imgClose_Click" /></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td>
+                <strong>Branch View:</strong></td>
+            <td>
+            </td>
+            <td colspan="2">
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="6">
+                <asp:GridView ID="gvManage" runat="server" AutoGenerateColumns="False" CssClass="datagrid" DataKeyNames="orgid,summarydate">
+                    <RowStyle CssClass="gridItem" />
+                    <Columns>
+                        <asp:TemplateField HeaderText="S.No">
+                            <ItemTemplate>
+                                <%#Container.DataItemIndex+1 %>:
+                            </ItemTemplate>
+                            <HeaderStyle HorizontalAlign="Left" />
+                            <ItemStyle HorizontalAlign="Left" Width="5%" />
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Branch">
+                            <ItemTemplate>
+                                <asp:LinkButton ID="lbtnBranch" Text='<%#DataBinder.Eval(Container.DataItem,"branch") %>' runat="server" OnClick="lbtnBranch_Click"></asp:LinkButton>
+                            </ItemTemplate>
+                            <HeaderStyle HorizontalAlign="Left" />
+                            <ItemStyle HorizontalAlign="Left" Width="30%" />
+                        </asp:TemplateField>
+                        <asp:BoundField DataField="cashpatient" HeaderText="Cash Pt." >
+                            <HeaderStyle HorizontalAlign="Right" />
+                            <ItemStyle HorizontalAlign="Right" Width="10%" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="panelpatient" HeaderText="Panel Pt." >
+                            <HeaderStyle HorizontalAlign="Right" />
+                            <ItemStyle HorizontalAlign="Right" Width="10%" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="totaltest" HeaderText="Test" >
+                            <HeaderStyle HorizontalAlign="Right" />
+                            <ItemStyle HorizontalAlign="Right" Width="10%" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="cashreceived" HeaderText="Cash Received" >
+                            <HeaderStyle HorizontalAlign="Right" />
+                            <ItemStyle HorizontalAlign="Right" Width="15%" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="cashrefund" HeaderText="Refunds" >
+                            <HeaderStyle HorizontalAlign="Right" />
+                            <ItemStyle HorizontalAlign="Right" Width="10%" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="netamount" HeaderText="Net Amount" >
+                            <HeaderStyle HorizontalAlign="Right" />
+                            <ItemStyle HorizontalAlign="Right" Width="10%" />
+                        </asp:BoundField>
+                    </Columns>
+                    <HeaderStyle CssClass="gridheader" />
+                    <AlternatingRowStyle CssClass="gridAlternate" />
+                </asp:GridView>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="6">
+                
+                <div>
+                    <ZGW:ZEDGRAPHWEB id="ZedGraphWeb1" runat="server" RenderMode="ImageTag"
+            Width="990" Height="300"></ZGW:ZEDGRAPHWEB>
+         
+                </div>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td width="5%"></td>
+            <td width="10%"></td>
+            <td width="20%"></td>
+            <td width="10%"></td>
+            <td width="20%"></td>
+            <td width="10%"></td>
+            <td width="20%"></td>
+            <td width="5%"></td>
+        </tr>
+    </table>
+</asp:Content>
+

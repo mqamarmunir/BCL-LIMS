@@ -1,0 +1,117 @@
+
+/*	=================
+	FOOTER STYLES
+================== */
+footer							{background:#000000; color:#fff; position:relative; padding:!important;}
+
+footer h2 A,footer h2 A:link,footer h2 A:visited		{color:#fff; text-decoration:none;}
+footer h2 A:hover,footer h2 A:focus,footer h2 A:active	{color:#333; text-decoration:underline;}
+footer h1,footer h2,footer h3,footer h4,footer h5,footer h6 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* === Newsletter === */
+#newsletterContainer			{background:blcak; min-height:47px; color:#fff; position:relative;}
+#newsletterContainer .window	{width:100%; min-height:47px; position:relative; overflow:hidden; margin:0 auto;}
+#newsletter						{width:100%; position:absolute; left:7px/*860px*/;}
+#newsletter					{line-height:47px; font-size:15px; font-weight:100; padding:0; float:left; margin-right:100px;}
+#newsletter h2 a				{display:block; padding-left:41px; background:url(../images/footer_newsletter.gif) left center no-repeat; float:left;}
+#newsletter h2 a:focus			{outline:none;}
+#newsletter h2 span				{ font-family:'HelveticaNeue-Light','Helvetica Neue Light','Helvetica Neue', Helvetica, Arial, sans-serif; font-weight:300;}
+#newsletter form				{float:left;}
+#newsletter fieldset			{padding:10px 0 0; position:relative;}
+#newsletter input[type=email],
+.ieLTE7 #newsletter #MERGE0		{position:relative; width:245px; padding:5px 10px; background:#0B3955; color:#ccc/*6f7071*/; border:0; font-size:1.3em; -moz-box-shadow:1px 1px 0 #525252; -webkit-box-shadow:1px 1px 0 #525252; box-shadow:1px 1px 0 #525252; behavior:url(../js/PIE.htc);}
+#newsletter input.blurred		{color:#6f7071; font-style:italic;}
+#newsletter input[type=submit]	{border:0; background:0; font-family:'museo-1','museo-2',sans-serif; font-weight:100; color:#ffc423; font-size:1.8em; text-transform:lowercase;}
+#newsletter .error				{position:absolute; left:-166px; top:0; width:150px; display:block; background:#000; background:rgba(0,0,0,.85); padding:4px 8px 3px; font-size:1.2em; color:#ffc423; border:1px solid #ffc423; border-right-width:0;}
+
+
+#footerMisc						{width:901px; margin:0 auto; text-align:left;}
+#footerMisc > div				{float:right; width:280px; padding:23px 0 13px 40px}
+#footerMisc h2					{text-transform:lowercase; font-size:2em; line-height:1; font-weight:100; padding-bottom:.4em;}
+/* === Contact Us === */
+#contact						{width:185px !important;}
+	{background-image:none;}
+/* === Map === */
+#map							{padding-left:20px !important;}
+/* === flickr === */
+#flickr							{width:300px !important; position:relative;}
+#flickr .photos ul				{list-style:none; padding:0; margin:0;}
+#flickr .photos li				{float:left; margin:0 20px 24px 0;}
+#flickr .photos li a			{position:relative; display:block; width:70px; height:62px; text-indent:-9999em; border:5px solid #fff; border-bottom-width:13px; background-repeat:no-repeat; background-position:-2px -6px;
+								-moz-box-shadow:0 5px 7px rgba(0,0,0,.3); -webkit-box-shadow:0 5px 7px rgba(0,0,0,0.3); box-shadow:0 5px 7px rgba(0,0,0,0.3); behavior:url(../js/PIE.htc);}
+.ie #flickr .photos li a		{box-shadow:0 8px 10px #222;}
+#flickr .photos li a:hover,
+#flickr .photos li a:focus		{-moz-transform:rotate(-3deg); -webkit-transform:rotate(-3deg); transform:rotate(-3deg);}
+#flickr .photos li:nth-child(odd) a:hover,
+#flickr .photos li:nth-child(odd) a:focus		{-moz-transform:rotate(3deg); -webkit-transform:rotate(3deg); transform:rotate(3deg);}
+#flickr p						{clear:both;}
+/* === Copyright === */
+#copyright						{clear:both; background:#000 url(../images/footer_copyright_bg.gif) center bottom no-repeat; padding-bottom:7px;}
+#copyright p					{padding:0; background:#DD8515; text-align:center; padding:0px 0 2px 0; border-bottom:3px solid #494a4c;}
+
+
+/* Temp HUB link */
+footer p.hub					{clear:both; padding:20px 0 0;}
+footer .hub a:link,
+footer .hub a:visited			{color:#333;}
+
+
+
+
+
+
+
+
+
+/*	=====================
+	OPEN HOUSE GALLERIA
+========================= */
+#openhouse-gallery	{text-align:center;}
+.galleria-container {background: #343435;}
+.galleria-info-link	{background-color:#454545;}
+.galleria-thumbnails .galleria-image	{border-color:#666;}
+
+
+
+
+
+
+
+/* HTML5 âœ° Boilerplate (Cont.) */
+.ir { display: block; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; direction: ltr; }
+.hidden { display: none; visibility: hidden; }
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+.invisible { visibility: hidden; }
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+
+/* iPad */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px){
+.wf-active header nav li		{padding:0 40px;}
+.wf-active .sub header nav li	{padding:0 27px;}
+div#filters ul					{margin:8px 25px;}
+}
+@media print {
+  * { background: transparent !important; color: #444 !important; text-shadow: none !important; }
+  a, a:visited { color: #444 !important; text-decoration: underline; }
+  a:after { content: " (" attr(href) ")"; } 
+  abbr:after { content: " (" attr(title) ")"; }
+  .ir a:after { content: ""; }  /* Don't show links for images */
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; } /* css-discuss.incutio.com/wiki/Printing_Tables */ 
+  tr, img { page-break-inside: avoid; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3{ page-break-after: avoid; }
+}

@@ -1,0 +1,354 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using BusinessLayer;
+using ZedGraph;
+using ZedGraph.Web;
+using System.Drawing;
+using System.IO;
+
+public partial class manage_console : System.Web.UI.Page
+{
+    
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!Session["personid"].Equals(""))
+        {            
+            if (!IsPostBack)
+            {
+                clsLogin log = new clsLogin();
+                log.OptionId = "34";
+                log.PersonId = Session["personid"].ToString();
+                DataView dvLog = log.GetLogin(2);
+                if (dvLog.Count > 0)
+                {
+                    txtCal.Text = System.DateTime.Now.ToString("dd/MM/yyyy");
+                    FillGV();
+                }
+                else
+                {
+                    Response.Redirect("../Parameter/wfrmNotAllowed.aspx");
+                }
+                
+                //OnRenderGraph1(ZedGraph, Graphics, MasterPane);                
+            }
+        }
+        else
+        {
+            Response.Redirect("../Login.aspx");
+        }
+    }
+    protected void imgClose_Click(object sender, ImageClickEventArgs e)
+    {
+        Response.Redirect("../Parameter/MainPage.aspx");
+    }
+
+    #region Web Form Designer generated code
+    override protected void OnInit(EventArgs e)
+    {
+        //
+        // CODEGEN: This call is required by the ASP.NET Web Form Designer.
+        //
+        InitializeComponent();
+        base.OnInit(e);
+    }
+
+    /// <summary>
+    /// Required method for Designer support - do not modify
+    /// the contents of this method with the code editor.
+    /// </summary>
+    private void InitializeComponent()
+    {
+        this.ZedGraphWeb1.RenderGraph += new ZedGraph.Web.ZedGraphWebControlEventHandler(this.OnRenderGraph1);
+       
+    }
+    #endregion
+
+    private void FillGV()
+    {
+        clsBLMain mn = new clsBLMain();
+        mn.Date = this.txtCal.Text.Trim();
+        //CreateGraph(zg1);
+       mn.FromDate = txtCal.Text.Trim().Substring(6, 4) + "-" + txtCal.Text.Trim().Substring(3, 2) + "-" + txtCal.Text.Trim().Substring(0, 2);
+        DataView dv = mn.GetAll(11);
+
+        gvManage.DataSource = dv;
+        gvManage.DataBind();        
+    }
+    private void CreateGraph(ZedGraphControl zg1)
+    {
+        // get a reference to the GraphPane
+
+        GraphPane myPane = zg1.GraphPane;
+
+        // Set the Titles
+
+        myPane.Title.Text = "My Test Bar Graph";
+        myPane.XAxis.Title.Text = "Label";
+        myPane.YAxis.Title.Text = "My Y Axis";
+
+        // Make up some random data points
+
+        string[] labels = { "KDC Main", "KDC Millat", "KDC Stadium" };
+        double[] y = { 160, 115, 75 };
+        double[] y2 = { 90, 100, 95 };
+        double[] y3 = { 80, 110, 65 };
+        double[] y4 = { 120, 125, 100 };
+
+        // Generate a red bar with "Curve 1" in the legend
+
+        BarItem myBar = myPane.AddBar("Patient", null, y,
+                                                   System.Drawing.Color.Red);
+        myBar.Bar.Fill = new Fill(System.Drawing.Color.Red, System.Drawing.Color.White,
+                                                    System.Drawing.Color.Red);
+
+        // Generate a blue bar with "Curve 2" in the legend
+
+        myBar = myPane.AddBar("Test", null, y2, System.Drawing.Color.Blue);
+        myBar.Bar.Fill = new Fill(System.Drawing.Color.Blue, System.Drawing.Color.White,
+                                                    System.Drawing.Color.Blue);
+
+        // Generate a green bar with "Curve 3" in the legend
+
+        myBar = myPane.AddBar("Cash", null, y3, System.Drawing.Color.Green);
+        myBar.Bar.Fill = new Fill(System.Drawing.Color.Green, System.Drawing.Color.White,
+                                                    System.Drawing.Color.Green);
+
+        // Generate a black line with "Curve 4" in the legend
+
+        //LineItem myCurve = myPane.AddCurve("Curve 4",
+        //      null, y4, Color.Black, SymbolType.Circle);
+        //myCurve.Line.Fill = new Fill(Color.White,
+        //                      Color.LightSkyBlue, -45F);
+
+        // Fix up the curve attributes a little
+
+        //myCurve.Symbol.Size = 8.0F;
+        //myCurve.Symbol.Fill = new Fill(Color.White);
+        //myCurve.Line.Width = 2.0F;
+
+        // Draw the X tics between the labels instead of 
+
+        // at the labels
+
+        myPane.XAxis.MajorTic.IsBetweenLabels = true;
+
+        // Set the XAxis labels
+
+        myPane.XAxis.Scale.TextLabels = labels;
+        // Set the XAxis to Text type
+
+        myPane.XAxis.Type = AxisType.Text;
+
+        // Fill the Axis and Pane backgrounds
+
+        myPane.Chart.Fill = new Fill(System.Drawing.Color.White,
+              System.Drawing.Color.FromArgb(255, 255, 166), 90F);
+        myPane.Fill = new Fill(System.Drawing.Color.FromArgb(250, 250, 255));
+        myPane.YAxis.Scale.FormatAuto = false;
+        // Tell ZedGraph to refigure the
+
+        // axes since the data have changed
+
+        zg1.AxisChange();
+    }
+    protected void imgSerach_Click(object sender, ImageClickEventArgs e)
+    {
+        if (txtCal.Text.Trim().Replace("__/__/____","").Equals(""))
+        {
+            lblError.ForeColor = System.Drawing.Color.Red;
+            lblError.Text = "Please enter date first";
+            return;
+        }
+        FillGV();
+    }
+
+    private void OnRenderGraph1(ZedGraph.Web.ZedGraphWeb z, System.Drawing.Graphics g, ZedGraph.MasterPane masterPane)
+    {
+        // Get the GraphPane so we can work with it
+        GraphPane myPane = masterPane[0];
+       
+        myPane.Title.Text = "Graph View";
+        myPane.XAxis.Title.Text = "BIOCARE Labs (Pvt) Ltd.";
+        myPane.YAxis.Title.Text = "Number of Records";
+               
+
+        // Make up some random data points
+        clsBLMain mn = new clsBLMain();
+        mn.Date = this.txtCal.Text.Trim();        
+
+        DataView dv = mn.GetAll(11);
+        string labelget = "";
+        double dtPatient = 0;
+        double dtTest = 0;
+        double dtNetamount = 0;
+
+        string strPatient = "";
+        string strTest = "";
+        string strNetAmt = "";
+        # region"last"
+        //int count=0;
+        //for (int i = 0; i < dv.Count; i++)
+        //{
+        //    dtPatient = 0;
+        //    dtTest = 0;
+        //    dtNetamount = 0;
+        //    count++;
+        //    if (i == 0)
+        //    {
+        //        labelget =dv[i]["branch"].ToString();                
+        //        dtPatient = Convert.ToDouble(dv[i]["cashpatient"].ToString()) + Convert.ToDouble(dv[i]["panelpatient"].ToString());
+        //        dtTest = Convert.ToDouble(dv[i]["totaltest"].ToString());
+        //        dtNetamount = Convert.ToDouble(dv[i]["netamount"].ToString());
+
+        //        strPatient = dtPatient.ToString();
+        //        strTest = dtTest.ToString();
+        //        strNetAmt = dtNetamount.ToString();
+                
+        //    }
+        //    else
+        //    {
+        //        labelget += "," +dv[i]["branch"].ToString();
+        //        dtPatient = Convert.ToDouble(dv[i]["cashpatient"].ToString()) + Convert.ToDouble(dv[i]["panelpatient"].ToString());
+        //        dtTest = Convert.ToDouble(dv[i]["totaltest"].ToString());
+        //        dtNetamount = Convert.ToDouble(dv[i]["netamount"].ToString());
+
+        //        strPatient +=","+ dtPatient.ToString();
+        //        strTest +=","+ dtTest.ToString();
+        //        strNetAmt +=","+ dtNetamount.ToString();
+        //    }
+        //}
+        #endregion
+
+        string[] labels = new string[dv.Count];
+//{ "KLDC Stadium Road","KLDC Shaheed Millat","KLDC Clifton"};
+        double[] y = new double[dv.Count];
+        double[] y2 = new double[dv.Count];
+        double[] y3 = new double[dv.Count];
+
+        for (int i = 0; i < dv.Count; i++)
+        {
+            dtPatient = 0;
+            dtTest = 0;
+            dtNetamount = 0;
+            if (i == 0)
+            {
+                labelget = dv[i]["acronym"].ToString() ;
+                labels[i] = labelget;
+                strPatient =Convert.ToString( Convert.ToDouble(dv[i]["cashpatient"].ToString()) + Convert.ToDouble(dv[i]["panelpatient"].ToString()));
+                y[i] = Convert.ToDouble(strPatient);
+                strTest = dv[i]["totaltest"].ToString();
+                y2[i] =Convert.ToDouble(strTest);
+                strNetAmt = dv[i]["netamount"].ToString();
+                y3[i] = Convert.ToDouble(strNetAmt);
+
+            }
+            else
+            {
+                labelget =  dv[i]["acronym"].ToString() ;
+                labels[i] = labelget;
+
+                strPatient = Convert.ToString(Convert.ToDouble(dv[i]["cashpatient"].ToString()) + Convert.ToDouble(dv[i]["panelpatient"].ToString()));
+                y[i] = Convert.ToDouble(strPatient);
+                strTest = dv[i]["totaltest"].ToString();
+                y2[i] = Convert.ToDouble(strTest);
+                strNetAmt= dv[i]["netamount"].ToString();
+                y3[i] = Convert.ToDouble(strNetAmt);
+            }
+        }
+//{ labelget};
+        //double[] y ={ 100,200};
+//{Convert.ToDouble(strPatient) };
+        //double[] y2 ={ 40,123};
+//{Convert.ToDouble(strTest) };
+        //double[] y3 ={ 90,19};
+//{Convert.ToDouble(strNetAmt) };
+        double[] y4 = { 120, 125, 100,3 };
+
+        // Generate a red bar with "Curve 1" in the legend
+
+        BarItem myBar = myPane.AddBar("Total Patient", null, y,
+                                                    Color.Red);
+        myBar.Bar.Fill = new Fill(Color.Red, Color.White,
+                                                    Color.Red);
+
+        // Generate a blue bar with "Curve 2" in the legend
+
+        myBar = myPane.AddBar("Total Test", null, y2, Color.Blue);
+        myBar.Bar.Fill = new Fill(Color.Blue, Color.White,
+                                                    Color.Blue);
+              
+        // Generate a green bar with "Curve 3" in the legend
+
+        myBar = myPane.AddBar("Net Amount", null, y3, Color.Green);
+        myBar.Bar.Fill = new Fill(Color.Green, Color.White,
+                                                    Color.Green);
+
+        // Generate a black line with "Curve 4" in the legend
+
+        //LineItem myCurve = myPane.AddCurve("Curve 4",
+        //      null, y4, Color.Black, SymbolType.Circle);
+        //myCurve.Line.Fill = new Fill(Color.White,
+        //                      Color.LightSkyBlue, -45F);
+
+        // Fix up the curve attributes a little
+
+        //myCurve.Symbol.Size = 8.0F;
+        //myCurve.Symbol.Fill = new Fill(Color.White);
+        //myCurve.Line.Width = 2.0F;
+
+        // Draw the X tics between the labels instead of 
+
+        // at the labels
+
+        myPane.XAxis.MajorTic.IsBetweenLabels = true;
+
+        // Set the XAxis labels
+
+        myPane.XAxis.Scale.TextLabels = labels;
+        // Set the XAxis to Text type
+
+        myPane.XAxis.Type = AxisType.Text;
+        // Fill the Axis and Pane backgrounds
+
+        myPane.Chart.Fill = new Fill(Color.White,
+              Color.FromArgb(255, 255, 166), 90F);
+        myPane.Fill = new Fill(Color.FromArgb(250, 250, 255));
+
+        // Tell ZedGraph to refigure the
+
+        // axes since the data have changed
+       
+
+        masterPane.AxisChange(g);
+        myPane.YAxis.Scale.Max += myPane.YAxis.Scale.MajorStep;
+        
+       
+        // Create TextObj's to provide labels for each bar
+        BarItem.CreateBarLabels(myPane, false, "f0");       
+    }
+    protected void lbtnBranch_Click(object sender, EventArgs e)
+    {
+     
+        GridViewRow gridItem = ((GridViewRow)((LinkButton)sender).Parent.Parent);
+
+        if (gvManage.Rows[gridItem.DataItemIndex].Cells[2].Text.Trim().Equals("0") && gvManage.Rows[gridItem.DataItemIndex].Cells[3].Text.Trim().Equals("0") && gvManage.Rows[gridItem.DataItemIndex].Cells[4].Text.Trim().Equals("0") && gvManage.Rows[gridItem.DataItemIndex].Cells[5].Text.Trim().Equals("0") && gvManage.Rows[gridItem.DataItemIndex].Cells[6].Text.Trim().Equals("0") && gvManage.Rows[gridItem.DataItemIndex].Cells[7].Text.Trim().Equals("0"))
+        {
+            lblError.ForeColor = System.Drawing.Color.Red;
+            lblError.Text = "No detail available.";
+            return;
+        }
+        else
+        {
+            lblError.Text = "";
+            Response.Write("<script language='javascript'>window.open('../Report/wfrmReportView.aspx?type=mc &orgid=" + gvManage.DataKeys[gridItem.DataItemIndex].Value.ToString() + " &date=" + gvManage.DataKeys[gridItem.DataItemIndex].Values[1].ToString() + " &rec=" + gvManage.Rows[gridItem.DataItemIndex].Cells[5].Text.Trim() + " &refund=" + gvManage.Rows[gridItem.DataItemIndex].Cells[6].Text.Trim() + " &bal=" + gvManage.Rows[gridItem.DataItemIndex].Cells[7].Text.Trim() + "')</script>");
+        }
+    }
+}

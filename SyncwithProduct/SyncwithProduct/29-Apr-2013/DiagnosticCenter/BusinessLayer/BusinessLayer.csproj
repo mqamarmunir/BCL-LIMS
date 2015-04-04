@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E4F39E83-8E76-46FF-A4BE-0D58B1400544}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BusinessLayer</RootNamespace>
+    <AssemblyName>BusinessLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="clsAccessGroup.cs" />
+    <Compile Include="clsAccessOption.cs" />
+    <Compile Include="clsARange.cs" />
+    <Compile Include="clsATemplate.cs" />
+    <Compile Include="clsAttribute.cs" />
+    <Compile Include="clsBLAlerts.cs" />
+    <Compile Include="clsBLAlertsAudit.cs" />
+    <Compile Include="clsBlBankEntry.cs" />
+    <Compile Include="clsBLbookedTests.cs" />
+    <Compile Include="clsBLBranch.cs" />
+    <Compile Include="clsBLbranchAlerts.cs" />
+    <Compile Include="clsBLBranchAlertsD.cs" />
+    <Compile Include="clsBlBranchGroups.cs" />
+    <Compile Include="clsBLBranchPanels.cs" />
+    <Compile Include="clsBLBranchTestD.cs" />
+    <Compile Include="clsBLCashRec.cs" />
+    <Compile Include="clsBLClassification.cs" />
+    <Compile Include="clsBLCourierbatches.cs" />
+    <Compile Include="clsBLCourierbranch.cs" />
+    <Compile Include="clsBLDerivedAttributes.cs" />
+    <Compile Include="clsBLDerivedAttributesD.cs" />
+    <Compile Include="clsBlDiscountpackage.cs" />
+    <Compile Include="clsBLDispatch.cs" />
+    <Compile Include="clsBLDrug.cs" />
+    <Compile Include="clsBLDrugOrganism.cs" />
+    <Compile Include="clsBLExternalTrack.cs" />
+    <Compile Include="clsBLGazzetedHolidays.cs" />
+    <Compile Include="clsBLGeneral.cs" />
+    <Compile Include="clsBLMain.cs" />
+    <Compile Include="clsBLMicroSenstivity.cs" />
+    <Compile Include="clsBLOrganism.cs" />
+    <Compile Include="clsBLPanel.cs" />
+    <Compile Include="clsBLPanelClass.cs" />
+    <Compile Include="clsBLPanel_Bill.cs" />
+    <Compile Include="clsBLPatientReg_Inv.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="clsBLPreferenceSettings.cs" />
+    <Compile Include="clsBLProcedure.cs" />
+    <Compile Include="clsBLProcess.cs" />
+    <Compile Include="clsBLRefDoctor.cs" />
+    <Compile Include="clsBLSpecimen.cs" />
+    <Compile Include="clsBLSpecimenNature.cs" />
+    <Compile Include="clsBLTest_C_P.cs" />
+    <Compile Include="clsBLUserRight.cs" />
+    <Compile Include="clsBLVitalSign.cs" />
+    <Compile Include="clsBLWard.cs" />
+    <Compile Include="clsBLWorkList.cs" />
+    <Compile Include="clsCashCollection.cs" />
+    <Compile Include="clsCashPaid.cs" />
+    <Compile Include="clsDepartment.cs" />
+    <Compile Include="clsDesignation.cs" />
+    <Compile Include="clsGroupD.cs" />
+    <Compile Include="clsGroupM.cs" />
+    <Compile Include="clsGroupOption.cs" />
+    <Compile Include="clsLogin.cs" />
+    <Compile Include="clsMethod.cs" />
+    <Compile Include="clsMethodTest.cs" />
+    <Compile Include="clsOrganization.cs" />
+    <Compile Include="clsPersonnel.cs" />
+    <Compile Include="clsPreferenceSettings.cs" />
+    <Compile Include="clsSContainer.cs" />
+    <Compile Include="clsSpecimenType.cs" />
+    <Compile Include="clsStudyD.cs" />
+    <Compile Include="clsStudyM.cs" />
+    <Compile Include="clsSubDepartment.cs" />
+    <Compile Include="clsTest.cs" />
+    <Compile Include="clsValidation.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryBuilder.cs" />
+    <Compile Include="TaskbarNotifier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clsBLResultEntry.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\BusinessLayer.dll" />
+    <Content Include="bin\Debug\BusinessLayer.pdb" />
+    <Content Include="obj\BusinessLayer.csproj.FileList.txt" />
+    <Content Include="obj\Debug\BusinessLayer.dll" />
+    <Content Include="obj\Debug\BusinessLayer.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataLayer\DataLayer.csproj">
+      <Project>{637233D8-D88F-45C4-93E5-CE52AD0E7480}</Project>
+      <Name>DataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DropDownCheckBoxes\DropDownCheckBoxes.csproj">
+      <Project>{DC5FD4C5-70C8-4EC1-A9EA-B0A3FB7AE1D3}</Project>
+      <Name>DropDownCheckBoxes</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,119 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="~/MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+
+<head runat="server">
+    <title>Diagnostic Center Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=big5">
+    <LINK href="images/format.css" type=text/css rel=stylesheet>   
+    <link href="LIMS.css" rel="stylesheet" type="text/css" /> 
+    <script type="text/javascript" language="javascript">
+
+        function TitleCase(objField) 
+        {        
+            var objValues = objField.value.split(" ");
+            var outText = "";
+            for (var i = 0; i < objValues.length; i++) {
+                outText = outText + objValues[i].substr(0, 1).toUpperCase() + objValues[i].substr(1).toLowerCase() + ((i < objValues.length - 1) ? " " : "");
+            }
+            return outText;
+        }                          
+    </script>
+
+    <style type="text/css">
+    
+<!--
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+.style44 {color: #000000;
+	font-size: 9pt;
+}
+.style45 {color: #204C95}
+-->
+</style>
+<style type="text/css">
+<!--
+.style46 {color: #FFFFFF}
+.style47 {font-family: Arial, Helvetica, sans-serif}
+-->
+</style>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body >
+        <form id="form1" runat="server" style="overflow-y:auto;overflow-x:hidden" >
+            <div id="conte" class="newcontent" >
+        <table id="main" cellpadding="1" cellspacing="1" border="0" width="100%" class="label">
+            <tr>
+                <td colspan="4" valign="top">
+                    <!--#include file="~/Header/header.htm"-->
+                </td>                
+            </tr>
+                    
+             <tr>
+                <td valign="top">
+                 <%--<div id="Layer1" style=" LEFT:12px; POSITION:relative; TOP:5px"> --%>
+                    <asp:Menu ID="DBMenu" runat="server" Font-Bold="True" Orientation="Horizontal"
+                        DynamicHorizontalOffset="3" StaticEnableDefaultPopOutImage="False" MaximumDynamicDisplayLevels="1" 
+                        StaticSubMenuIndent="30px" StaticMenuItemStyle-ItemSpacing="3px" StaticMenuItemStyle-Width="100px" 
+                        DynamicMenuItemStyle-ItemSpacing="1px" DynamicEnableDefaultPopOutImage="False">
+                    <StaticMenuItemStyle CssClass="staticmenu" Font-Bold="True" ItemSpacing="3px" Width="100px" />
+                    <DynamicMenuItemStyle CssClass="dynamicmenu" ItemSpacing="1px" HorizontalPadding="10px" />
+                    <StaticHoverStyle CssClass="staticmenuhover" />
+                    <DynamicMenuStyle CssClass="dynamicmenu" />
+                    <DynamicHoverStyle CssClass="dynamicmenuhover" />
+                                        
+                </asp:Menu>
+                     <%--</div>--%>
+                </td>
+                <td></td>
+                <td></td>
+                <td>
+                    <asp:Label ID="lblPerson" runat="server" Font-Bold="True" ForeColor="DarkBlue"></asp:Label><asp:LinkButton ID="lbtnF11" runat="server" Font-Size="Smaller" OnClick="lbtnF11_Click"
+                        Visible="False">Full Screen</asp:LinkButton></td>
+            </tr>
+            <tr>
+                <td valign="top">
+                </td>
+                <td colspan="2">                               
+                  
+                                     
+                    
+                </td>
+                <td align="right">               
+                    <asp:LinkButton ID="lbtnChange" runat="server" Font-Size="Smaller" OnClick="lbtnChange_Click">Change Password</asp:LinkButton></td>
+                
+            </tr>
+             <tr>
+                 <td colspan="4" valign="top" class="middlebody">
+                  <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">                  
+                </asp:contentplaceholder>
+                 </td>
+            </tr>            
+             <tr>
+                <td width="25%"></td>
+                <td width="25%"></td>
+                <td width="25%"></td>
+                <td width="25%"></td>
+            </tr>
+            
+        </table>                                                                                                                                                                             
+      	
+        	                                      </div>
+        	                                      
+     
+      
+    </form>
+     
+       <div id="footer" class="newfooter">
+    <p>       </p>
+    </div>
+   
+</body>
+</html>

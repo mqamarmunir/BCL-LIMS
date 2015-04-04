@@ -1,0 +1,92 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPageManagement.master.cs" Inherits="MasterPageManagement" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+     <link href="Styles/tstyle.css" rel="stylesheet" type="text/css" />
+    
+<!-- adjust these paths as necessary -->
+
+<script src="Scripts/jquery-1.3.2.min.js" type="text/javascript"></script>
+<script src="Scripts/jquery.quickflip.source.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    $(function () {
+        $('.quickFlip').quickFlip();
+
+        $('.quickFlip3').quickFlip({
+            vertical: true
+        });
+
+        /*    $('.quickFlip2').quickFlip();*/
+    });
+</script>
+
+<!-- end quickflip javascript -->
+
+<link rel="stylesheet" type="text/css" href="Styles/basic-quickflips.css" />
+<!--<script src="../jquery-latest.js" type="text/javascript"></script>-->
+<script type="text/javascript">
+    $(document).ready(function () {
+        var hide = false;
+        $(".quickFlipCta").hover(function () {
+            if (hide) clearTimeout(hide);
+            $("#rss-subscribe").fadeIn();
+        }, function () {
+            hide = setTimeout(function () { $("#rss-subscribe").fadeOut("slow"); }, 250);
+        });
+        $("#rss-subscribe").hover(function () {
+            if (hide) clearTimeout(hide);
+        }, function () {
+            hide = setTimeout(function () { $("#rss-subscribe").fadeOut("slow"); }, 250);
+        });
+    });
+</script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="Form1" runat="server">
+    <div id="tWrap">
+    <img src="../img/bannerM.jpg" alt="Img" width="100%" />
+<%--<div id="tHeader"></div>--%>
+    <div id="tnavigation">
+        <img alt="" src="" style="padding-left:5px"/>
+        <p align="right" style="margin-top:-10px; padding-right:10px; font-size:12px"><a href="../logout.aspx">Logout</a></p>
+    </div>
+    
+   <%-- <div id="topbar">
+    
+    		<ul id="ttop">
+				
+				<li class="ttop">
+                <a href="#" class="ttop"><img alt="" src="img/cash.gif" width="24px" height="24px" /><br />
+						Cashier Entry
+					</a>       
+				</li>
+
+				<li class="ttop">
+                <a href="#" class="ttop"> <img  alt="" src="img/notebook.png" width="24px" height="24px" /><br />
+						  Cashier List
+                      
+					</a>       
+				</li>
+                </ul>
+    </div>--%>
+ 
+    <div id="tMain">
+      <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+    </div>
+   
+    	
+         <div id="tFooter">
+		
+	     </div>
+    </div>
+           
+
+      
+    </form>
+</body>
+</html>

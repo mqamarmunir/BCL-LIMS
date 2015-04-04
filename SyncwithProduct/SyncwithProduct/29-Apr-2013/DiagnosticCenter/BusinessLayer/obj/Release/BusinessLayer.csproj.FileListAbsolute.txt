@@ -1,0 +1,8 @@
+D:\Muhammad Qamar\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Release\BusinessLayer.dll
+D:\Muhammad Qamar\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Release\BusinessLayer.pdb
+D:\Muhammad Qamar\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Release\DataLayer.dll
+D:\Muhammad Qamar\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Release\DropDownCheckBoxes.dll
+D:\Muhammad Qamar\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\BusinessLayer\bin\Release\DropDownCheckBoxes.pdb
+D:\Muhammad Qamar\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\BusinessLayer\obj\Release\BusinessLayer.csprojResolveAssemblyReference.cache
+D:\Muhammad Qamar\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\BusinessLayer\obj\Release\BusinessLayer.dll
+D:\Muhammad Qamar\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\BusinessLayer\obj\Release\BusinessLayer.pdb

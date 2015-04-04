@@ -1,0 +1,82 @@
+﻿/* Copyright © Maxim Saplin 2010, 2011
+   Under LGPL License */
+
+div.dd_chk_select
+{
+	border-color: #CCCCCC;
+	border-style: solid;
+	border-width: 1px;
+	height: 18px;
+	padding: 0px 0px 0px 0px;
+	text-align: left;
+	vertical-align: middle;
+	font-size: 12px;
+	text-decoration: none;
+	overflow: visible;
+	color: Black;
+	background-color: white;
+	background-image: url("<%= WebResource("Saplin.Controls.EmbeddedResources.button.gif")%>");
+	background-position: right center;
+	background-repeat: no-repeat;
+}
+
+div.dd_chk_select:hover
+{
+	background-image: url("<%= WebResource("Saplin.Controls.EmbeddedResources.hoverButton.gif")%>");
+	cursor: pointer;
+}
+
+div.dd_chk_select div#caption
+{
+	overflow: hidden;
+	height: 16px;
+	margin-right: 20px;
+	margin-left: 2px;
+	text-align: left;
+	vertical-align: middle;
+	position: relative;
+	top: 1px;
+}
+
+div.dd_chk_drop
+{
+	background-color: white;
+	border: 1px solid #CCCCCC;
+	text-align: left;
+	z-index: 1000;
+	left: -1px;
+	top: 18px;
+	min-width: 100%;
+}
+
+div.dd_chk_drop div#checks
+{
+	border-style: none;
+	padding: 4px 4px 4px 4px;
+	max-height: 200px;
+	overflow: auto;
+}
+
+
+div.dd_chk_drop div#buttons
+{
+	padding: 2px 4px 4px 4px;
+	text-align: right;
+	min-width: 154px;
+}
+
+div.dd_chk_drop div#buttons input
+{
+	text-align: center;
+	width: 75px;
+	font-size: 12px;
+	background-image: url("<%= WebResource("Saplin.Controls.EmbeddedResources.actionButton.gif")%>");
+	background-repeat: no-repeat;
+	background-position: center;
+	border: medium none;
+}
+
+div.dd_chk_drop div#buttons input:hover
+{
+	background-image: url("<%= WebResource("Saplin.Controls.EmbeddedResources.actionButtonHover.gif")%>");
+}

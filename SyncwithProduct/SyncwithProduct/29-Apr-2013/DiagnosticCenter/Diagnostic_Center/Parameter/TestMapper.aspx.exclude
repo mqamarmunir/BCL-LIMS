@@ -1,0 +1,48 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="TestMapper.aspx.cs" Inherits="Parameter_TestMapper" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+
+<asp:ScriptManager ID="srcp" runat="server"></asp:ScriptManager>
+    
+<div style=" width:100%; align:center"> 
+
+
+
+<asp:Button ID="btnmapp" runat="server" Text="Map Tests" onclick="btnmapp_Click" />
+    <br />
+    <asp:Label ID="lblerror" runat="server"></asp:Label>
+    <center>
+<asp:GridView ID="GVTESTS" AutoGenerateColumns="False" AllowPaging="true" PageSize="20"
+        DataKeyNames="testid,cliqtestid" runat="server" 
+        onrowcommand="GVTESTS_RowCommand" onrowdatabound="GVTESTS_RowDataBound" 
+        onpageindexchanging="GVTESTS_PageIndexChanging" ForeColor="#333333">
+        <RowStyle BackColor="#D1EED6" />
+    <Columns>
+    <asp:TemplateField HeaderText="Sr #">
+    <ItemTemplate>
+     <%# Container.DataItemIndex+1 %>
+    </ItemTemplate>
+    
+    </asp:TemplateField>
+    <asp:BoundField HeaderText="Test" DataField="test_name" />
+    <asp:BoundField HeaderText="Method" DataField="method" />
+    <asp:TemplateField HeaderText="Cliq Tests">
+    <ItemTemplate>
+    <cc1:ComboBox ID="cliqtests" Enabled="true" AutoCompleteMode="SuggestAppend" runat="server"></cc1:ComboBox>
+    
+    </ItemTemplate>
+    </asp:TemplateField>
+        <asp:ButtonField CommandName="UnMapp" HeaderText="UnMapp" text="UnMapp" ShowHeader="True" runat="server" />
+    </Columns>
+     <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+            <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+            <HeaderStyle HorizontalAlign="Left" />
+            <EditRowStyle BackColor="#2461BF" />
+            <AlternatingRowStyle BackColor="White" />
+    </asp:GridView>
+    </center>
+</div>
+    
+</asp:Content>
+

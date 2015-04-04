@@ -1,0 +1,32 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+
+public partial class transaction_ResultReportfooter : System.Web.UI.UserControl
+{
+    //private static string sample_Internal = "";
+    protected void Page_Load(object sender, EventArgs e)
+    {
+    //    if (!IsPostBack)
+    //    {
+    //        //string getDate = System.DateTime.Now.ToString("MMM dd,yyyy hh:mm:ss tt");
+    //        //Lb_TodayDate.Text = "Print On : " + getDate.ToString();
+    //        //DataView dv = new DataView();
+    //        //clsReporting report = new clsReporting();
+    //        //report.Prno = Request.QueryString["prno"].ToString();
+    //        //report.Labid = Request.QueryString["labid"].ToString();
+
+    //        //dv = report.GetAll(2);//Previously It was 5
+    //        //sample_Internal = dv[0]["specimen_Internal"].ToString().Trim();
+    //        //if (sample_Internal == "E")
+    //        //{
+    //        //    lblnoresponsibility.Visible = true;
+    //        //    lblnoresponsibility.Text = "Sample Received From Outside " + System.Configuration.ConfigurationManager.AppSettings["ClientName"].ToString() + " bears no responsibility regarding correct identity and quality of sample.";
+    //        //}
+    //    }
+    }
+}

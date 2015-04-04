@@ -1,0 +1,10 @@
+﻿<browsers>
+    <browser refID="Default">
+        <controlAdapters>
+            <adapter controlType="System.Web.UI.Page" adapterType="TheSiteDoctor.PageStateAdapter.PageStateAdapter" />
+        </controlAdapters>
+        <capabilities>
+            <capability name="requiresControlStateInSession" value="true" />
+        </capabilities>
+    </browser>
+</browsers>

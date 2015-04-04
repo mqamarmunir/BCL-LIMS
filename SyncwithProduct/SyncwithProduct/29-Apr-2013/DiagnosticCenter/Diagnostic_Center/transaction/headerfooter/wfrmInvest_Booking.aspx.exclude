@@ -1,0 +1,542 @@
+<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="~/transaction/headerfooter/wfrmInvest_Booking.aspx.cs" Inherits="invest_reg" Title="Investigation Booking" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"> 
+   <script language="javascript" type="text/javascript">
+
+<!--
+
+function GetValue()
+        {
+
+             var label = document.getElementById("<%=lblcharges.ClientID%>");
+             var textbox = document.getElementById("<%=txtDiscount.ClientID%>");             
+             var z;
+             var total;
+             if(parseInt(textbox.value) > 100)
+             {
+                alert('Please enter discount percentage less than or equal to 100');               
+             }
+                else if(textbox.value!="")
+                 {      
+              z = (parseInt(textbox.value) * parseInt(label.innerText)) / (100);
+              total =  parseInt(label.innerText) - z;
+              document.getElementById("<%=txtCash.ClientID%>").innerText= Math.round(total);              
+              }
+              else
+                document.getElementById("<%=txtCash.ClientID%>").innerText= label.innerText;  
+
+}
+
+//-->
+
+</script>
+   
+   <table id="main" cellpadding="1" cellspacing="1" border="0" width="100%" class="label">
+        <tr>
+            <td align="center" class="tdheading" colspan="8">
+            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>&nbsp;
+                Investigation Booking</td>
+        </tr>
+        <tr>
+            <td colspan="5">
+            
+            <asp:UpdatePanel ID="up_Er" runat="server">
+                <ContentTemplate>
+<asp:Label id="lblError" runat="server"></asp:Label> 
+</ContentTemplate>
+                <triggers>
+<asp:AsyncPostBackTrigger ControlID="lbtnAdd" EventName="Click"></asp:AsyncPostBackTrigger>
+<asp:AsyncPostBackTrigger ControlID="lbtnAddALL" EventName="Click"></asp:AsyncPostBackTrigger>
+</triggers>
+             </asp:UpdatePanel>   
+                </td>
+            <td colspan="2">
+                <asp:ImageButton  ID="imgSave" runat="server" ImageUrl="~/images/SavePack_2.gif" OnClick="imgSave_Click" AccessKey="s" ToolTip="Click or Press Alt+s to save test booking" /><asp:ImageButton
+                    ID="imgClear" runat="server" ImageUrl="~/images/ClearPack.gif" OnClick="imgClear_Click" AccessKey="x" ToolTip="Click or Press Alt+x to clear this screen" /><asp:ImageButton
+                        ID="imgCLose" runat="server" ImageUrl="~/images/ClosePack.gif" OnClick="imgCLose_Click" AccessKey="c" ToolTip="Click or Press Alt+c to close this screen" /></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td align="left" colspan="6">
+                <asp:Panel ID="pnlPatientInfo" runat="server" BorderWidth="1px"  Width="99%" BorderColor="Tan" BorderStyle="Solid" >
+                    
+                    <table id="tb_patientInfo" cellpadding="1" cellspacing="1" border="0" width="100%" class="label">
+                        <tr>
+                        <td align="left" style="width: 66px">PR No:</td>
+                        <td>
+                <asp:Label ID="lblPRno" runat="server" Font-Bold="True" ForeColor="DarkBlue"></asp:Label></td>
+                        <td align="left">
+                Patient:</td>
+                        <td>
+                <asp:Label ID="lblPatient" runat="server" ForeColor="DarkBlue"></asp:Label></td>
+                        <td>
+                            Age:</td>
+                        <td>
+                                <asp:Label ID="lblAge" runat="server" ForeColor="DarkBlue"></asp:Label></td>
+                        <td>
+                            Gender:</td>
+                        <td>
+                            <asp:Label ID="lblGender" runat="server" ForeColor="DarkBlue"></asp:Label></td>
+                        <td>
+                            Marital Status:</td>
+                        <td>
+                            <asp:Label ID="lblMarital" runat="server" ForeColor="DarkBlue"></asp:Label></td>
+                        </tr>
+                        <tr>
+                            <td align="left" style="width: 66px">
+                <asp:Label ID="lblPanelHead" runat="server" Text="Panel:"></asp:Label></td>
+                            <td colspan="7">
+                <asp:Label ID="lblPanel" runat="server" ForeColor="DarkBlue"></asp:Label></td>
+                            <td>
+                <asp:Label ID="lblClassHead" runat="server" Visible="False">Class:</asp:Label></td>
+                            <td>
+                <asp:Label ID="lblClass" runat="server" ForeColor="DarkBlue" Visible="False"></asp:Label></td>
+                        </tr>
+                        <tr>
+                        <td style="width: 66px"></td>
+                        <td width="14%"></td>
+                        <td width="6%"></td>
+                        <td width="25%"></td>
+                        <td width="6%"></td>
+                        <td width="10%"></td>
+                        <td width="7%"></td>
+                        <td width="8%"></td>
+                        <td width="12%"></td>
+                        <td width="6%"></td>
+                        </tr>
+                        
+                    </table>
+                </asp:Panel>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Test Priority:</td>
+            <td valign="middle">
+                <asp:RadioButtonList ID="rdbPriority" runat="server" Height="5px" RepeatDirection="Horizontal"
+                    RepeatLayout="Flow">
+                    <asp:ListItem Value="N">Normal</asp:ListItem>
+                    <asp:ListItem Value="U">Urgent</asp:ListItem>
+                </asp:RadioButtonList><br /><br />
+                Type:<asp:DropDownList ID="ddlPatientType" runat="server" CssClass="dropdown" Width="32%" AutoPostBack="True" OnSelectedIndexChanged="ddlPatientType_SelectedIndexChanged">
+                </asp:DropDownList></td>
+            <td colspan="4" align="left">
+                <asp:UpdatePanel ID="up_cash" runat="Server" UpdateMode="Conditional">
+                <ContentTemplate>
+<cc1:FilteredTextBoxExtender id="flt_cash" runat="server" TargetControlID="txtCash" FilterType="Numbers"></cc1:FilteredTextBoxExtender> <cc1:FilteredTextBoxExtender id="flt_dis" runat="server" TargetControlID="txtDiscount" FilterType="numbers"></cc1:FilteredTextBoxExtender> <asp:RadioButtonList id="rdbMode" runat="server" RepeatLayout="flow" RepeatDirection="Horizontal" BackColor="#FFE0C0" AutoPostBack="True" OnSelectedIndexChanged="rdbMode_SelectedIndexChanged"><asp:ListItem Value="C">Cash</asp:ListItem>
+<asp:ListItem Value="R">Credit Card</asp:ListItem>
+<asp:ListItem Value="D">Debit Card</asp:ListItem>
+</asp:RadioButtonList>&nbsp;<asp:Label id="lblReferenceNo" runat="server" Text="Reference No:"></asp:Label> <asp:TextBox id="txtReferenceNo" runat="server" Width="10%" CssClass="mandatoryField" MaxLength="30"></asp:TextBox> Discount: <asp:TextBox id="txtDiscount" onkeyup="GetValue()" runat="server" ToolTip="Please enter discount in percentage" Width="7%" CssClass="field" MaxLength="3"></asp:TextBox> (%)<asp:Label id="lblCash" runat="server" BackColor="#FFE0C0"></asp:Label> <asp:TextBox id="txtCash" runat="server" Width="8%" CssClass="mandatoryField" BackColor="#FFE0C0"></asp:TextBox>&nbsp; Total Charges:<asp:Label id="lblcharges" runat="server" Font-Bold="True" ForeColor="Indigo"></asp:Label> <asp:CheckBox id="chkOnCASH" runat="server" Text="On Cash" OnCheckedChanged="chkOnCASH_CheckedChanged" AutoPostBack="True"></asp:CheckBox> 
+</ContentTemplate>
+                <triggers>
+<asp:AsyncPostBackTrigger ControlID="lbtnAdd" EventName="Click"></asp:AsyncPostBackTrigger>
+<asp:AsyncPostBackTrigger ControlID="lbtnAddALL" EventName="Click"></asp:AsyncPostBackTrigger>
+<asp:AsyncPostBackTrigger ControlID="lbtnRemoveALL" EventName="Click"></asp:AsyncPostBackTrigger>
+<asp:AsyncPostBackTrigger ControlID="gvTestPick" EventName="RowDeleting"></asp:AsyncPostBackTrigger>
+</triggers>
+            </asp:UpdatePanel>    &nbsp; &nbsp;
+            </td>
+            <td></td>
+        </tr>
+       <tr>
+           <td>
+           </td>
+           <td colspan="2">
+            
+           </td>
+           <td align="left" colspan="4">
+           </td>
+           <td>
+           </td>
+       </tr>
+       <tr>
+           <td>
+           </td>
+           <td colspan="4">
+            <asp:UpdatePanel id="up_war" runat="server">
+               <ContentTemplate>
+                <asp:Panel ID="pnl_ward" runat="server" Width="100%" BorderStyle="Solid" BorderWidth="2px"  >
+                    <table id="tb_ward" border="0" cellpadding="1" cellspacing="1" class="label" width="100%">
+                        <tr>
+                            <td align="left">
+                                Ward:</td>
+                            <td colspan="2">
+                                <asp:DropDownList ID="ddlWard" runat="server" Width="99%">
+                                </asp:DropDownList></td>
+                                <td></td>
+                        </tr>
+                        <tr>
+                            <td align="left">
+                                Bed:</td>
+                            <td>
+                                <asp:TextBox ID="txtBed" runat="server" CssClass="field" MaxLength="25" Width="99%"></asp:TextBox></td>
+                            <td>
+                                Ref Adm No:</td>
+                            <td>
+                                <asp:TextBox ID="txtAdm_Reference" runat="server" CssClass="field" MaxLength="50"
+                                    Width="79%"></asp:TextBox></td>
+                        </tr>
+                        <tr>
+                            <td style="width:8%"></td>
+                            <td style="width:30%"></td>
+                            <td style="width:15%"></td>
+                            <td style="width:47%"></td>
+                        </tr>
+                    </table>
+                </asp:Panel>
+               </ContentTemplate> 
+               <triggers>
+<asp:AsyncPostBackTrigger ControlID="ddlPatientType" EventName="SelectedIndexChanged"></asp:AsyncPostBackTrigger>
+</triggers>
+             </asp:UpdatePanel>   
+           </td>
+           <td align="right">
+           </td>
+           <td align="left">
+           </td>
+           <td>
+           </td>
+       </tr>
+        <tr>
+            <td>
+            </td>
+            <td>
+                Search Test:</td>
+            <td valign="top">
+                <asp:TextBox ID="txtSearch_test" runat="server" CssClass="field" Width="80%" ToolTip="Please enter test name"></asp:TextBox>&nbsp;<asp:ImageButton
+                    ID="imgSearch_test" runat="server" ImageUrl="~/images/btn_Blank.GIF" OnClick="imgSearch_test_Click" />
+                  <cc1:TextBoxWatermarkExtender ID="wt_sear_te" runat="server" TargetControlID="txtSearch_test" WatermarkCssClass="waterlabel" WatermarkText="Please enter test name"></cc1:TextBoxWatermarkExtender>  
+                    </td>
+            <td colspan="2" align="left">
+                Speed Key:<asp:TextBox ID="txtSpeed" runat="server" CssClass="field" Width="20%" ToolTip="Please enter speed key to search test"></asp:TextBox>
+                <asp:ImageButton ID="imgSpdKey" runat="server" ImageUrl="~/images/btn_Blank.GIF"
+                    OnClick="imgSpdKey_Click" />
+                &nbsp;
+                                <asp:LinkButton ID="lbtnAdd" runat="server" OnClick="lbtnAdd_Click">Add Selected</asp:LinkButton>
+                &nbsp; <asp:LinkButton ID="lbtnAddALL" runat="server" OnClick="lbtnAddALL_Click">Add All</asp:LinkButton></td>
+            <td align="right">
+                </td>
+            <td align="left">
+                <asp:DropDownList ID="ddlBranch" runat="server" Width="98%" CssClass="dropdown" Visible="False">
+                </asp:DropDownList></td>
+            <td>
+            </td>
+        </tr>
+       <tr>
+           <td>
+           </td>
+           <td>
+           </td>
+           <td valign="top">
+               </td>
+           <td align="left" colspan="2">
+               <asp:UpdatePanel id="up_prg" runat="server">
+                   <contenttemplate>
+<asp:UpdateProgress id="UpdateProgress1" runat="server" DisplayAfter="0"><ProgressTemplate>
+<DIV class="UpdateProgress"><asp:Image id="Image1" runat="server" ImageUrl="../images/loading.gif"></asp:Image> ........Loading! Please Wait </DIV>
+</ProgressTemplate>
+</asp:UpdateProgress> 
+</contenttemplate>
+                   <triggers>
+<asp:AsyncPostBackTrigger ControlID="imgSearch_test" EventName="Click"></asp:AsyncPostBackTrigger>
+<asp:AsyncPostBackTrigger ControlID="imgSpdKey" EventName="Click"></asp:AsyncPostBackTrigger>
+<asp:AsyncPostBackTrigger ControlID="txtList_search" EventName="TextChanged"></asp:AsyncPostBackTrigger>
+<asp:AsyncPostBackTrigger ControlID="gvDepartment" EventName="RowCommand"></asp:AsyncPostBackTrigger>
+<asp:AsyncPostBackTrigger ControlID="gvSubdept" EventName="RowCommand"></asp:AsyncPostBackTrigger>
+<asp:AsyncPostBackTrigger ControlID="gvGroup" EventName="RowCommand"></asp:AsyncPostBackTrigger>
+<asp:AsyncPostBackTrigger ControlID="lbtnAdd" EventName="Click"></asp:AsyncPostBackTrigger>
+<asp:AsyncPostBackTrigger ControlID="lbtnAddALL" EventName="Click"></asp:AsyncPostBackTrigger>
+<asp:AsyncPostBackTrigger ControlID="lbtnRemoveALL" EventName="Click"></asp:AsyncPostBackTrigger>
+<asp:AsyncPostBackTrigger ControlID="imgSave" EventName="Click"></asp:AsyncPostBackTrigger>
+<asp:AsyncPostBackTrigger ControlID="imgClear" EventName="Click"></asp:AsyncPostBackTrigger>
+<asp:AsyncPostBackTrigger ControlID="imgCLose" EventName="Click"></asp:AsyncPostBackTrigger>
+</triggers>
+               </asp:UpdatePanel>&nbsp;
+           </td>
+           <td align="right">
+           </td>
+           <td align="left"> &nbsp;
+               <br />
+               <asp:UpdatePanel id="up_int" runat="server" UpdateMode="Conditional"><ContentTemplate>
+<asp:LinkButton id="lbtntest" runat="server"></asp:LinkButton> <cc1:ModalPopupExtender id="mde_intcmt" runat="server" TargetControlID="lbtntest" Y="200" X="600" PopupControlID="pnlInt_cmmnt" DropShadow="true" BackgroundCssClass="TransparentGrayBackground" CancelControlID="imgCmt_Close">
+               </cc1:ModalPopupExtender> <asp:Panel id="pnlInt_cmmnt" runat="server"  Width="350px" Height="220px" CssClass="mPopup"><TABLE id="tb_cpy" class="label" cellSpacing=1 cellPadding=1 width="100%" border=0><TBODY><TR><TD align=center colSpan=4><STRONG>Internal Comment</STRONG></TD></TR><TR><TD align=left colSpan=4><asp:Label id="lblTest_intCmt" runat="server" Font-Bold="True"></asp:Label></TD></TR><TR><TD align=right>&nbsp; </TD><TD align=right colSpan=3>
+                   <asp:Label ID="lblInt_Index" runat="server" Visible="False"></asp:Label>
+                   <asp:ImageButton id="imgcmt_save" runat="server" ImageUrl="~/images/SavePack_2.gif" OnClick="imgcmt_save_Click"></asp:ImageButton><asp:ImageButton id="imgCmt_Close" onclick="imgCmt_Close_Click" runat="server" ImageUrl="~/images/ClosePack.gif"></asp:ImageButton>&nbsp;</TD></TR><TR><TD align=right>Stage:</TD><TD colSpan=3><asp:DropDownList id="ddlFor_Process" runat="server" Width="98%" CssClass="dropdown">
+                               </asp:DropDownList></TD></TR><TR><TD align=right>Comment:</TD>
+                                   <td align="left" colspan="3" rowspan="5" valign="top">
+                                       <asp:TextBox id="txtInt_Comnt" runat="server" Width="98%" CssClass="field" MaxLength="500" TextMode="MultiLine" Height="87px"></asp:TextBox></td>
+                               </TR><TR><TD align=right></TD></TR><TR><TD align=right></TD></TR>
+                   <tr>
+                       <td align="right">
+                       </td>
+                   </tr>
+                   <tr>
+                       <td align="right">
+                       </td>
+                   </tr>
+                   <TR><TD colSpan=4></TD></TR><TR><TD width="25%"></TD><TD width="25%"></TD><TD width="25%"></TD><TD width="25%"></TD></TR></TBODY></TABLE></asp:Panel>&nbsp;&nbsp;&nbsp; 
+</ContentTemplate>
+               <triggers>
+<asp:AsyncPostBackTrigger ControlID="gvTestPick" EventName="RowCommand"></asp:AsyncPostBackTrigger>
+
+</triggers>
+           </asp:UpdatePanel> </td>
+           <td>
+           </td>
+       </tr>
+        <tr>
+            <td></td>
+            <td colspan="2" valign="top">
+            <asp:Panel ID="pnl_dept" Width="99%" Height="100px" runat="server" ScrollBars="auto" BorderColor="Tan" BorderStyle="Solid" BorderWidth="1px">
+                <table id="tb_dept" width="94%" cellpadding="1" cellspacing="1" border="0" class="label">
+                    <tr>
+                        <td><img src=  "../images/bullet.gif" unselectable="on" align=middle /></td>
+                        <td>Department</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">                                     
+                <asp:GridView ID="gvDepartment" runat="server" AutoGenerateColumns="False" CssClass="datagrid" DataKeyNames="departmentid" ShowHeader="False" Width="99%">
+                    <RowStyle CssClass="gridItem" />
+                    <Columns>
+                        <asp:TemplateField HeaderText="S.No">
+                            <HeaderStyle HorizontalAlign="Right" />
+                                <ItemTemplate>
+                                    <%#Container.DataItemIndex+1 %>:
+                                </ItemTemplate>
+                            <ItemStyle HorizontalAlign="Right" Width="5%" />
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Name">
+                            <HeaderStyle HorizontalAlign="Left" />
+                            <ItemStyle HorizontalAlign="Left" Width="95%" />
+                            <ItemTemplate>
+                                <asp:LinkButton ID="lbtnDepart" runat="server" Text='<%#DataBinder.Eval(Container.DataItem,"Name") %>' OnClick="lbtnDepart_Click"></asp:LinkButton>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
+                    <HeaderStyle CssClass="gridheader" />
+                    <AlternatingRowStyle CssClass="gridAlternate" />
+                    <SelectedRowStyle CssClass="gridSelectedItem" />
+                </asp:GridView>               
+                
+                        </td>
+                    </tr>
+                     <tr>
+                        <td width="10%"></td>
+                        <td width="90%"></td>
+                    </tr>
+                </table>
+                </asp:Panel>
+                
+            </td>
+            <td colspan="2" rowspan="3" valign="top">
+             <asp:UpdatePanel ID="up_List" runat="server" UpdateMode="Conditional">
+                <ContentTemplate>
+<asp:Panel id="pnl_testList" runat="server" BorderStyle="Solid" BorderColor="Tan" Width="99%" BorderWidth="1px" Height="320px"><TABLE id="tb_testlist" class="label" cellSpacing=1 cellPadding=1 width="94%" border=0><TBODY><TR><TD><IMG src="../images/bullet.gif" align=middle unselectable="on" /></TD><TD>Test List &nbsp;&nbsp; <asp:TextBox id="txtList_search" runat="server" Width="40%" AutoPostBack="True" CssClass="field" OnTextChanged="txtList_search_TextChanged"></asp:TextBox> </TD></TR><TR><TD colSpan=2><DIV style="OVERFLOW-Y: auto; VERTICAL-ALIGN: top; WIDTH: 32%; POSITION: absolute; HEIGHT: 270px"><asp:GridView id="gvTestList" runat="server" Width="99%" CssClass="datagrid" ShowHeader="False" DataKeyNames="testid,classificationid,priority,maxtime,charges" AutoGenerateColumns="False">
+<RowStyle CssClass="gridItem"></RowStyle>
+<Columns>
+<asp:BoundField DataField="speedkey" HeaderText="SPD Key">
+<HeaderStyle HorizontalAlign="Right"></HeaderStyle>
+
+<ItemStyle HorizontalAlign="Right" Width="10%"></ItemStyle>
+</asp:BoundField>
+<asp:BoundField DataField="testname" HeaderText="Test">
+<HeaderStyle HorizontalAlign="Left"></HeaderStyle>
+
+<ItemStyle HorizontalAlign="Left" Width="70%"></ItemStyle>
+</asp:BoundField>
+<asp:BoundField DataField="charges" HeaderText="charges">
+<HeaderStyle HorizontalAlign="Right"></HeaderStyle>
+
+<ItemStyle HorizontalAlign="Right" Width="15%"></ItemStyle>
+</asp:BoundField>
+<asp:TemplateField><ItemTemplate>
+                                    <asp:CheckBox ID="chkSelect" runat="server" />
+                                
+</ItemTemplate>
+
+<ItemStyle HorizontalAlign="Center" Width="5%"></ItemStyle>
+</asp:TemplateField>
+</Columns>
+
+<SelectedRowStyle CssClass="gridSelectedItem"></SelectedRowStyle>
+
+<HeaderStyle CssClass="gridheader"></HeaderStyle>
+
+<AlternatingRowStyle CssClass="gridAlternate"></AlternatingRowStyle>
+</asp:GridView> </DIV></TD></TR><TR><TD></TD><TD></TD></TR><TR><TD width="10%"></TD><TD width="90%"></TD></TR></TBODY></TABLE></asp:Panel> 
+</ContentTemplate>
+                 <triggers>
+<asp:AsyncPostBackTrigger ControlID="gvSubdept" EventName="RowCommand"></asp:AsyncPostBackTrigger>
+<asp:AsyncPostBackTrigger ControlID="gvGroup" EventName="RowCommand"></asp:AsyncPostBackTrigger>
+<asp:AsyncPostBackTrigger ControlID="imgSearch_test" EventName="Click"></asp:AsyncPostBackTrigger>
+<asp:AsyncPostBackTrigger ControlID="imgSpdKey" EventName="Click"></asp:AsyncPostBackTrigger>
+<asp:AsyncPostBackTrigger ControlID="lbtnAdd" EventName="Click"></asp:AsyncPostBackTrigger>
+<asp:AsyncPostBackTrigger ControlID="lbtnAddALL" EventName="Click"></asp:AsyncPostBackTrigger>
+</triggers>
+               </asp:UpdatePanel> 
+            </td>
+            <td colspan="2" rowspan="3" valign="top">
+           <asp:UpdatePanel ID="up_ser" runat="server" UpdateMode="Conditional">
+            <ContentTemplate>
+<asp:Panel id="pnl_testPick" runat="server" BorderStyle="Solid" BorderColor="Tan" Width="96%" BorderWidth="1px" Height="320px"><TABLE id="tb_pick" class="label" cellSpacing=1 cellPadding=1 width="94%" border=0><TBODY><TR><TD><IMG src="../images/bullet.gif" align=middle unselectable="on" /></TD><TD>Patient Test&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:LinkButton id="lbtnRemoveALL" onclick="lbtnRemoveALL_Click" runat="server">Remove All</asp:LinkButton></TD></TR><TR><TD colSpan=2><DIV style="OVERFLOW-Y: auto; VERTICAL-ALIGN: top; WIDTH: 30%; POSITION: absolute; HEIGHT: 270px"><asp:GridView id="gvTestPick" runat="server" Width="99%" CssClass="datagrid" ShowHeader="False" DataKeyNames="testid,classificationid,priority,comment,for_process,charges" AutoGenerateColumns="False" OnRowCommand="gvTestPick_RowCommand" OnRowDeleting="gvTestPick_RowDeleting">
+<RowStyle CssClass="gridItem"></RowStyle>
+<Columns>
+<asp:TemplateField HeaderText="S.No"><ItemTemplate>
+                                        <%#Container.DataItemIndex+1 %>:
+                                    
+</ItemTemplate>
+
+<HeaderStyle HorizontalAlign="Right"></HeaderStyle>
+
+<ItemStyle HorizontalAlign="Right" Width="5%"></ItemStyle>
+</asp:TemplateField>
+<asp:BoundField DataField="testname" HeaderText="Test">
+<HeaderStyle HorizontalAlign="Left"></HeaderStyle>
+
+<ItemStyle HorizontalAlign="Left" Width="50%"></ItemStyle>
+</asp:BoundField>
+<asp:BoundField DataField="charges" HeaderText="Charges">
+<HeaderStyle HorizontalAlign="Right"></HeaderStyle>
+
+<ItemStyle HorizontalAlign="Right" Width="15%"></ItemStyle>
+</asp:BoundField>
+<asp:BoundField DataField="deliveredon" HeaderText="Delivered On">
+<HeaderStyle HorizontalAlign="Left"></HeaderStyle>
+
+<ItemStyle HorizontalAlign="Left" Width="20%"></ItemStyle>
+</asp:BoundField>
+<asp:CommandField DeleteText="&lt;img src='../images/Delete.gif' border='0' /&gt;" ShowDeleteButton="True">
+<ItemStyle HorizontalAlign="Center" Width="5%"></ItemStyle>
+</asp:CommandField>
+<asp:CommandField SelectText="&lt;img src='../images/comment_add.png' border='0' /&gt;" ShowSelectButton="True" HeaderText="a">
+<HeaderStyle HorizontalAlign="Left"></HeaderStyle>
+
+<ItemStyle HorizontalAlign="Center" Width="5%"></ItemStyle>
+</asp:CommandField>
+</Columns>
+
+<HeaderStyle CssClass="gridheader"></HeaderStyle>
+
+<AlternatingRowStyle CssClass="gridAlternate"></AlternatingRowStyle>
+</asp:GridView></DIV></TD></TR><TR><TD colSpan=2></TD></TR><TR><TD width="10%"></TD><TD width="90%"></TD></TR></TBODY></TABLE></asp:Panel> 
+</ContentTemplate>
+               <triggers>
+<asp:AsyncPostBackTrigger ControlID="lbtnAdd" EventName="Click"></asp:AsyncPostBackTrigger>
+<asp:AsyncPostBackTrigger ControlID="lbtnAddALL" EventName="Click"></asp:AsyncPostBackTrigger>
+</triggers>
+             </asp:UpdatePanel>          
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td colspan="2" valign="top">
+           <asp:UpdatePanel ID="up_su" runat="Server" UpdateMode="Conditional">
+            <ContentTemplate>
+<asp:Panel id="pnl_Sub" runat="server" BorderStyle="Solid" BorderColor="Tan" Width="99%" BorderWidth="1px" Height="100px" ScrollBars="Auto"><TABLE id="tb_sub" class="label" cellSpacing=1 cellPadding=1 width="94%" border=0><TBODY><TR><TD><IMG src="../images/bullet.gif" align=middle unselectable="on" /></TD><TD>Sub-Department</TD></TR><TR><TD colSpan=2><asp:GridView id="gvSubdept" runat="server" Width="99%" CssClass="datagrid" ShowHeader="False" DataKeyNames="subdepartmentid,departmentid" AutoGenerateColumns="False">
+                        <RowStyle CssClass="gridItem" />
+                        <Columns>
+                            <asp:TemplateField HeaderText="S.No">
+                                <HeaderStyle HorizontalAlign="Right" />
+                                    <ItemTemplate>
+                                        <%#Container.DataItemIndex+1 %>:
+                                    </ItemTemplate>
+                                <ItemStyle HorizontalAlign="Right" Width="5%" />
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Name">
+                                <ItemTemplate>
+                                    <asp:LinkButton ID="lbtnSubDept" Text='<%#DataBinder.Eval(Container.DataItem,"name") %>' runat="server" OnClick="lbtnSubDept_Click"></asp:LinkButton>
+                                </ItemTemplate>
+                                <HeaderStyle HorizontalAlign="Left" />
+                                <ItemStyle HorizontalAlign="Left" Width="95%" />
+                            </asp:TemplateField>
+                        </Columns>
+                        <HeaderStyle CssClass="gridheader" />
+                        <AlternatingRowStyle CssClass="gridAlternate" />
+                        <SelectedRowStyle CssClass="gridSelectedItem" />
+                    </asp:GridView> </TD></TR><TR><TD></TD><TD></TD></TR><TR><TD width="10%"></TD><TD width="90%"></TD></TR></TBODY></TABLE></asp:Panel> 
+</ContentTemplate>
+               <triggers>
+<asp:AsyncPostBackTrigger ControlID="gvDepartment" EventName="RowCommand"></asp:AsyncPostBackTrigger>
+</triggers>
+            </asp:UpdatePanel>  
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td colspan="2" valign="top">
+              <asp:Panel ID="pnl_Group" runat="server" Height="110px" ScrollBars="Auto"
+                    Width="99%" BorderColor="Tan" BorderStyle="Solid" BorderWidth="1px">
+                <table id="tb_group" width="94%" cellpadding="1" cellspacing="1" class="label" border="0">
+                    <tr>
+                        <td><img src=  "../images/bullet.gif" unselectable="on" align=middle /></td>
+                        <td>
+                            Group</td>
+                    </tr>
+                     <tr>
+                        <td colspan="2"><asp:GridView ID="gvGroup" runat="server" AutoGenerateColumns="False" CssClass="datagrid"
+                        DataKeyNames="groupid" ShowHeader="False" Width="99%" OnRowDataBound="gvGroup_RowDataBound">
+                        <RowStyle CssClass="gridItem" />
+                        <Columns>
+                            <asp:TemplateField HeaderText="S.No">
+                                <HeaderStyle HorizontalAlign="Right" />
+                                    <ItemTemplate>
+                                        <%#Container.DataItemIndex+1 %>:
+                                    </ItemTemplate>
+                                <ItemStyle HorizontalAlign="Right" Width="5%" />
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Name">
+                                <ItemTemplate>
+                                    <asp:LinkButton ID="lbtnGroup" Text='<%#DataBinder.Eval(Container.DataItem,"groupname") %>' runat="server" OnClick="lbtnGroup_Click"></asp:LinkButton>
+                                </ItemTemplate>
+                                <HeaderStyle HorizontalAlign="Left" />
+                                <ItemStyle HorizontalAlign="Left" Width="95%" />
+                            </asp:TemplateField>
+                        </Columns>
+                        <HeaderStyle CssClass="gridheader" />
+                        <AlternatingRowStyle CssClass="gridAlternate" />
+                            <SelectedRowStyle CssClass="gridSelectedItem" />
+                    </asp:GridView></td>
+                        
+                    </tr>
+                     <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                     <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                     <tr>
+                        <td width="10%"></td>
+                        <td width="90%"></td>
+                    </tr>
+                </table>
+              
+                    </asp:Panel> 
+                    
+               
+            </td>
+            <td>            
+            </td>
+        </tr>
+        
+        <tr>
+            <td width="3%"></td>
+            <td width="9%"></td>
+            <td width="20%"></td>
+            <td width="13%"></td>
+            <td width="20%"></td>
+            <td width="5%"></td>
+            <td width="25%"></td>
+            <td width="3%"></td>
+        </tr>
+    </table>
+     
+</asp:Content>
+

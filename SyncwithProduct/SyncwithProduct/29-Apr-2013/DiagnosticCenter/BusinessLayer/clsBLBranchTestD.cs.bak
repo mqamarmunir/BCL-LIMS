@@ -1,0 +1,398 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Data;
+using DataLayer;
+
+namespace BusinessLayer
+{
+    public class clsBLBranchTestD
+    {
+        public clsBLBranchTestD()
+        {
+            /// Add Constructor logic here...
+        }
+
+        #region Variables
+        private const string TableName = "dc_tp_BranchTestD";
+        private const string Default = "~!@";
+
+        private string StrErrorMessage = "";
+
+        private string _BranchtestID = Default;
+
+    
+        private string _BranchID = Default;
+        private string _TestID = Default;
+        private string _External = Default;
+        private string _DestBranchID = Default;
+        private string _TestPrice = Default;
+        private string _TATtype = Default;
+
+      
+        private string _TATvalue = Default;
+        private string _Active = Default;
+        private string _SubDepartmentID = Default;
+        private string _Offeredprice = Default;
+
+
+        private string[] _subdepartmentids;
+        private string _Percentage = Default;
+        private string _FranchiseDiscount = Default;
+
+      
+       
+     
+     
+   
+      
+        private string _ClientId = Default;
+        private string _Enteredby = Default;
+        private string _Enteredon = Default;
+
+        clsoperation objTrans = new clsoperation();
+        clsdbhims objdbhims = new clsdbhims();
+        #endregion 
+
+        #region Properties
+        public string BranchtestID
+        {
+            get { return _BranchtestID; }
+            set { _BranchtestID = value; }
+        }
+        public string BranchID
+        {
+            get { return _BranchID; }
+            set { _BranchID = value; }
+        }
+        public string TestID
+        {
+            get { return _TestID; }
+            set { _TestID = value; }
+        }
+        public string External
+        {
+            get { return _External; }
+            set { _External = value; }
+        }
+        public string DestBranchID
+        {
+            get { return _DestBranchID; }
+            set { _DestBranchID = value; }
+        }
+        public string TestPrice
+        {
+            get { return _TestPrice; }
+            set { _TestPrice = value; }
+        }
+        public string TATtype
+        {
+            get { return _TATtype; }
+            set { _TATtype = value; }
+        }
+        public string TATvalue
+        {
+            get { return _TATvalue; }
+            set { _TATvalue = value; }
+        }
+        public string ClientId
+        {
+            get { return _ClientId; }
+            set { _ClientId = value; }
+        }
+        public string Enteredby
+        {
+            get { return _Enteredby; }
+            set { _Enteredby = value; }
+        }
+        public string Enteredon
+        {
+            get { return _Enteredon; }
+            set { _Enteredon = value; }
+        }
+        public string Active
+        {
+            get { return _Active; }
+            set { _Active = value; }
+        }
+        public string SubDepartmentID
+        {
+            get { return _SubDepartmentID; }
+            set { _SubDepartmentID = value; }
+        }
+        public string Offeredprice
+        {
+            get { return _Offeredprice; }
+            set { _Offeredprice = value; }
+        }
+        public string[] Subdepartmentids
+        {
+            get { return _subdepartmentids; }
+            set { _subdepartmentids = value; }
+        }
+        public string Percentage
+        {
+            get { return _Percentage; }
+            set { _Percentage = value; }
+        }
+        public string FranchiseDiscount
+        {
+            get { return _FranchiseDiscount; }
+            set { _FranchiseDiscount = value; }
+        }
+    
+        public string ErrorMessage
+        {
+            get { return StrErrorMessage; }
+            set { StrErrorMessage = value; }
+        }
+        #endregion
+
+        #region Methods
+        public DataView GetAll(int flag)
+        {
+            switch (flag)
+            {
+                case 1:
+                    objdbhims.Query = @"Select s.Name SubDepartment,bt.BranchTestId,bt.BranchId,bt.TestID,bt.percentageDiscount Percentage,bt.External,bt.DestinationBranchID,bt.TestPrice Price1,bt.TATtype,bt.TATvalue,b.Name Branch,t.Test_Name Testname,bt.OfferedPrice,bt.SubDepartmentID,t.Charges VendorPrice,bt.FranchiseDiscount,t.charges-(Round(t.charges*bt.percentagediscount/1000)*10) as Price
+                                            From dc_tp_branchtestd bt left
+                                            outer join dc_tp_branch b On b.BranchID=bt.DestinationBranchID
+                                            Inner join dc_tp_test t on t.testID=bt.TestID
+                                            inner join dc_tp_subdepartments s on s.SubDepartmentiD=bt.SubDepartmentID
+                                            where bt.Active!='N' and t.Active='Y' and bt.External='"+_External+"' and bt.BranchID=" + Convert.ToInt32(_BranchID);
+                    break;
+                case 2:
+                    objdbhims.Query = @"Select bt.TestID TestID,t.Test_Name Name,bt.TestPrice TestPriceVend,bt.OfferedPrice TestPriceOff From dc_tp_branchTestD bt Inner Join dc_tp_test t on t.TestID=bt.TestID where bt.Active='Y' and bt.SubDepartmentID=" + Convert.ToInt32(_SubDepartmentID) + " and bt.BranchID=" + Convert.ToInt32(_BranchID);
+                    break;
+                case 3:
+                    objdbhims.Query = @"Select TestPrice TestPriceVend,OfferedPrice TestPriceOff From dc_tp_branchTestD where Active='Y' and TestID=" + Convert.ToInt32(_TestID) + " and BranchID=" + Convert.ToInt32(_BranchID);
+                    break;
+                case 4://Filling ddlSubDepartmentper
+                    objdbhims.Query = @"Select SubDepartmentID,name From dc_tp_subdepartments where Active='Y'";// and SubDepartmentid in ("+_subdepartmentids[0];
+                    if (_subdepartmentids.Length > 0)
+                    {
+                        objdbhims.Query += @" and SubDepartmentid in (" + _subdepartmentids[0];
+                        for (int i = 1; i < _subdepartmentids.Length; i++)
+                        {
+                            objdbhims.Query += ",";
+                            objdbhims.Query += _subdepartmentids[i];
+                        }
+                        objdbhims.Query += ")";
+                    }
+                    break;
+
+                case 5:
+                    objdbhims.Query = @"Select s.Name SubDepartment,bt.BranchTestId,bt.BranchId,bt.TestID,bt.percentageDiscount Percentage,bt.External,bt.DestinationBranchID,bt.TestPrice Price1,bt.TATtype,bt.TATvalue,b.Name Branch,t.Test_Name Testname,bt.OfferedPrice,bt.SubDepartmentID,t.Charges VendorPrice,bt.FranchiseDiscount,t.charges-(Round(t.charges*bt.percentagediscount/1000)*10) as Price
+                                            From dc_tp_branchtestd bt left
+                                            outer join dc_tp_branch b On b.BranchID=bt.DestinationBranchID
+                                            Inner join dc_tp_test t on t.testID=bt.TestID
+                                            inner join dc_tp_subdepartments s on s.SubDepartmentiD=bt.SubDepartmentID
+                                            where bt.Active!='N' and t.Active='Y' and bt.BranchID=" + Convert.ToInt32(_BranchID);
+                        break;
+
+
+            }
+            return objTrans.DataTrigger_Get_All(objdbhims);
+        }
+
+        public bool updateofferedprice()
+        {
+            objdbhims.Query="Update dc_tp_branchtestd Set OfferedPrice="+Convert.ToInt32(_Offeredprice)+" Where Active='Y' and BranchID="+Convert.ToInt32(_BranchID)+" and TestID="+Convert.ToInt32(_TestID);
+            objTrans.Start_Transaction();
+            this.StrErrorMessage = objTrans.DataTrigger_Update(objdbhims);
+            objTrans.End_Transaction();
+
+            if (this.StrErrorMessage.Equals("True"))
+            {
+                this.StrErrorMessage = objTrans.OperationError;
+                return false;
+            }
+            return true;
+        }
+        
+        public bool delete()
+        {
+            objdbhims.Query = "Delete from dc_tp_branchtestD where  BranchID=" + Convert.ToInt32(this._BranchID) +" and External='"+_External+"'";
+            objTrans.Start_Transaction();
+            this.StrErrorMessage = objTrans.DataTrigger_Delete(objdbhims);
+            objTrans.End_Transaction();
+
+            if (this.StrErrorMessage.Equals("True"))
+            {
+                this.StrErrorMessage = objTrans.OperationError;
+                return false;
+            }
+            return true;
+        }
+        public bool Insert()
+        {
+            if (Validation())
+            {
+                try
+                {
+                    clsoperation objTrans = new clsoperation();
+                    QueryBuilder objQB = new QueryBuilder();
+                    objTrans.Start_Transaction();
+
+                    objdbhims.Query = objQB.QBGetMax("BranchTestID", TableName);
+                    this._BranchtestID = objTrans.DataTrigger_Get_Max(objdbhims);
+
+                    if (!this._BranchtestID.Equals("True"))
+                    {
+                        objdbhims.Query = objQB.QBInsert(MakeArray(), TableName);
+                        this.ErrorMessage = objTrans.DataTrigger_Insert(objdbhims);
+
+                        objTrans.End_Transaction();
+
+                        if (this.ErrorMessage.Equals("True"))
+                        {
+                            this.ErrorMessage = objTrans.OperationError;
+                            return false;
+                        }
+                        else
+                        {
+                            return true;
+                        }
+                    }
+                    else
+                    {
+                        this.ErrorMessage = objTrans.OperationError;
+                        objTrans.End_Transaction();
+                        return false;
+                    }
+                }
+                catch (Exception e)
+                {
+                    this.ErrorMessage = e.Message;
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+        private string[,] MakeArray()
+        {
+            string[,] arySAPS = new string[16, 3];
+
+            if (!this._BranchtestID.Equals(Default))
+            {
+                arySAPS[0, 0] = "BranchTestID";
+                arySAPS[0, 1] = this._BranchtestID;
+                arySAPS[0, 2] = "int";
+            }
+
+            if (!this._BranchID.Equals(Default))
+            {
+                arySAPS[1, 0] = "BranchID";
+                arySAPS[1, 1] = this._BranchID;
+                arySAPS[1, 2] = "int";
+            }
+
+            if (!this._TestID.Equals(Default))
+            {
+                arySAPS[2, 0] = "TestID";
+                arySAPS[2, 1] = this._TestID;
+                arySAPS[2, 2] = "int";
+            }
+
+            if (!this._Enteredby.Equals(Default))
+            {
+                arySAPS[3, 0] = "Enteredby";
+                arySAPS[3, 1] = this._Enteredby;
+                arySAPS[3, 2] = "int";
+            }
+
+            if (!this._Enteredon.Equals(Default))
+            {
+                arySAPS[4, 0] = "Enteredon";
+                arySAPS[4, 1] = this._Enteredon;
+                arySAPS[4, 2] = "datetime";
+            }
+
+            if (!this._External.Equals(Default))
+            {
+                arySAPS[5, 0] = "External";
+                arySAPS[5, 1] = this._External;
+                arySAPS[5, 2] = "string";
+            }
+
+            if (!this._DestBranchID.Equals(Default))
+            {
+                arySAPS[6, 0] = "DestinationBranchID";
+                arySAPS[6, 1] = this._DestBranchID;
+                arySAPS[6, 2] = "int";
+            }
+
+            if (!this._TestPrice.Equals(Default))
+            {
+                arySAPS[7, 0] = "TestPrice";
+                arySAPS[7, 1] = this._TestPrice;
+                arySAPS[7, 2] = "int";
+            }
+
+            if (!this._ClientId.Equals(Default))
+            {
+                arySAPS[8, 0] = "ClientId";
+                arySAPS[8, 1] = this._ClientId;
+                arySAPS[8, 2] = "string";
+            }
+            if (!this._TATtype.Equals(Default))
+            {
+                arySAPS[9, 0] = "TATtype";
+                arySAPS[9, 1] = this._TATtype;
+                arySAPS[9, 2] = "string";
+            }
+            if (!this._TATvalue.Equals(Default))
+            {
+                arySAPS[10, 0] = "TATvalue";
+                arySAPS[10, 1] = this._TATvalue;
+                arySAPS[10, 2] = "int";
+            }
+            if (!this._Active.Equals(Default))
+            {
+                arySAPS[11, 0] = "Active";
+                arySAPS[11, 1] = this._Active;
+                arySAPS[11, 2] = "string";
+            }
+            if (!this._SubDepartmentID.Equals(Default))
+            {
+                arySAPS[12, 0] = "SubDepartmentID";
+                arySAPS[12, 1] = this._SubDepartmentID;
+                arySAPS[12, 2] = "int";
+            }
+            if (!this._Offeredprice.Equals(Default))
+            {
+                arySAPS[13, 0] = "OfferedPrice";
+                arySAPS[13, 1] = this._Offeredprice;
+                arySAPS[13, 2] = "int";
+            }
+            if (!this._Percentage.Equals(Default))
+            {
+                arySAPS[14, 0] = "PercentageDiscount";
+                arySAPS[14, 1] = this._Percentage;
+                arySAPS[14, 2] = "int";
+ 
+            }
+            if (!this._FranchiseDiscount.Equals(Default))
+            {
+                arySAPS[15, 0] = "FranchiseDiscount";
+                arySAPS[15, 1] = this._FranchiseDiscount;
+                arySAPS[15, 2] = "int";
+
+            }
+            return arySAPS;
+        }
+
+        #region Validations 
+        private bool Validation()
+        {
+            return true;
+        }
+
+        #endregion
+
+        #endregion
+    }
+}
