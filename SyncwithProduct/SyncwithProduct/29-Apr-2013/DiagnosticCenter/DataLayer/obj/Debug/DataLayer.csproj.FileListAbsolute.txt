@@ -104,3 +104,7 @@ D:\Muhammad Qamar\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\D
 D:\Muhammad Qamar\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\DataLayer\bin\Debug\DataLayer.pdb
 D:\Muhammad Qamar\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\DataLayer\obj\Debug\DataLayer.dll
 D:\Muhammad Qamar\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\DataLayer\obj\Debug\DataLayer.pdb
+D:\Muhammad Qamar\BCL LIMS\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\DataLayer\bin\Debug\DataLayer.dll
+D:\Muhammad Qamar\BCL LIMS\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\DataLayer\bin\Debug\DataLayer.pdb
+D:\Muhammad Qamar\BCL LIMS\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\DataLayer\obj\Debug\DataLayer.dll
+D:\Muhammad Qamar\BCL LIMS\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\DataLayer\obj\Debug\DataLayer.pdb

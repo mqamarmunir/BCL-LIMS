@@ -125,6 +125,7 @@ public partial class transaction_wfrmNewInvestigaionBooking : System.Web.UI.Page
                     hdTotalamount.Value = lblcharges.Text.Trim();
                     txtList_search.Attributes.Add("onKeyUp", "__doPostBack('ctl00_ContentPlaceHolder1_txtList_search','')");
                 }
+                FillGvTest();
                 
                 //if (System.Configuration.ConfigurationManager.AppSettings["clientid"].ToString().Trim() == "006")
                 //{

@@ -483,7 +483,7 @@ public partial class transaction_wfrmPatientSearch : System.Web.UI.Page
                 if (gvPatients.DataKeys[e.Row.RowIndex].Values[3].ToString() == "7" || gvPatients.DataKeys[e.Row.RowIndex].Values[3].ToString() == "8" || (gvPatients.DataKeys[e.Row.RowIndex].Values[3].ToString() == "6" && gvPatients.DataKeys[e.Row.RowIndex].Values[4].ToString() == "Y"))
                 {
                     string test = gvPatients.DataKeys[e.Row.RowIndex].Values[7].ToString();
-                    if (gvPatients.DataKeys[e.Row.RowIndex].Values[6].ToString().Equals("C") && Convert.ToInt32(gvPatients.DataKeys[e.Row.RowIndex].Values[7].ToString().Replace("-", "-")) > 0)
+                    if ((gvPatients.DataKeys[e.Row.RowIndex].Values[6].ToString().Equals("C") || gvPatients.DataKeys[e.Row.RowIndex].Values[6].ToString().Equals("P")) && Convert.ToInt32(gvPatients.DataKeys[e.Row.RowIndex].Values[7].ToString().Replace("-", "-")) > 0)
                     {
                         (e.Row.FindControl("Img_cprint") as Image).Visible = true;
                         (e.Row.FindControl("Img_print") as Image).Visible = false;

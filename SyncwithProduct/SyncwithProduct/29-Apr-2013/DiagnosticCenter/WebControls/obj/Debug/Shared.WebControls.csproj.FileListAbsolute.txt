@@ -29,3 +29,7 @@ D:\Muhammad Qamar\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\W
 D:\Muhammad Qamar\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\WebControls\bin\Debug\Shared.WebControls.pdb
 D:\Muhammad Qamar\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\WebControls\obj\Debug\Shared.WebControls.dll
 D:\Muhammad Qamar\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\WebControls\obj\Debug\Shared.WebControls.pdb
+D:\Muhammad Qamar\BCL LIMS\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\WebControls\bin\Debug\Shared.WebControls.dll
+D:\Muhammad Qamar\BCL LIMS\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\WebControls\bin\Debug\Shared.WebControls.pdb
+D:\Muhammad Qamar\BCL LIMS\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\WebControls\obj\Debug\Shared.WebControls.dll
+D:\Muhammad Qamar\BCL LIMS\SyncwithProduct\SyncwithProduct\29-Apr-2013\DiagnosticCenter\WebControls\obj\Debug\Shared.WebControls.pdb
