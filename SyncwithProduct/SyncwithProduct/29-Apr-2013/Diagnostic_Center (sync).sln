@@ -22,6 +22,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Diagnostic_Center", "Diagno
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "63230"
+		SlnRelativePath = "DiagnosticCenter\Diagnostic_Center\"
 	EndProjectSection
 	ProjectSection(ProjectDependencies) = postProject
 		{E4F39E83-8E76-46FF-A4BE-0D58B1400544} = {E4F39E83-8E76-46FF-A4BE-0D58B1400544}
